@@ -21,7 +21,7 @@ namespace Events
 
         private void registerForm_Load(object sender, EventArgs e)
         {
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            
             showData();
         }
         public const int WM_NCLBUTTONDOWN = 0xA1;

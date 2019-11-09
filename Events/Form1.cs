@@ -24,34 +24,9 @@ namespace Events
             Application.Exit();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Size oldSize = new Size(159,433);
-            Size newSize = new Size(45, 433);
-
-            if (panel1.Size.Width == 159) {
-
-                panel1.Size = newSize;
-
-                button1.Width = 60;
-                button2.Visible = false;
-                button3.Visible = false;
-                button4.Visible = false;
-
-                
-            }else {
-                panel1.Size = oldSize;
-
-                button1.Visible = true;
-                button2.Visible = true;
-                button3.Visible = true;
-                button4.Visible = true;
-            }
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            
             
         }
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -79,10 +54,10 @@ namespace Events
 
         private void button5_Click_1(object sender, EventArgs e)
         {
-            Size oldSize = new Size(159, 433);
-            Size newSize = new Size(47, 433);
+			Size oldSize = new Size(159, 641);
+			Size newSize = new Size(50, 641);
 
-            if (panel1.Size.Width == 159)
+			if (panel1.Size.Width == 159)
             {
 
                 panel1.Size = newSize;
@@ -92,7 +67,12 @@ namespace Events
                 button2.Text = "";
                 button3.Text = "";
                 button4.Text = "";
-            }
+
+				button1.ImageAlign = ContentAlignment.MiddleLeft;
+				button2.ImageAlign = ContentAlignment.MiddleLeft;
+				button3.ImageAlign = ContentAlignment.MiddleLeft;
+				button4.ImageAlign = ContentAlignment.MiddleLeft;
+			}
             else
             {
                 panel1.Size = oldSize;
@@ -101,7 +81,12 @@ namespace Events
                 button2.Text = "Cinema";
                 button3.Text = "Θέατρο";
                 button4.Text = "Συναυλίες";
-            }
+
+				button1.ImageAlign = ContentAlignment.BottomCenter;
+				button2.ImageAlign = ContentAlignment.BottomCenter;
+				button3.ImageAlign = ContentAlignment.BottomCenter;
+				button4.ImageAlign = ContentAlignment.BottomCenter;
+			}
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -141,5 +126,15 @@ namespace Events
         {
 
         }
-    }
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

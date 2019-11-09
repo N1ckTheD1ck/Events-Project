@@ -20,7 +20,7 @@ namespace Events
 
         private void loginForm_Load(object sender, EventArgs e)
         {
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            
         }
 
         private void loginButton_Click(object sender, EventArgs e)
