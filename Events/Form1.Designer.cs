@@ -236,7 +236,7 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F);
-			this.label1.Location = new System.Drawing.Point(302, 244);
+			this.label1.Location = new System.Drawing.Point(295, 230);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(275, 29);
 			this.label1.TabIndex = 4;
