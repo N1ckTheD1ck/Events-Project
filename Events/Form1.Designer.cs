@@ -250,7 +250,7 @@
 			this.richTextBox1.ForeColor = System.Drawing.Color.Transparent;
 			this.richTextBox1.Location = new System.Drawing.Point(286, 13);
 			this.richTextBox1.Name = "richTextBox1";
-			this.richTextBox1.Size = new System.Drawing.Size(413, 199);
+			this.richTextBox1.Size = new System.Drawing.Size(413, 198);
 			this.richTextBox1.TabIndex = 3;
 			this.richTextBox1.Text = "Το γεγονος της χρονιας εφτασε.Η μια και μοναδικη εφη θωδη live στην Σαλονικα για " +
     "ενα μοναδικο πανηγυρι με σουβλακια,κρασια,γρουνοπουλες,κοτοπουλα,χοληστερινες,πω" +
