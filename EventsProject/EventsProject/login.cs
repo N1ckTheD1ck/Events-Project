@@ -53,9 +53,14 @@ namespace EventsProject
 				MessageBox.Show(ex.Message);
 			}
 		}
+		
 		private void loginButton_Click(object sender, EventArgs e)
 		{
+			string username = usernameTextBox.Text;
 			authentication();
+			this.Hide();
+			startForm start = new startForm(username);
+			start.Show();
 		}
 	}
 }

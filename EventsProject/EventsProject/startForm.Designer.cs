@@ -30,6 +30,8 @@
 		{
 			this.loginButton = new System.Windows.Forms.Button();
 			this.registerButton = new System.Windows.Forms.Button();
+			this.welcomeLabel = new System.Windows.Forms.Label();
+			this.usernameLabel = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// loginButton
@@ -52,16 +54,38 @@
 			this.registerButton.UseVisualStyleBackColor = true;
 			this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
 			// 
+			// welcomeLabel
+			// 
+			this.welcomeLabel.AutoSize = true;
+			this.welcomeLabel.Location = new System.Drawing.Point(550, 24);
+			this.welcomeLabel.Name = "welcomeLabel";
+			this.welcomeLabel.Size = new System.Drawing.Size(55, 13);
+			this.welcomeLabel.TabIndex = 2;
+			this.welcomeLabel.Text = "Welcome:";
+			// 
+			// usernameLabel
+			// 
+			this.usernameLabel.AutoSize = true;
+			this.usernameLabel.Location = new System.Drawing.Point(611, 24);
+			this.usernameLabel.Name = "usernameLabel";
+			this.usernameLabel.Size = new System.Drawing.Size(0, 13);
+			this.usernameLabel.TabIndex = 3;
+			// 
 			// startForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.usernameLabel);
+			this.Controls.Add(this.welcomeLabel);
 			this.Controls.Add(this.registerButton);
 			this.Controls.Add(this.loginButton);
 			this.Name = "startForm";
 			this.Text = "startForm";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+			this.Load += new System.EventHandler(this.startForm_Load);
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -69,5 +93,7 @@
 
 		private System.Windows.Forms.Button loginButton;
 		private System.Windows.Forms.Button registerButton;
+		private System.Windows.Forms.Label welcomeLabel;
+		private System.Windows.Forms.Label usernameLabel;
 	}
 }
