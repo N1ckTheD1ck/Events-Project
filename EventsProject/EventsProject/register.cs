@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Security.Cryptography;
 
 
 namespace EventsProject
@@ -27,20 +28,14 @@ namespace EventsProject
 				passwordLabel.Visible = true;
 			}
 		}
+		HashCode hash = new HashCode();
 		private void insertData()
 		{
-			string fname = fnameTextBox.Text;
-			string lname = lnameTextBox.Text;
-			string city = cityTextBox.Text;
-			string address = addressTextBox.Text;
-			string username = usernameTextBox.Text;
-			string passwd = passwordTextBox.Text;
-	
 				SqlCommand cmd = new SqlCommand("addUser",con);
 				cmd.CommandType = CommandType.StoredProcedure;
 
 				cmd.Parameters.AddWithValue("@username", this.usernameTextBox.Text);
-				cmd.Parameters.AddWithValue("@password", this.passwordTextBox.Text);
+				cmd.Parameters.AddWithValue("@password", hash.passHash(this.passwordTextBox.Text));
 				cmd.Parameters.AddWithValue("@lastName", this.lnameTextBox.Text);
 				cmd.Parameters.AddWithValue("@firstName", this.fnameTextBox.Text);
 				cmd.Parameters.AddWithValue("@city", this.cityTextBox.Text);
