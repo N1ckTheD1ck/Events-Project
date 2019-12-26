@@ -18,18 +18,22 @@ namespace EventsProject
 			InitializeComponent();
 		}
 
-		SqlConnection con = new SqlConnection(Properties.Settings.Default.EventsConnectionString);
+		SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\kostas\Source\Repos\N1ckTheD1ck\Events-Project-Team-7\EventsProject\EventsProject\Events.mdf;Integrated Security = True");
 
 		private void authentication()
 		{
-			string sql = "SELECT * FROM [user] WHERE username = '" + usernameTextBox.Text + "' AND password = '" + passwordTextBox.Text + "'";
+			string sql = "SELECT * FROM UserTable WHERE username = '" + usernameTextBox.Text + "' AND password = '" + passwordTextBox.Text + "'";
+			SqlCommand cmd = new SqlCommand(sql, con);
+			cmd.CommandType = CommandType.Text;
+
+			SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+			DataSet ds = new DataSet();
+			adapter.Fill(ds);
+
+			SqlDataReader dr = cmd.ExecuteReader();
 			try
 			{
-				con.Open();
-				SqlCommand cmd = con.CreateCommand();
-				cmd.CommandType = CommandType.Text;
-				cmd.CommandText = sql;
-				SqlDataReader dr = cmd.ExecuteReader();
+				
 				if (dr.Read())
 				{
 					MessageBox.Show("login succesfully!!!");

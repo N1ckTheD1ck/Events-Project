@@ -19,7 +19,7 @@ namespace EventsProject
 		{
 			InitializeComponent();
 		}
-		SqlConnection con = new SqlConnection(Properties.Settings.Default.EventsConnectionString);
+		SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\kostas\Source\Repos\N1ckTheD1ck\Events-Project-Team-7\EventsProject\EventsProject\Events.mdf;Integrated Security = True");
 		private void passwordText_Leave(object sender, EventArgs e)
 		{
 			if(passwordTextBox.Text.Length < 8)
@@ -35,57 +35,50 @@ namespace EventsProject
 			string address = addressTextBox.Text;
 			string username = usernameTextBox.Text;
 			string passwd = passwordTextBox.Text;
+	
+				SqlCommand cmd = new SqlCommand("addUser",con);
+				cmd.CommandType = CommandType.StoredProcedure;
 
-			string sql = "INSERT INTO [user] (username,password,city,address,firstName,lastName)" +
-							"VALUES ('" + username + "','" + passwd + "','" + city + "','" + address + "','" + fname + "','" + lname + "')";
-			
-			try
-			{
+				cmd.Parameters.AddWithValue("@username", this.usernameTextBox.Text);
+				cmd.Parameters.AddWithValue("@password", this.passwordTextBox.Text);
+				cmd.Parameters.AddWithValue("@lastName", this.lnameTextBox.Text);
+				cmd.Parameters.AddWithValue("@firstName", this.fnameTextBox.Text);
+				cmd.Parameters.AddWithValue("@city", this.cityTextBox.Text);
+				cmd.Parameters.AddWithValue("@address", this.addressTextBox.Text);
+
 				con.Open();
-				SqlCommand cmd = new SqlCommand("Select id from [user] where username= @Username", con);
-				cmd.Parameters.AddWithValue("@Username", this.usernameTextBox.Text);
-
-				var nId = cmd.ExecuteScalar();
-
-				if (nId != null)
-				{
-					MessageBox.Show("username exists");
-				}
-				else
-				{
-					SqlCommand cmd2 = con.CreateCommand();
-					cmd2.CommandType = CommandType.Text;
-					cmd2.CommandText = sql;
-					cmd2.ExecuteNonQuery();
-				}
-				con.Close();
+			try {
+				cmd.ExecuteScalar();
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
 			}
+			con.Close();
 		}
 		private void showData()
 		{
 
-			string sql = "SELECT * FROM [user]";
+			string sql = "SELECT * FROM UserTable";
+			SqlCommand cmd = new SqlCommand(sql, con);
+			cmd.CommandType = CommandType.Text;
+
+			SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+			DataSet ds = new DataSet();
+			adapter.Fill(ds);
+
+			con.Open();
 			try
 			{
-				con.Open();
-				SqlCommand cmd = con.CreateCommand();
-				cmd.CommandType = CommandType.Text;
-				cmd.CommandText = sql;
 				cmd.ExecuteNonQuery();
-				DataTable dt = new DataTable();
-				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-				adapter.Fill(dt);
-				dataGridView1.DataSource = dt;
-				con.Close();
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
 			}
+			con.Close();
+
+			dataGridView1.DataSource = ds.Tables[0];
 		}
 		private void button1_Click(object sender, EventArgs e)
 		{
