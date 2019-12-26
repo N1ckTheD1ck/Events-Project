@@ -30,6 +30,8 @@ namespace EventsProject
 			DataSet ds = new DataSet();
 			adapter.Fill(ds);
 
+			con.Open();
+
 			SqlDataReader dr = cmd.ExecuteReader();
 			try
 			{
