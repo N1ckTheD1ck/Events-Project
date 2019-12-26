@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using System.Security.Cryptography;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace EventsProject
@@ -35,11 +36,12 @@ namespace EventsProject
 				cmd.CommandType = CommandType.StoredProcedure;
 
 				cmd.Parameters.AddWithValue("@username", this.usernameTextBox.Text);
-				cmd.Parameters.AddWithValue("@password", hash.passHash(this.passwordTextBox.Text));
+				cmd.Parameters.AddWithValue("@password", hash.encrypt(this.passwordTextBox.Text));
 				cmd.Parameters.AddWithValue("@lastName", this.lnameTextBox.Text);
 				cmd.Parameters.AddWithValue("@firstName", this.fnameTextBox.Text);
 				cmd.Parameters.AddWithValue("@city", this.cityTextBox.Text);
 				cmd.Parameters.AddWithValue("@address", this.addressTextBox.Text);
+				cmd.Parameters.AddWithValue("@email", this.mailTextBox.Text);
 
 				con.Open();
 			try {

@@ -33,6 +33,8 @@
 			this.loginButton = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
+			this.registerButton = new System.Windows.Forms.Button();
+			this.forgotPass = new System.Windows.Forms.LinkLabel();
 			this.SuspendLayout();
 			// 
 			// usernameTextBox
@@ -77,11 +79,34 @@
 			this.label2.TabIndex = 4;
 			this.label2.Text = "password";
 			// 
+			// registerButton
+			// 
+			this.registerButton.Location = new System.Drawing.Point(249, 290);
+			this.registerButton.Name = "registerButton";
+			this.registerButton.Size = new System.Drawing.Size(75, 23);
+			this.registerButton.TabIndex = 5;
+			this.registerButton.Text = "register";
+			this.registerButton.UseVisualStyleBackColor = true;
+			this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
+			// 
+			// forgotPass
+			// 
+			this.forgotPass.AutoSize = true;
+			this.forgotPass.Location = new System.Drawing.Point(383, 228);
+			this.forgotPass.Name = "forgotPass";
+			this.forgotPass.Size = new System.Drawing.Size(111, 13);
+			this.forgotPass.TabIndex = 6;
+			this.forgotPass.TabStop = true;
+			this.forgotPass.Text = "forgot your password?";
+			this.forgotPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgotPass_LinkClicked);
+			// 
 			// login
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.forgotPass);
+			this.Controls.Add(this.registerButton);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.loginButton);
@@ -101,5 +126,7 @@
 		private System.Windows.Forms.Button loginButton;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Button registerButton;
+		private System.Windows.Forms.LinkLabel forgotPass;
 	}
 }

@@ -43,6 +43,8 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.mailTextBox = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -74,7 +76,7 @@
 			// 
 			// cityTextBox
 			// 
-			this.cityTextBox.Location = new System.Drawing.Point(131, 181);
+			this.cityTextBox.Location = new System.Drawing.Point(131, 178);
 			this.cityTextBox.Name = "cityTextBox";
 			this.cityTextBox.Size = new System.Drawing.Size(157, 20);
 			this.cityTextBox.TabIndex = 3;
@@ -172,11 +174,29 @@
 			this.dataGridView1.Size = new System.Drawing.Size(451, 150);
 			this.dataGridView1.TabIndex = 17;
 			// 
+			// mailTextBox
+			// 
+			this.mailTextBox.Location = new System.Drawing.Point(131, 269);
+			this.mailTextBox.Name = "mailTextBox";
+			this.mailTextBox.Size = new System.Drawing.Size(157, 20);
+			this.mailTextBox.TabIndex = 18;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(59, 272);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(34, 13);
+			this.label5.TabIndex = 19;
+			this.label5.Text = "e-mail";
+			// 
 			// register
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.label5);
+			this.Controls.Add(this.mailTextBox);
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.label6);
@@ -218,6 +238,8 @@
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.TextBox mailTextBox;
+		private System.Windows.Forms.Label label5;
 	}
 }
 

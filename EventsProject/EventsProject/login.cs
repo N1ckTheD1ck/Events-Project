@@ -24,7 +24,7 @@ namespace EventsProject
 
 		private void authentication()
 		{
-			string sql = "SELECT * FROM UserTable WHERE username = '" + usernameTextBox.Text + "' AND password = '" + hash.passHash(passwordTextBox.Text) + "'";
+			string sql = "SELECT * FROM UserTable WHERE username = '" + usernameTextBox.Text + "' AND password = '" + hash.decrypt(passwordTextBox.Text) + "'";
 			SqlCommand cmd = new SqlCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
 
@@ -61,6 +61,21 @@ namespace EventsProject
 			this.Hide();
 			startForm start = new startForm(username);
 			start.Show();
+			start.activate();
+		}
+
+		private void registerButton_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			register reg = new register();
+			reg.Show();
+		}
+
+		private void forgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			this.Hide();
+			forgotPass forgot = new forgotPass();
+			forgot.Show();
 		}
 	}
 }

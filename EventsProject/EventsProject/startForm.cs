@@ -29,16 +29,22 @@ namespace EventsProject
 			login.Show();
 		}
 
-		private void registerButton_Click(object sender, EventArgs e)
-		{
-			this.Hide();
-			register reg = new register();
-			reg.Show();
-		}
 
 		private void startForm_Load(object sender, EventArgs e)
 		{
 
+		}
+
+		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+
+		}
+
+		public void activate()
+		{
+			welcomeLabel.Visible = true;
+			myAccountLabel.Visible = true;
+			usernameLabel.Visible = true;
 		}
 	}
 }
