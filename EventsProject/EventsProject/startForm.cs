@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace EventsProject
 {
@@ -25,15 +26,60 @@ namespace EventsProject
 
 		private void loginButton_Click(object sender, EventArgs e)
 		{
-			this.Hide();
-			login login = new login();
-			login.Show();
+			if(loginButton.Text == "login")
+			{
+				this.Hide();
+				login login = new login();
+				login.Show();
+			}
+			else
+			{
+				usernameLabel.Text = " ";
+				myAccount acc = new myAccount();
+				acc.logout();
+				myAccountLabel.Visible = false;
+				loginButton.Text = "login";
+			}
+			
 		}
 
 
+		SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\kostas\Source\Repos\N1ckTheD1ck\Events-Project-Team-7\EventsProject\EventsProject\Events.mdf;Integrated Security = True");
+		public void eventLoad()
+		{
+			string sql = "SELECT * FROM EventTable";
+			SqlCommand cmd = new SqlCommand(sql, con);
+			cmd.CommandType = CommandType.Text;
+
+			SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+			DataSet ds = new DataSet();
+			adapter.Fill(ds);
+		
+			con.Open();
+
+			SqlDataReader dr = cmd.ExecuteReader();
+			try
+			{
+
+				while (dr.Read())
+				{
+					title.Text = dr["name"].ToString();
+					description.Text = dr["description"].ToString();
+					date.Text = dr["date"].ToString();
+					place.Text = dr["place"].ToString();
+					address.Text = dr["placeAddress"].ToString();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+
+			con.Close();
+		}
 		private void startForm_Load(object sender, EventArgs e)
 		{
-			
+			eventLoad();
 		}
 
 		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -48,7 +94,7 @@ namespace EventsProject
 			welcomeLabel.Visible = true;
 			myAccountLabel.Visible = true;
 			usernameLabel.Visible = true;
-			
+			loginButton.Text = "logout";
 		}
 	}
 }

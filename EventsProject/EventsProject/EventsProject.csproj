@@ -123,6 +123,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EventsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="forgotPass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +194,17 @@
     <EmbeddedResource Include="startForm.resx">
       <DependentUpon>startForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="EventsDataSet.xsc">
+      <DependentUpon>EventsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EventsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EventsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EventsDataSet.xss">
+      <DependentUpon>EventsDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">

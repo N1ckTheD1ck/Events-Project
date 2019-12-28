@@ -96,5 +96,15 @@ namespace EventsProject
 		{
 			updateUser();
 		}
+
+		public void logout()
+		{
+			usernameTextBox.Text = " ";
+			fnameTextBox.Text = " ";
+			lnameTextBox.Text = " ";
+			mailTextBox.Text = " ";
+			cityTextBox.Text = " ";
+			addressTextBox.Text = " ";
+		}
 	}
 }
