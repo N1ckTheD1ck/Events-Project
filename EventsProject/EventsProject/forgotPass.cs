@@ -21,19 +21,19 @@ namespace EventsProject
 		}
 
 		public static string to;
+		public static string email;
 		SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\kostas\Source\Repos\N1ckTheD1ck\Events-Project-Team-7\EventsProject\EventsProject\Events.mdf;Integrated Security = True");
 		HashCode hash = new HashCode();
+		string randomCode;
 
 		private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
 		{
 
 		}
 
-		private void getPass()
+		public void getPass()
 		{
 			string sql = "SELECT * FROM UserTable WHERE username = '" + textBox1.Text + "'";
-			string password = "";
-			string email = "";
 			SqlCommand cmd = new SqlCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
 
@@ -48,7 +48,6 @@ namespace EventsProject
 			{
 				if (dr.Read())
 				{
-					password = dr["password"].ToString();
 					email = dr["email"].ToString();
 				}
 			}
@@ -57,12 +56,21 @@ namespace EventsProject
 				MessageBox.Show(ex.Message);
 			}
 			con.Close();
+
+	}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			getPass();
+			
 			string from, pass, message;
+			Random rand = new Random();
+			randomCode = (rand.Next(999999)).ToString();
 			MailMessage mail = new MailMessage();
 			to = email;
 			from = "kmpatz88@gmail.com";
 			pass = "19122014";
-			message = "your reset code is:" + hash.decrypt(password);
+			message = "your reset code is:" + " " + randomCode; ;
 			mail.To.Add(to);
 			mail.From = new MailAddress(from);
 			mail.Body = message;
@@ -81,12 +89,33 @@ namespace EventsProject
 			{
 				MessageBox.Show(ex.Message);
 			}
+			verifyButton.Visible = true;
+			verifyText.Visible = true;
+			label2.Visible = true;
+		}
 
-	}
-
-		private void button1_Click(object sender, EventArgs e)
+		public string getMail()
 		{
-			getPass();
-		}	
+			return to;
+		}
+
+		private void label2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void verifyButton_Click(object sender, EventArgs e)
+		{
+			if(randomCode == (verifyText.Text).ToString())
+			{
+				resetPass rp = new resetPass();
+				this.Hide();
+				rp.Show();
+			}
+			else
+			{
+				MessageBox.Show("wrong verification code!");
+			}
+		}
 	}
 }

@@ -24,7 +24,7 @@ namespace EventsProject
 
 		private void authentication()
 		{
-			string sql = "SELECT * FROM UserTable WHERE username = '" + usernameTextBox.Text + "' AND password = '" + hash.decrypt(passwordTextBox.Text) + "'";
+			string sql = "SELECT * FROM UserTable WHERE username = '" + usernameTextBox.Text + "' AND password = '" + hash.encrypt(passwordTextBox.Text) + "'";
 			SqlCommand cmd = new SqlCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
 
