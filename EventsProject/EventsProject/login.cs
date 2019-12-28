@@ -22,7 +22,7 @@ namespace EventsProject
 		SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\kostas\Source\Repos\N1ckTheD1ck\Events-Project-Team-7\EventsProject\EventsProject\Events.mdf;Integrated Security = True");
 		HashCode hash = new HashCode();
 
-		private void authentication()
+		public string authentication()
 		{
 			string sql = "SELECT * FROM UserTable WHERE username = '" + usernameTextBox.Text + "' AND password = '" + hash.encrypt(passwordTextBox.Text) + "'";
 			SqlCommand cmd = new SqlCommand(sql, con);
@@ -31,30 +31,29 @@ namespace EventsProject
 			SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 			DataSet ds = new DataSet();
 			adapter.Fill(ds);
-
+			string user = null;
 			con.Open();
 
 			SqlDataReader dr = cmd.ExecuteReader();
 			try
 			{
-				
-				if (dr.Read())
+
+				while (dr.Read())
 				{
 					MessageBox.Show("login succesfully!!!");
+					user = dr["username"].ToString();
 				}
-				else
-				{
-					MessageBox.Show("wrong username or password");
-				}
-				con.Close();
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
 			}
+			
+			con.Close();
+			return user;
 		}
 		
-		private void loginButton_Click(object sender, EventArgs e)
+		public void loginButton_Click(object sender, EventArgs e)
 		{
 			string username = usernameTextBox.Text;
 			authentication();
@@ -62,7 +61,7 @@ namespace EventsProject
 			startForm start = new startForm(username);
 			start.Show();
 			start.activate();
-			myAccount acc = new myAccount(username);
+			
 		}
 
 		private void registerButton_Click(object sender, EventArgs e)

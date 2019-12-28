@@ -21,7 +21,7 @@ namespace EventsProject
 		public myAccount(string user)
 		{
 			InitializeComponent();
-			usernameTextBox.Text = user;
+			usernameTextBox.Text = user.ToString();
 			
 		}
 		
@@ -29,8 +29,6 @@ namespace EventsProject
 		
 		public void getUser()
 		{
-			startForm st = new startForm();
-			
 			string sql = "SELECT * FROM UserTable WHERE username = '"+usernameTextBox.Text+"'";
 			SqlCommand cmd = new SqlCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
@@ -45,9 +43,9 @@ namespace EventsProject
 			try
 			{
 
-				if (dr.Read())
+				while (dr.Read())
 				{
-					usernameTextBox.Text = dr["username"].ToString();
+					usernameTextBox.Text.Equals(dr["username"].ToString());
 					fnameTextBox.Text = dr["firstName"].ToString();
 					lnameTextBox.Text = dr["lastName"].ToString();
 					mailTextBox.Text = dr["email"].ToString();
@@ -79,6 +77,7 @@ namespace EventsProject
 			try
 			{
 				cmd.ExecuteScalar();
+				MessageBox.Show("updated succesfully");
 			}catch(Exception ex)
 			{
 				MessageBox.Show(ex.Message);
@@ -91,6 +90,11 @@ namespace EventsProject
 		{
 			getUser();
 			
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			updateUser();
 		}
 	}
 }

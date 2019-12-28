@@ -39,7 +39,7 @@ namespace EventsProject
 		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			this.Hide();
-			myAccount myacc = new myAccount();
+			myAccount myacc = new myAccount(usernameLabel.Text);
 			myacc.Show();
 		}
 
