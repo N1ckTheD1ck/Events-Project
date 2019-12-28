@@ -22,6 +22,7 @@ namespace EventsProject
 			usernameLabel.Text = user;
 		}
 		
+
 		private void loginButton_Click(object sender, EventArgs e)
 		{
 			this.Hide();
@@ -32,7 +33,7 @@ namespace EventsProject
 
 		private void startForm_Load(object sender, EventArgs e)
 		{
-
+			
 		}
 
 		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -47,6 +48,7 @@ namespace EventsProject
 			welcomeLabel.Visible = true;
 			myAccountLabel.Visible = true;
 			usernameLabel.Visible = true;
+			
 		}
 	}
 }

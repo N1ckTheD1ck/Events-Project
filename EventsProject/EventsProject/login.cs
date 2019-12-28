@@ -62,6 +62,7 @@ namespace EventsProject
 			startForm start = new startForm(username);
 			start.Show();
 			start.activate();
+			myAccount acc = new myAccount(username);
 		}
 
 		private void registerButton_Click(object sender, EventArgs e)
