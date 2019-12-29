@@ -123,6 +123,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventsDataSet.cs">
+      <DependentUpon>EventsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EventsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

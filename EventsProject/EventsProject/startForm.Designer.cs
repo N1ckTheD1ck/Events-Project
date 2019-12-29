@@ -37,19 +37,21 @@
 			this.button3 = new System.Windows.Forms.Button();
 			this.button4 = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.address = new System.Windows.Forms.Label();
+			this.place = new System.Windows.Forms.Label();
+			this.date = new System.Windows.Forms.Label();
+			this.description = new System.Windows.Forms.Label();
+			this.title = new System.Windows.Forms.Label();
 			this.myAccountLabel = new System.Windows.Forms.LinkLabel();
 			this.button5 = new System.Windows.Forms.Button();
 			this.button6 = new System.Windows.Forms.Button();
 			this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.eventsDataSet = new EventsProject.EventsDataSet();
-			this.title = new System.Windows.Forms.Label();
-			this.description = new System.Windows.Forms.Label();
-			this.date = new System.Windows.Forms.Label();
-			this.place = new System.Windows.Forms.Label();
-			this.address = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.eventsDataSet)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// loginButton
@@ -119,6 +121,7 @@
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.pictureBox1);
 			this.panel1.Controls.Add(this.address);
 			this.panel1.Controls.Add(this.place);
 			this.panel1.Controls.Add(this.date);
@@ -126,8 +129,53 @@
 			this.panel1.Controls.Add(this.title);
 			this.panel1.Location = new System.Drawing.Point(182, 1);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(457, 283);
+			this.panel1.Size = new System.Drawing.Size(457, 398);
 			this.panel1.TabIndex = 8;
+			// 
+			// address
+			// 
+			this.address.AutoSize = true;
+			this.address.Location = new System.Drawing.Point(3, 336);
+			this.address.Name = "address";
+			this.address.Size = new System.Drawing.Size(44, 13);
+			this.address.TabIndex = 4;
+			this.address.Text = "address";
+			// 
+			// place
+			// 
+			this.place.AutoSize = true;
+			this.place.Location = new System.Drawing.Point(3, 299);
+			this.place.Name = "place";
+			this.place.Size = new System.Drawing.Size(33, 13);
+			this.place.TabIndex = 3;
+			this.place.Text = "place";
+			// 
+			// date
+			// 
+			this.date.AutoSize = true;
+			this.date.Location = new System.Drawing.Point(3, 370);
+			this.date.Name = "date";
+			this.date.Size = new System.Drawing.Size(28, 13);
+			this.date.TabIndex = 2;
+			this.date.Text = "date";
+			// 
+			// description
+			// 
+			this.description.AutoSize = true;
+			this.description.Location = new System.Drawing.Point(65, 240);
+			this.description.Name = "description";
+			this.description.Size = new System.Drawing.Size(58, 13);
+			this.description.TabIndex = 1;
+			this.description.Text = "description";
+			// 
+			// title
+			// 
+			this.title.AutoSize = true;
+			this.title.Location = new System.Drawing.Point(202, 206);
+			this.title.Name = "title";
+			this.title.Size = new System.Drawing.Size(27, 13);
+			this.title.TabIndex = 0;
+			this.title.Text = "Title";
 			// 
 			// myAccountLabel
 			// 
@@ -143,7 +191,7 @@
 			// 
 			// button5
 			// 
-			this.button5.Location = new System.Drawing.Point(182, 304);
+			this.button5.Location = new System.Drawing.Point(182, 405);
 			this.button5.Name = "button5";
 			this.button5.Size = new System.Drawing.Size(75, 23);
 			this.button5.TabIndex = 10;
@@ -152,7 +200,7 @@
 			// 
 			// button6
 			// 
-			this.button6.Location = new System.Drawing.Point(564, 304);
+			this.button6.Location = new System.Drawing.Point(564, 405);
 			this.button6.Name = "button6";
 			this.button6.Size = new System.Drawing.Size(75, 23);
 			this.button6.TabIndex = 11;
@@ -169,50 +217,13 @@
 			this.eventsDataSet.DataSetName = "EventsDataSet";
 			this.eventsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
-			// title
+			// pictureBox1
 			// 
-			this.title.AutoSize = true;
-			this.title.Location = new System.Drawing.Point(211, 23);
-			this.title.Name = "title";
-			this.title.Size = new System.Drawing.Size(27, 13);
-			this.title.TabIndex = 0;
-			this.title.Text = "Title";
-			// 
-			// description
-			// 
-			this.description.AutoSize = true;
-			this.description.Location = new System.Drawing.Point(30, 81);
-			this.description.Name = "description";
-			this.description.Size = new System.Drawing.Size(58, 13);
-			this.description.TabIndex = 1;
-			this.description.Text = "description";
-			// 
-			// date
-			// 
-			this.date.AutoSize = true;
-			this.date.Location = new System.Drawing.Point(30, 187);
-			this.date.Name = "date";
-			this.date.Size = new System.Drawing.Size(28, 13);
-			this.date.TabIndex = 2;
-			this.date.Text = "date";
-			// 
-			// place
-			// 
-			this.place.AutoSize = true;
-			this.place.Location = new System.Drawing.Point(30, 145);
-			this.place.Name = "place";
-			this.place.Size = new System.Drawing.Size(33, 13);
-			this.place.TabIndex = 3;
-			this.place.Text = "place";
-			// 
-			// address
-			// 
-			this.address.AutoSize = true;
-			this.address.Location = new System.Drawing.Point(148, 145);
-			this.address.Name = "address";
-			this.address.Size = new System.Drawing.Size(44, 13);
-			this.address.TabIndex = 4;
-			this.address.Text = "address";
+			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(457, 185);
+			this.pictureBox1.TabIndex = 5;
+			this.pictureBox1.TabStop = false;
 			// 
 			// startForm
 			// 
@@ -238,6 +249,7 @@
 			this.panel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.eventsDataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -263,5 +275,6 @@
 		private System.Windows.Forms.Label description;
 		private System.Windows.Forms.Label title;
 		private System.Windows.Forms.Label address;
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }
