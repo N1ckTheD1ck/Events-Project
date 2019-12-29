@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data.OleDb;
 
 namespace EventsProject
 {
@@ -43,27 +44,26 @@ namespace EventsProject
 			
 		}
 
-
-		SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\kostas\Source\Repos\N1ckTheD1ck\Events-Project-Team-7\EventsProject\EventsProject\Event.mdf;Integrated Security = True");
+		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
 		public void eventLoad()
 		{
 			string sql = "SELECT * FROM EventTable";
-			SqlCommand cmd = new SqlCommand(sql, con);
+			OleDbCommand cmd = new OleDbCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
 
-			SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+			OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
 			DataSet ds = new DataSet();
 			adapter.Fill(ds);
 		
 			con.Open();
 
-			SqlDataReader dr = cmd.ExecuteReader();
+			OleDbDataReader dr = cmd.ExecuteReader();
 			try
 			{
 
 				while (dr.Read())
 				{
-					title.Text = dr["name"].ToString();
+					title.Text = dr["title"].ToString();
 					description.Text = dr["description"].ToString();
 					date.Text = dr["date"].ToString();
 					place.Text = dr["place"].ToString();

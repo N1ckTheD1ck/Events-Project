@@ -131,6 +131,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EventsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EventsdbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EventsdbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="forgotPass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +213,17 @@
     <None Include="EventsDataSet.xss">
       <DependentUpon>EventsDataSet.xsd</DependentUpon>
     </None>
+    <None Include="EventsdbDataSet.xsc">
+      <DependentUpon>EventsdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EventsdbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EventsdbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EventsdbDataSet.xss">
+      <DependentUpon>EventsdbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -240,6 +256,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Event.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Eventsdb.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Event_log.ldf">

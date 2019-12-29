@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.Data.OleDb;
 
 namespace EventsProject
 {
@@ -25,7 +26,7 @@ namespace EventsProject
 		}
 
 
-		SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\kostas\Source\Repos\N1ckTheD1ck\Events-Project-Team-7\EventsProject\EventsProject\Event.mdf;Integrated Security = True");
+		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
 		HashCode hash = new HashCode();
 		private void button1_Click(object sender, EventArgs e)
 		{
@@ -34,7 +35,7 @@ namespace EventsProject
 				forgotPass fp = new forgotPass();
 				string mail = fp.getMail();
 				string sql = "UPDATE UserTable SET password = '" + hash.encrypt(textBox1.Text) + "' WHERE email = '" + mail + "'";
-				SqlCommand cmd = new SqlCommand(sql,con);
+				OleDbCommand cmd = new OleDbCommand(sql, con);
 				cmd.CommandType = CommandType.Text;
 				con.Open();
 				try

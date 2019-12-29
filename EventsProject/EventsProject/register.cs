@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Security.Cryptography;
 using System.ComponentModel.DataAnnotations;
+using System.Data.OleDb;
 
 
 namespace EventsProject
@@ -21,7 +22,7 @@ namespace EventsProject
 		{
 			InitializeComponent();
 		}
-		SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\kostas\Source\Repos\N1ckTheD1ck\Events-Project-Team-7\EventsProject\EventsProject\Event.mdf;Integrated Security = True");
+		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
 		private void passwordText_Leave(object sender, EventArgs e)
 		{
 			if(passwordTextBox.Text.Length < 8)
@@ -32,16 +33,15 @@ namespace EventsProject
 		HashCode hash = new HashCode();
 		private void insertData()
 		{
-				SqlCommand cmd = new SqlCommand("addUser",con);
-				cmd.CommandType = CommandType.StoredProcedure;
+			string username = usernameTextBox.Text;
+			string password = hash.encrypt(passwordTextBox.Text);
+			string fname = fnameTextBox.Text;
+			string lname = lnameTextBox.Text;
+			string email = mailTextBox.Text;
+			string sql = "INSERT INTO UserTable(username,password,firstName,lastName,email) VALUES('"+username+ "','" + password + "','" + fname + "','" + lname + "','" + email + "')";
+				OleDbCommand cmd = new OleDbCommand(sql,con);
+				cmd.CommandType = CommandType.Text;
 
-				cmd.Parameters.AddWithValue("@username", this.usernameTextBox.Text);
-				cmd.Parameters.AddWithValue("@password", hash.encrypt(this.passwordTextBox.Text));
-				cmd.Parameters.AddWithValue("@lastName", this.lnameTextBox.Text);
-				cmd.Parameters.AddWithValue("@firstName", this.fnameTextBox.Text);
-				cmd.Parameters.AddWithValue("@city", this.cityTextBox.Text);
-				cmd.Parameters.AddWithValue("@address", this.addressTextBox.Text);
-				cmd.Parameters.AddWithValue("@email", this.mailTextBox.Text);
 
 				con.Open();
 			try {
@@ -57,10 +57,10 @@ namespace EventsProject
 		{
 
 			string sql = "SELECT * FROM UserTable";
-			SqlCommand cmd = new SqlCommand(sql, con);
+			OleDbCommand cmd = new OleDbCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
 
-			SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+			OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
 			DataSet ds = new DataSet();
 			adapter.Fill(ds);
 
