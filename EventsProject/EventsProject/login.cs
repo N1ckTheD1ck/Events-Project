@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using System.Data.OleDb;
 using System.Security.Cryptography;
 
 namespace EventsProject
@@ -19,22 +19,22 @@ namespace EventsProject
 			InitializeComponent();
 		}
 
-		SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\kostas\Source\Repos\N1ckTheD1ck\Events-Project-Team-7\EventsProject\EventsProject\Event.mdf;Integrated Security = True");
+		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
 		HashCode hash = new HashCode();
 
 		public string authentication()
 		{
-			string sql = "SELECT * FROM UserTable WHERE username = '" + usernameTextBox.Text + "' AND password = '" + hash.encrypt(passwordTextBox.Text) + "'";
-			SqlCommand cmd = new SqlCommand(sql, con);
+			string sql = "SELECT * FROM UserTable WHERE username = '" + usernameTextBox.Text + "' AND [password] = '" + hash.encrypt(passwordTextBox.Text) + "'";
+			OleDbCommand cmd = new OleDbCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
 
-			SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+			OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
 			DataSet ds = new DataSet();
 			adapter.Fill(ds);
 			string user = null;
 			con.Open();
 
-			SqlDataReader dr = cmd.ExecuteReader();
+			OleDbDataReader dr = cmd.ExecuteReader();
 			try
 			{
 

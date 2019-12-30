@@ -46,11 +46,11 @@
 			this.button5 = new System.Windows.Forms.Button();
 			this.button6 = new System.Windows.Forms.Button();
 			this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-			this.eventsDataSet = new EventsProject.EventsDataSet();
+			
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.eventsDataSet)).BeginInit();
+			
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -209,13 +209,13 @@
 			// 
 			// bindingSource1
 			// 
-			this.bindingSource1.DataSource = this.eventsDataSet;
+			
 			this.bindingSource1.Position = 0;
 			// 
 			// eventsDataSet
 			// 
-			this.eventsDataSet.DataSetName = "EventsDataSet";
-			this.eventsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			
+			
 			// 
 			// pictureBox1
 			// 
@@ -248,7 +248,7 @@
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.eventsDataSet)).EndInit();
+			
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -269,7 +269,7 @@
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Button button6;
 		private System.Windows.Forms.BindingSource bindingSource1;
-		private EventsDataSet eventsDataSet;
+		
 		private System.Windows.Forms.Label place;
 		private System.Windows.Forms.Label date;
 		private System.Windows.Forms.Label description;

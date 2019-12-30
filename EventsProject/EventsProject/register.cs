@@ -33,19 +33,19 @@ namespace EventsProject
 		HashCode hash = new HashCode();
 		private void insertData()
 		{
-			string username = usernameTextBox.Text;
-			string password = hash.encrypt(passwordTextBox.Text);
-			string fname = fnameTextBox.Text;
-			string lname = lnameTextBox.Text;
-			string email = mailTextBox.Text;
-			string sql = "INSERT INTO UserTable(username,password,firstName,lastName,email) VALUES('"+username+ "','" + password + "','" + fname + "','" + lname + "','" + email + "')";
+			string sql = "INSERT INTO UserTable (username, [password], firstName, lastName, city, address, email, is_admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 				OleDbCommand cmd = new OleDbCommand(sql,con);
-				cmd.CommandType = CommandType.Text;
-
-
-				con.Open();
+			cmd.Parameters.AddWithValue("@username",usernameTextBox.Text);
+			cmd.Parameters.AddWithValue("@password", hash.encrypt(passwordTextBox.Text));
+			cmd.Parameters.AddWithValue("@firstName",fnameTextBox.Text);
+			cmd.Parameters.AddWithValue("@lastName",lnameTextBox.Text);
+			cmd.Parameters.AddWithValue("@city",cityTextBox.Text);
+			cmd.Parameters.AddWithValue("@address",addressTextBox.Text);
+			cmd.Parameters.AddWithValue("@email",mailTextBox.Text);
+			cmd.Parameters.AddWithValue("@is_admin",0);
+			con.Open();
 			try {
-				cmd.ExecuteScalar();
+				cmd.ExecuteNonQuery();
 			}
 			catch (Exception ex)
 			{

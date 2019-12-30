@@ -34,7 +34,7 @@ namespace EventsProject
 			{
 				forgotPass fp = new forgotPass();
 				string mail = fp.getMail();
-				string sql = "UPDATE UserTable SET password = '" + hash.encrypt(textBox1.Text) + "' WHERE email = '" + mail + "'";
+				string sql = "UPDATE UserTable SET [password] = '" + hash.encrypt(textBox1.Text) + "' WHERE email = '" + mail + "'";
 				OleDbCommand cmd = new OleDbCommand(sql, con);
 				cmd.CommandType = CommandType.Text;
 				con.Open();

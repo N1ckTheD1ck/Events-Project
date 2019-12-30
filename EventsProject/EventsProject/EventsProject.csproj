@@ -123,14 +123,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EventsDataSet.cs">
-      <DependentUpon>EventsDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="EventsDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EventsDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="EventsdbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -202,17 +194,6 @@
     <EmbeddedResource Include="startForm.resx">
       <DependentUpon>startForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="EventsDataSet.xsc">
-      <DependentUpon>EventsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="EventsDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>EventsDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="EventsDataSet.xss">
-      <DependentUpon>EventsDataSet.xsd</DependentUpon>
-    </None>
     <None Include="EventsdbDataSet.xsc">
       <DependentUpon>EventsdbDataSet.xsd</DependentUpon>
     </None>
@@ -255,15 +236,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Event.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Eventsdb.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Event_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Event.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

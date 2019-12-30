@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using System.Data.OleDb;
 
 namespace EventsProject
 {
@@ -24,22 +24,22 @@ namespace EventsProject
 			usernameTextBox.Text = user.ToString();
 			
 		}
-		
-		SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\kostas\Source\Repos\N1ckTheD1ck\Events-Project-Team-7\EventsProject\EventsProject\Event.mdf;Integrated Security = True");
-		
+
+		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
+
 		public void getUser()
 		{
 			string sql = "SELECT * FROM UserTable WHERE username = '"+usernameTextBox.Text+"'";
-			SqlCommand cmd = new SqlCommand(sql, con);
+			OleDbCommand cmd = new OleDbCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
 
-			SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+			OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
 			DataSet ds = new DataSet();
 			adapter.Fill(ds);
 
 			con.Open();
 
-			SqlDataReader dr = cmd.ExecuteReader();
+			OleDbDataReader dr = cmd.ExecuteReader();
 			try
 			{
 
@@ -62,8 +62,9 @@ namespace EventsProject
 
 		public void updateUser()
 		{
-			SqlCommand cmd = new SqlCommand("updateUser", con);
-			cmd.CommandType = CommandType.StoredProcedure;
+			string sql = "UPDATE UserTable SET username = @username, lastName=@lastName, firstName=@firstName,email=@email,city=@city,address=@address  WHERE username='" + usernameTextBox.Text + "'";
+			OleDbCommand cmd = new OleDbCommand(sql, con);
+			cmd.CommandType = CommandType.Text;
 
 			cmd.Parameters.AddWithValue("@username", this.usernameTextBox.Text);
 			cmd.Parameters.AddWithValue("@lastName", this.lnameTextBox.Text);
