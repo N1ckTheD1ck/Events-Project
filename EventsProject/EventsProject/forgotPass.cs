@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
-using System.Data.SqlClient;
+using System.Data.OleDb;
 
 namespace EventsProject
 {
@@ -22,7 +22,7 @@ namespace EventsProject
 
 		public static string to;
 		public static string email;
-		SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\kostas\Source\Repos\N1ckTheD1ck\Events-Project-Team-7\EventsProject\EventsProject\Event.mdf;Integrated Security = True");
+		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
 		HashCode hash = new HashCode();
 		string randomCode;
 
@@ -34,16 +34,16 @@ namespace EventsProject
 		public void getPass()
 		{
 			string sql = "SELECT * FROM UserTable WHERE username = '" + textBox1.Text + "'";
-			SqlCommand cmd = new SqlCommand(sql, con);
+			OleDbCommand cmd = new OleDbCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
 
-			SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+			OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
 			DataSet ds = new DataSet();
 			adapter.Fill(ds);
 
 			con.Open();
 
-			SqlDataReader dr = cmd.ExecuteReader();
+			OleDbDataReader dr = cmd.ExecuteReader();
 			try
 			{
 				if (dr.Read())

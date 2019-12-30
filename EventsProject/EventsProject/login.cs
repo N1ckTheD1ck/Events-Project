@@ -22,7 +22,7 @@ namespace EventsProject
 		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
 		HashCode hash = new HashCode();
 
-		public string authentication()
+		public int authentication()
 		{
 			string sql = "SELECT * FROM UserTable WHERE username = '" + usernameTextBox.Text + "' AND [password] = '" + hash.encrypt(passwordTextBox.Text) + "'";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
@@ -31,17 +31,17 @@ namespace EventsProject
 			OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
 			DataSet ds = new DataSet();
 			adapter.Fill(ds);
-			string user = null;
+			int is_admin = 0;
 			con.Open();
 
 			OleDbDataReader dr = cmd.ExecuteReader();
 			try
 			{
 
-				while (dr.Read())
+				if (dr.Read())
 				{
 					MessageBox.Show("login succesfully!!!");
-					user = dr["username"].ToString();
+					is_admin = Convert.ToInt32(dr["is_admin"]);
 				}
 			}
 			catch (Exception ex)
@@ -50,7 +50,7 @@ namespace EventsProject
 			}
 			
 			con.Close();
-			return user;
+			return is_admin;
 		}
 		
 		public void loginButton_Click(object sender, EventArgs e)
@@ -61,7 +61,10 @@ namespace EventsProject
 			startForm start = new startForm(username);
 			start.Show();
 			start.activate();
-			
+			if (authentication() == 1)
+			{
+				start.admin();
+			}
 		}
 
 		private void registerButton_Click(object sender, EventArgs e)

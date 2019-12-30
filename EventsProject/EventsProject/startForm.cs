@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.OleDb;
+using System.IO;
 
 namespace EventsProject
 {
@@ -45,6 +46,7 @@ namespace EventsProject
 		}
 
 		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
+
 		public void eventLoad()
 		{
 			string sql = "SELECT * FROM EventTable";
@@ -68,6 +70,10 @@ namespace EventsProject
 					date.Text = dr["date"].ToString();
 					place.Text = dr["place"].ToString();
 					address.Text = dr["placeAddress"].ToString();
+					byte[] fetchedImgBytes = (byte[])dr["image"];
+					MemoryStream stream = new MemoryStream(fetchedImgBytes);
+					Image fetchImg = Image.FromStream(stream);
+					pictureBox1.Image = fetchImg;
 				}
 			}
 			catch (Exception ex)
@@ -95,6 +101,17 @@ namespace EventsProject
 			myAccountLabel.Visible = true;
 			usernameLabel.Visible = true;
 			loginButton.Text = "logout";
+		}
+		public void admin()
+		{
+			adminButton.Visible = true;
+		}
+
+		private void adminButton_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			adminForm admin = new adminForm();
+			admin.Show();
 		}
 	}
 }

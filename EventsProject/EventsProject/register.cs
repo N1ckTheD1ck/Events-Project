@@ -28,29 +28,55 @@ namespace EventsProject
 			if(passwordTextBox.Text.Length < 8)
 			{
 				passwordLabel.Visible = true;
+				button1.Enabled = false;
+				
+			}
+			else
+			{
+				passwordLabel.Visible = false;
+				button1.Enabled = true;
 			}
 		}
 		HashCode hash = new HashCode();
 		private void insertData()
 		{
-			string sql = "INSERT INTO UserTable (username, [password], firstName, lastName, city, address, email, is_admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-				OleDbCommand cmd = new OleDbCommand(sql,con);
-			cmd.Parameters.AddWithValue("@username",usernameTextBox.Text);
-			cmd.Parameters.AddWithValue("@password", hash.encrypt(passwordTextBox.Text));
-			cmd.Parameters.AddWithValue("@firstName",fnameTextBox.Text);
-			cmd.Parameters.AddWithValue("@lastName",lnameTextBox.Text);
-			cmd.Parameters.AddWithValue("@city",cityTextBox.Text);
-			cmd.Parameters.AddWithValue("@address",addressTextBox.Text);
-			cmd.Parameters.AddWithValue("@email",mailTextBox.Text);
-			cmd.Parameters.AddWithValue("@is_admin",0);
+			string check = "SELECT * FROM UserTable WHERE username = @username";
+			OleDbCommand checkcmd = new OleDbCommand(check, con);
+			checkcmd.Parameters.AddWithValue("@username", usernameTextBox.Text);
+			OleDbDataAdapter adapter = new OleDbDataAdapter(checkcmd);
+			DataSet ds = new DataSet();
+			adapter.Fill(ds);
 			con.Open();
-			try {
-				cmd.ExecuteNonQuery();
-			}
-			catch (Exception ex)
+
+			OleDbDataReader dr = checkcmd.ExecuteReader();
+
+			if (dr.Read())
 			{
-				MessageBox.Show(ex.Message);
+				MessageBox.Show("το username χρησιμοποιειται ηδη,παρακαλω επιλεξτε διαφορετικο username");
 			}
+			else
+			{
+				string sql = "INSERT INTO UserTable (username, [password], firstName, lastName, city, address, email, is_admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+				OleDbCommand cmd = new OleDbCommand(sql, con);
+				cmd.Parameters.AddWithValue("@username", usernameTextBox.Text);
+				cmd.Parameters.AddWithValue("@password", hash.encrypt(passwordTextBox.Text));
+				cmd.Parameters.AddWithValue("@firstName", fnameTextBox.Text);
+				cmd.Parameters.AddWithValue("@lastName", lnameTextBox.Text);
+				cmd.Parameters.AddWithValue("@city", cityTextBox.Text);
+				cmd.Parameters.AddWithValue("@address", addressTextBox.Text);
+				cmd.Parameters.AddWithValue("@email", mailTextBox.Text);
+				cmd.Parameters.AddWithValue("@is_admin", 0);
+
+				try
+				{
+					cmd.ExecuteNonQuery();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
+			}
+			
 			con.Close();
 		}
 		private void showData()

@@ -37,6 +37,7 @@
 			this.button3 = new System.Windows.Forms.Button();
 			this.button4 = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.address = new System.Windows.Forms.Label();
 			this.place = new System.Windows.Forms.Label();
 			this.date = new System.Windows.Forms.Label();
@@ -46,12 +47,10 @@
 			this.button5 = new System.Windows.Forms.Button();
 			this.button6 = new System.Windows.Forms.Button();
 			this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-			
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.adminButton = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-			
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// loginButton
@@ -67,7 +66,7 @@
 			// welcomeLabel
 			// 
 			this.welcomeLabel.AutoSize = true;
-			this.welcomeLabel.Location = new System.Drawing.Point(662, 24);
+			this.welcomeLabel.Location = new System.Drawing.Point(726, 24);
 			this.welcomeLabel.Name = "welcomeLabel";
 			this.welcomeLabel.Size = new System.Drawing.Size(55, 13);
 			this.welcomeLabel.TabIndex = 2;
@@ -77,7 +76,7 @@
 			// usernameLabel
 			// 
 			this.usernameLabel.AutoSize = true;
-			this.usernameLabel.Location = new System.Drawing.Point(723, 24);
+			this.usernameLabel.Location = new System.Drawing.Point(796, 24);
 			this.usernameLabel.Name = "usernameLabel";
 			this.usernameLabel.Size = new System.Drawing.Size(0, 13);
 			this.usernameLabel.TabIndex = 3;
@@ -129,8 +128,17 @@
 			this.panel1.Controls.Add(this.title);
 			this.panel1.Location = new System.Drawing.Point(182, 1);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(457, 398);
+			this.panel1.Size = new System.Drawing.Size(538, 398);
 			this.panel1.TabIndex = 8;
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(538, 185);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 5;
+			this.pictureBox1.TabStop = false;
 			// 
 			// address
 			// 
@@ -162,7 +170,7 @@
 			// description
 			// 
 			this.description.AutoSize = true;
-			this.description.Location = new System.Drawing.Point(65, 240);
+			this.description.Location = new System.Drawing.Point(3, 240);
 			this.description.Name = "description";
 			this.description.Size = new System.Drawing.Size(58, 13);
 			this.description.TabIndex = 1;
@@ -180,7 +188,7 @@
 			// myAccountLabel
 			// 
 			this.myAccountLabel.AutoSize = true;
-			this.myAccountLabel.Location = new System.Drawing.Point(684, 57);
+			this.myAccountLabel.Location = new System.Drawing.Point(726, 57);
 			this.myAccountLabel.Name = "myAccountLabel";
 			this.myAccountLabel.Size = new System.Drawing.Size(64, 13);
 			this.myAccountLabel.TabIndex = 9;
@@ -207,29 +215,23 @@
 			this.button6.Text = "next >";
 			this.button6.UseVisualStyleBackColor = true;
 			// 
-			// bindingSource1
+			// adminButton
 			// 
-			
-			this.bindingSource1.Position = 0;
-			// 
-			// eventsDataSet
-			// 
-			
-			
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(457, 185);
-			this.pictureBox1.TabIndex = 5;
-			this.pictureBox1.TabStop = false;
+			this.adminButton.Location = new System.Drawing.Point(12, 300);
+			this.adminButton.Name = "adminButton";
+			this.adminButton.Size = new System.Drawing.Size(75, 23);
+			this.adminButton.TabIndex = 6;
+			this.adminButton.Text = "admin";
+			this.adminButton.UseVisualStyleBackColor = true;
+			this.adminButton.Visible = false;
+			this.adminButton.Click += new System.EventHandler(this.adminButton_Click);
 			// 
 			// startForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 449);
+			this.ClientSize = new System.Drawing.Size(883, 449);
+			this.Controls.Add(this.adminButton);
 			this.Controls.Add(this.button6);
 			this.Controls.Add(this.button5);
 			this.Controls.Add(this.myAccountLabel);
@@ -247,9 +249,8 @@
 			this.Load += new System.EventHandler(this.startForm_Load);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-			
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -276,5 +277,6 @@
 		private System.Windows.Forms.Label title;
 		private System.Windows.Forms.Label address;
 		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.Button adminButton;
 	}
 }
