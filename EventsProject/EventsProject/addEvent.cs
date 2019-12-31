@@ -32,7 +32,7 @@ namespace EventsProject
 			cmd.Parameters.AddWithValue("@category", categoryComboBox.Text);
 			cmd.Parameters.AddWithValue("@place", placeTextBox.Text);
 			cmd.Parameters.AddWithValue("@placeAddress", streetTextBox.Text);
-			cmd.Parameters.AddWithValue("@date", dateTimePicker1);
+			cmd.Parameters.AddWithValue("@date", this.dateTimePicker1.Text);
 			OleDbParameter par = cmd.Parameters.AddWithValue("@image", SqlDbType.Binary);
 			par.Value = imgAsBytes;
 			par.Size = imgAsBytes.Length;

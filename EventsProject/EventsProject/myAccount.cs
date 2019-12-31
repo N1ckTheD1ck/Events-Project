@@ -26,7 +26,7 @@ namespace EventsProject
 		}
 
 		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
-
+		private static int id;
 		public void getUser()
 		{
 			string sql = "SELECT * FROM UserTable WHERE username = '"+usernameTextBox.Text+"'";
@@ -45,6 +45,7 @@ namespace EventsProject
 
 				while (dr.Read())
 				{
+					id = Convert.ToInt32(dr["ID"]);
 					usernameTextBox.Text.Equals(dr["username"].ToString());
 					fnameTextBox.Text = dr["firstName"].ToString();
 					lnameTextBox.Text = dr["lastName"].ToString();
@@ -62,7 +63,7 @@ namespace EventsProject
 
 		public void updateUser()
 		{
-			string sql = "UPDATE UserTable SET username = @username, lastName=@lastName, firstName=@firstName,email=@email,city=@city,address=@address  WHERE username='" + usernameTextBox.Text + "'";
+			string sql = "UPDATE UserTable SET username = @username, lastName=@lastName, firstName=@firstName,email=@email,city=@city,address=@address  WHERE username=" + id + "";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
 

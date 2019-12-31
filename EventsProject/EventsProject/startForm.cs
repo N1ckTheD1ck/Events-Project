@@ -85,7 +85,7 @@ namespace EventsProject
 		}
 		private void startForm_Load(object sender, EventArgs e)
 		{
-			eventLoad();
+			loadEventWithId(pos);
 		}
 
 		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -112,6 +112,58 @@ namespace EventsProject
 			this.Hide();
 			adminForm admin = new adminForm();
 			admin.Show();
+		}
+		int pos = 0;
+		private void button6_Click(object sender, EventArgs e)
+		{
+			pos++;
+			if (pos < table.Rows.Count)
+			{
+				loadEventWithId(pos);
+			}
+			else
+			{
+				MessageBox.Show("end");
+				pos = table.Rows.Count - 1;
+			}
+		}
+
+		OleDbDataAdapter adapter;
+		DataTable table = new DataTable();
+		public void loadEventWithId(int index)
+		{
+			adapter = new OleDbDataAdapter("SELECT * FROM EventTable", con);
+			adapter.Fill(table);
+			title.Text = table.Rows[index]["title"].ToString();
+			description.Text = table.Rows[index]["description"].ToString();
+			category.Text = table.Rows[index]["category"].ToString();
+			place.Text = table.Rows[index]["place"].ToString();
+			address.Text = table.Rows[index]["placeAddress"].ToString();
+			town.Text = table.Rows[index]["town"].ToString();
+			date.Text = table.Rows[index]["date"].ToString();
+			byte[] fetchedImgBytes = (byte[])table.Rows[index]["image"];
+			MemoryStream stream = new MemoryStream(fetchedImgBytes);
+			Image fetchImg = Image.FromStream(stream);
+			pictureBox1.Image = fetchImg;
+		}
+
+		private void button5_Click(object sender, EventArgs e)
+		{
+			pos--;
+			if (pos >= 0)
+			{
+				loadEventWithId(pos);
+			}
+			else
+			{
+				MessageBox.Show("zeroooo");
+				pos = 0;
+			}
+		}
+
+		private void label1_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

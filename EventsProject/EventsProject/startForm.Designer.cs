@@ -48,6 +48,11 @@
 			this.button6 = new System.Windows.Forms.Button();
 			this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.adminButton = new System.Windows.Forms.Button();
+			this.category = new System.Windows.Forms.Label();
+			this.town = new System.Windows.Forms.Label();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -120,6 +125,8 @@
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.town);
+			this.panel1.Controls.Add(this.category);
 			this.panel1.Controls.Add(this.pictureBox1);
 			this.panel1.Controls.Add(this.address);
 			this.panel1.Controls.Add(this.place);
@@ -143,7 +150,7 @@
 			// address
 			// 
 			this.address.AutoSize = true;
-			this.address.Location = new System.Drawing.Point(3, 336);
+			this.address.Location = new System.Drawing.Point(3, 347);
 			this.address.Name = "address";
 			this.address.Size = new System.Drawing.Size(44, 13);
 			this.address.TabIndex = 4;
@@ -152,7 +159,7 @@
 			// place
 			// 
 			this.place.AutoSize = true;
-			this.place.Location = new System.Drawing.Point(3, 299);
+			this.place.Location = new System.Drawing.Point(3, 318);
 			this.place.Name = "place";
 			this.place.Size = new System.Drawing.Size(33, 13);
 			this.place.TabIndex = 3;
@@ -205,6 +212,7 @@
 			this.button5.TabIndex = 10;
 			this.button5.Text = "< previous";
 			this.button5.UseVisualStyleBackColor = true;
+			this.button5.Click += new System.EventHandler(this.button5_Click);
 			// 
 			// button6
 			// 
@@ -214,6 +222,7 @@
 			this.button6.TabIndex = 11;
 			this.button6.Text = "next >";
 			this.button6.UseVisualStyleBackColor = true;
+			this.button6.Click += new System.EventHandler(this.button6_Click);
 			// 
 			// adminButton
 			// 
@@ -226,11 +235,60 @@
 			this.adminButton.Visible = false;
 			this.adminButton.Click += new System.EventHandler(this.adminButton_Click);
 			// 
+			// category
+			// 
+			this.category.AutoSize = true;
+			this.category.Location = new System.Drawing.Point(3, 272);
+			this.category.Name = "category";
+			this.category.Size = new System.Drawing.Size(48, 13);
+			this.category.TabIndex = 6;
+			this.category.Text = "category";
+			// 
+			// town
+			// 
+			this.town.AutoSize = true;
+			this.town.Location = new System.Drawing.Point(3, 299);
+			this.town.Name = "town";
+			this.town.Size = new System.Drawing.Size(30, 13);
+			this.town.TabIndex = 7;
+			this.town.Text = "town";
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(5, 371);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(171, 20);
+			this.textBox1.TabIndex = 8;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(12, 348);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(89, 13);
+			this.label1.TabIndex = 8;
+			this.label1.Text = "search for events";
+			this.label1.Click += new System.EventHandler(this.label1_Click);
+			// 
+			// linkLabel1
+			// 
+			this.linkLabel1.AutoSize = true;
+			this.linkLabel1.Location = new System.Drawing.Point(726, 92);
+			this.linkLabel1.Name = "linkLabel1";
+			this.linkLabel1.Size = new System.Drawing.Size(76, 13);
+			this.linkLabel1.TabIndex = 12;
+			this.linkLabel1.TabStop = true;
+			this.linkLabel1.Text = "τα events μου";
+			this.linkLabel1.Visible = false;
+			// 
 			// startForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(883, 449);
+			this.Controls.Add(this.linkLabel1);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.adminButton);
 			this.Controls.Add(this.button6);
 			this.Controls.Add(this.button5);
@@ -278,5 +336,10 @@
 		private System.Windows.Forms.Label address;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Button adminButton;
+		private System.Windows.Forms.Label town;
+		private System.Windows.Forms.Label category;
+		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.LinkLabel linkLabel1;
 	}
 }

@@ -50,38 +50,38 @@
 			// 
 			// titleTextBox
 			// 
-			this.titleTextBox.Location = new System.Drawing.Point(134, 12);
+			this.titleTextBox.Location = new System.Drawing.Point(87, 12);
 			this.titleTextBox.Name = "titleTextBox";
-			this.titleTextBox.Size = new System.Drawing.Size(251, 20);
+			this.titleTextBox.Size = new System.Drawing.Size(298, 20);
 			this.titleTextBox.TabIndex = 0;
 			// 
 			// placeTextBox
 			// 
-			this.placeTextBox.Location = new System.Drawing.Point(134, 278);
+			this.placeTextBox.Location = new System.Drawing.Point(87, 284);
 			this.placeTextBox.Name = "placeTextBox";
-			this.placeTextBox.Size = new System.Drawing.Size(251, 20);
+			this.placeTextBox.Size = new System.Drawing.Size(298, 20);
 			this.placeTextBox.TabIndex = 3;
 			// 
 			// streetTextBox
 			// 
-			this.streetTextBox.Location = new System.Drawing.Point(134, 323);
+			this.streetTextBox.Location = new System.Drawing.Point(87, 329);
 			this.streetTextBox.Name = "streetTextBox";
-			this.streetTextBox.Size = new System.Drawing.Size(251, 20);
+			this.streetTextBox.Size = new System.Drawing.Size(298, 20);
 			this.streetTextBox.TabIndex = 4;
 			// 
 			// dateTimePicker1
 			// 
-			this.dateTimePicker1.Location = new System.Drawing.Point(134, 383);
+			this.dateTimePicker1.Location = new System.Drawing.Point(87, 389);
 			this.dateTimePicker1.MinDate = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
 			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(251, 20);
+			this.dateTimePicker1.Size = new System.Drawing.Size(298, 20);
 			this.dateTimePicker1.TabIndex = 5;
 			this.dateTimePicker1.Value = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
 			// 
 			// pictureBox1
 			// 
 			this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBox1.Location = new System.Drawing.Point(169, 453);
+			this.pictureBox1.Location = new System.Drawing.Point(454, 190);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(533, 253);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -92,7 +92,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(58, 12);
+			this.label1.Location = new System.Drawing.Point(12, 15);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(39, 13);
 			this.label1.TabIndex = 7;
@@ -101,7 +101,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(58, 66);
+			this.label2.Location = new System.Drawing.Point(12, 69);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(62, 13);
 			this.label2.TabIndex = 8;
@@ -110,7 +110,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(58, 193);
+			this.label3.Location = new System.Drawing.Point(12, 196);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(59, 13);
 			this.label3.TabIndex = 9;
@@ -119,7 +119,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(58, 285);
+			this.label4.Location = new System.Drawing.Point(12, 288);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(41, 13);
 			this.label4.TabIndex = 10;
@@ -128,7 +128,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(58, 330);
+			this.label5.Location = new System.Drawing.Point(12, 333);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(31, 13);
 			this.label5.TabIndex = 11;
@@ -137,7 +137,7 @@
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(58, 389);
+			this.label6.Location = new System.Drawing.Point(12, 392);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(65, 13);
 			this.label6.TabIndex = 12;
@@ -146,7 +146,7 @@
 			// label7
 			// 
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(45, 497);
+			this.label7.Location = new System.Drawing.Point(680, 146);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(102, 13);
 			this.label7.TabIndex = 13;
@@ -154,15 +154,15 @@
 			// 
 			// descriptionTextBox
 			// 
-			this.descriptionTextBox.Location = new System.Drawing.Point(134, 63);
+			this.descriptionTextBox.Location = new System.Drawing.Point(87, 63);
 			this.descriptionTextBox.Name = "descriptionTextBox";
-			this.descriptionTextBox.Size = new System.Drawing.Size(319, 96);
+			this.descriptionTextBox.Size = new System.Drawing.Size(298, 96);
 			this.descriptionTextBox.TabIndex = 14;
 			this.descriptionTextBox.Text = "";
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(501, 383);
+			this.button1.Location = new System.Drawing.Point(204, 456);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(102, 23);
 			this.button1.TabIndex = 15;
@@ -178,15 +178,15 @@
             "Θέατρο",
             "Cinema",
             "Συναυλίες"});
-			this.categoryComboBox.Location = new System.Drawing.Point(134, 190);
+			this.categoryComboBox.Location = new System.Drawing.Point(87, 196);
 			this.categoryComboBox.Name = "categoryComboBox";
-			this.categoryComboBox.Size = new System.Drawing.Size(251, 21);
+			this.categoryComboBox.Size = new System.Drawing.Size(298, 21);
 			this.categoryComboBox.TabIndex = 16;
 			// 
 			// label8
 			// 
 			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(58, 247);
+			this.label8.Location = new System.Drawing.Point(12, 250);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(30, 13);
 			this.label8.TabIndex = 18;
@@ -194,16 +194,17 @@
 			// 
 			// townTextBox
 			// 
-			this.townTextBox.Location = new System.Drawing.Point(134, 240);
+			this.townTextBox.Location = new System.Drawing.Point(87, 246);
 			this.townTextBox.Name = "townTextBox";
-			this.townTextBox.Size = new System.Drawing.Size(251, 20);
+			this.townTextBox.Size = new System.Drawing.Size(298, 20);
 			this.townTextBox.TabIndex = 17;
 			// 
 			// addEvent
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 749);
+			this.AutoScroll = true;
+			this.ClientSize = new System.Drawing.Size(1031, 526);
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.townTextBox);
 			this.Controls.Add(this.categoryComboBox);

@@ -197,6 +197,9 @@
     <EmbeddedResource Include="adminForm.resx">
       <DependentUpon>adminForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="allEvents.resx">
+      <DependentUpon>allEvents.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="allUsers.resx">
       <DependentUpon>allUsers.cs</DependentUpon>
     </EmbeddedResource>
