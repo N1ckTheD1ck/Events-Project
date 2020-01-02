@@ -36,8 +36,9 @@
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, title, description, category, place, placeAddress, [date], [image], town FROM EventTable</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ID, title, description, category, place, placeAddress, [date], [image], town
+FROM            EventTable</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -103,7 +104,7 @@
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT ID, username, [password], firstName, lastName, email, city, address, is_admin FROM UserTable</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -149,7 +150,7 @@
   <xs:element name="EventsdbDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="EventsdbDataSet" msprop:Generator_UserDSName="EventsdbDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="EventTable" msprop:Generator_TableClassName="EventTableDataTable" msprop:Generator_TableVarName="tableEventTable" msprop:Generator_TablePropName="EventTable" msprop:Generator_RowDeletingName="EventTableRowDeleting" msprop:Generator_RowChangingName="EventTableRowChanging" msprop:Generator_RowEvHandlerName="EventTableRowChangeEventHandler" msprop:Generator_RowDeletedName="EventTableRowDeleted" msprop:Generator_UserTableName="EventTable" msprop:Generator_RowChangedName="EventTableRowChanged" msprop:Generator_RowEvArgName="EventTableRowChangeEvent" msprop:Generator_RowClassName="EventTableRow">
+        <xs:element name="EventTable" msprop:Generator_TableClassName="EventTableDataTable" msprop:Generator_TableVarName="tableEventTable" msprop:Generator_RowChangedName="EventTableRowChanged" msprop:Generator_TablePropName="EventTable" msprop:Generator_RowDeletingName="EventTableRowDeleting" msprop:Generator_RowChangingName="EventTableRowChanging" msprop:Generator_RowEvHandlerName="EventTableRowChangeEventHandler" msprop:Generator_RowDeletedName="EventTableRowDeleted" msprop:Generator_RowClassName="EventTableRow" msprop:Generator_UserTableName="EventTable" msprop:Generator_RowEvArgName="EventTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -206,7 +207,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UserTable" msprop:Generator_TableClassName="UserTableDataTable" msprop:Generator_TableVarName="tableUserTable" msprop:Generator_TablePropName="UserTable" msprop:Generator_RowDeletingName="UserTableRowDeleting" msprop:Generator_RowChangingName="UserTableRowChanging" msprop:Generator_RowEvHandlerName="UserTableRowChangeEventHandler" msprop:Generator_RowDeletedName="UserTableRowDeleted" msprop:Generator_UserTableName="UserTable" msprop:Generator_RowChangedName="UserTableRowChanged" msprop:Generator_RowEvArgName="UserTableRowChangeEvent" msprop:Generator_RowClassName="UserTableRow">
+        <xs:element name="UserTable" msprop:Generator_TableClassName="UserTableDataTable" msprop:Generator_TableVarName="tableUserTable" msprop:Generator_RowChangedName="UserTableRowChanged" msprop:Generator_TablePropName="UserTable" msprop:Generator_RowDeletingName="UserTableRowDeleting" msprop:Generator_RowChangingName="UserTableRowChanging" msprop:Generator_RowEvHandlerName="UserTableRowChangeEventHandler" msprop:Generator_RowDeletedName="UserTableRowDeleted" msprop:Generator_RowClassName="UserTableRow" msprop:Generator_UserTableName="UserTable" msprop:Generator_RowEvArgName="UserTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />

@@ -30,9 +30,11 @@ namespace EventsProject
 		{
 			if(loginButton.Text == "login")
 			{
-				login login = new login();
+                this.Hide();
+                login login = new login();
 				login.Show();
-			}
+               
+            }
 			else
 			{
 				usernameLabel.Text = " ";
@@ -40,7 +42,8 @@ namespace EventsProject
 				acc.logout();
 				myAccountLabel.Visible = false;
 				loginButton.Text = "login";
-			}
+                adminButton.Visible = false;
+            }
 			
 		}
 

@@ -185,6 +185,7 @@
     <Compile Include="resetPass.Designer.cs">
       <DependentUpon>resetPass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="startForm.cs">
       <SubType>Form</SubType>
     </Compile>

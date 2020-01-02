@@ -1823,8 +1823,8 @@ namespace EventsProject.EventsdbDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, title, description, category, place, placeAddress, [date], [image], to" +
-                "wn FROM EventTable";
+            this._commandCollection[0].CommandText = "SELECT        ID, title, description, category, place, placeAddress, [date], [ima" +
+                "ge], town\r\nFROM            EventTable";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
