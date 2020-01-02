@@ -56,7 +56,15 @@ namespace EventsProject
 		public void loginButton_Click(object sender, EventArgs e)
 		{
 			string username = usernameTextBox.Text;
-			authentication();
+			if (usernameTextBox.Text.Length != 0)
+			{
+				authentication();
+			}
+			else
+			{
+				MessageBox.Show("empty fields");
+			}
+			
 			this.Hide();
 			startForm start = new startForm(username);
 			start.Show();

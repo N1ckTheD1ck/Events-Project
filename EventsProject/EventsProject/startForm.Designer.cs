@@ -37,6 +37,8 @@
 			this.button3 = new System.Windows.Forms.Button();
 			this.button4 = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.town = new System.Windows.Forms.Label();
+			this.category = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.address = new System.Windows.Forms.Label();
 			this.place = new System.Windows.Forms.Label();
@@ -48,11 +50,10 @@
 			this.button6 = new System.Windows.Forms.Button();
 			this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.adminButton = new System.Windows.Forms.Button();
-			this.category = new System.Windows.Forms.Label();
-			this.town = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+			this.button7 = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -71,7 +72,7 @@
 			// welcomeLabel
 			// 
 			this.welcomeLabel.AutoSize = true;
-			this.welcomeLabel.Location = new System.Drawing.Point(726, 24);
+			this.welcomeLabel.Location = new System.Drawing.Point(817, 17);
 			this.welcomeLabel.Name = "welcomeLabel";
 			this.welcomeLabel.Size = new System.Drawing.Size(55, 13);
 			this.welcomeLabel.TabIndex = 2;
@@ -81,7 +82,7 @@
 			// usernameLabel
 			// 
 			this.usernameLabel.AutoSize = true;
-			this.usernameLabel.Location = new System.Drawing.Point(796, 24);
+			this.usernameLabel.Location = new System.Drawing.Point(887, 17);
 			this.usernameLabel.Name = "usernameLabel";
 			this.usernameLabel.Size = new System.Drawing.Size(0, 13);
 			this.usernameLabel.TabIndex = 3;
@@ -113,6 +114,7 @@
 			this.button3.TabIndex = 6;
 			this.button3.Text = "Cinema";
 			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.button3_Click);
 			// 
 			// button4
 			// 
@@ -122,6 +124,7 @@
 			this.button4.TabIndex = 7;
 			this.button4.Text = "Θεατρο";
 			this.button4.UseVisualStyleBackColor = true;
+			this.button4.Click += new System.EventHandler(this.button4_Click);
 			// 
 			// panel1
 			// 
@@ -135,14 +138,32 @@
 			this.panel1.Controls.Add(this.title);
 			this.panel1.Location = new System.Drawing.Point(182, 1);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(538, 398);
+			this.panel1.Size = new System.Drawing.Size(629, 506);
 			this.panel1.TabIndex = 8;
+			// 
+			// town
+			// 
+			this.town.AutoSize = true;
+			this.town.Location = new System.Drawing.Point(3, 389);
+			this.town.Name = "town";
+			this.town.Size = new System.Drawing.Size(30, 13);
+			this.town.TabIndex = 7;
+			this.town.Text = "town";
+			// 
+			// category
+			// 
+			this.category.AutoSize = true;
+			this.category.Location = new System.Drawing.Point(3, 362);
+			this.category.Name = "category";
+			this.category.Size = new System.Drawing.Size(48, 13);
+			this.category.TabIndex = 6;
+			this.category.Text = "category";
 			// 
 			// pictureBox1
 			// 
 			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(538, 185);
+			this.pictureBox1.Size = new System.Drawing.Size(629, 271);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox1.TabIndex = 5;
 			this.pictureBox1.TabStop = false;
@@ -150,7 +171,7 @@
 			// address
 			// 
 			this.address.AutoSize = true;
-			this.address.Location = new System.Drawing.Point(3, 347);
+			this.address.Location = new System.Drawing.Point(3, 437);
 			this.address.Name = "address";
 			this.address.Size = new System.Drawing.Size(44, 13);
 			this.address.TabIndex = 4;
@@ -159,7 +180,7 @@
 			// place
 			// 
 			this.place.AutoSize = true;
-			this.place.Location = new System.Drawing.Point(3, 318);
+			this.place.Location = new System.Drawing.Point(3, 408);
 			this.place.Name = "place";
 			this.place.Size = new System.Drawing.Size(33, 13);
 			this.place.TabIndex = 3;
@@ -168,7 +189,7 @@
 			// date
 			// 
 			this.date.AutoSize = true;
-			this.date.Location = new System.Drawing.Point(3, 370);
+			this.date.Location = new System.Drawing.Point(3, 460);
 			this.date.Name = "date";
 			this.date.Size = new System.Drawing.Size(28, 13);
 			this.date.TabIndex = 2;
@@ -177,7 +198,7 @@
 			// description
 			// 
 			this.description.AutoSize = true;
-			this.description.Location = new System.Drawing.Point(3, 240);
+			this.description.Location = new System.Drawing.Point(3, 330);
 			this.description.Name = "description";
 			this.description.Size = new System.Drawing.Size(58, 13);
 			this.description.TabIndex = 1;
@@ -186,7 +207,7 @@
 			// title
 			// 
 			this.title.AutoSize = true;
-			this.title.Location = new System.Drawing.Point(202, 206);
+			this.title.Location = new System.Drawing.Point(294, 287);
 			this.title.Name = "title";
 			this.title.Size = new System.Drawing.Size(27, 13);
 			this.title.TabIndex = 0;
@@ -195,7 +216,7 @@
 			// myAccountLabel
 			// 
 			this.myAccountLabel.AutoSize = true;
-			this.myAccountLabel.Location = new System.Drawing.Point(726, 57);
+			this.myAccountLabel.Location = new System.Drawing.Point(817, 50);
 			this.myAccountLabel.Name = "myAccountLabel";
 			this.myAccountLabel.Size = new System.Drawing.Size(64, 13);
 			this.myAccountLabel.TabIndex = 9;
@@ -206,7 +227,7 @@
 			// 
 			// button5
 			// 
-			this.button5.Location = new System.Drawing.Point(182, 405);
+			this.button5.Location = new System.Drawing.Point(182, 513);
 			this.button5.Name = "button5";
 			this.button5.Size = new System.Drawing.Size(75, 23);
 			this.button5.TabIndex = 10;
@@ -216,7 +237,7 @@
 			// 
 			// button6
 			// 
-			this.button6.Location = new System.Drawing.Point(564, 405);
+			this.button6.Location = new System.Drawing.Point(736, 513);
 			this.button6.Name = "button6";
 			this.button6.Size = new System.Drawing.Size(75, 23);
 			this.button6.TabIndex = 11;
@@ -234,24 +255,6 @@
 			this.adminButton.UseVisualStyleBackColor = true;
 			this.adminButton.Visible = false;
 			this.adminButton.Click += new System.EventHandler(this.adminButton_Click);
-			// 
-			// category
-			// 
-			this.category.AutoSize = true;
-			this.category.Location = new System.Drawing.Point(3, 272);
-			this.category.Name = "category";
-			this.category.Size = new System.Drawing.Size(48, 13);
-			this.category.TabIndex = 6;
-			this.category.Text = "category";
-			// 
-			// town
-			// 
-			this.town.AutoSize = true;
-			this.town.Location = new System.Drawing.Point(3, 299);
-			this.town.Name = "town";
-			this.town.Size = new System.Drawing.Size(30, 13);
-			this.town.TabIndex = 7;
-			this.town.Text = "town";
 			// 
 			// textBox1
 			// 
@@ -273,7 +276,7 @@
 			// linkLabel1
 			// 
 			this.linkLabel1.AutoSize = true;
-			this.linkLabel1.Location = new System.Drawing.Point(726, 92);
+			this.linkLabel1.Location = new System.Drawing.Point(817, 85);
 			this.linkLabel1.Name = "linkLabel1";
 			this.linkLabel1.Size = new System.Drawing.Size(76, 13);
 			this.linkLabel1.TabIndex = 12;
@@ -281,11 +284,21 @@
 			this.linkLabel1.Text = "τα events μου";
 			this.linkLabel1.Visible = false;
 			// 
+			// button7
+			// 
+			this.button7.Location = new System.Drawing.Point(5, 397);
+			this.button7.Name = "button7";
+			this.button7.Size = new System.Drawing.Size(75, 23);
+			this.button7.TabIndex = 15;
+			this.button7.Text = "search";
+			this.button7.UseVisualStyleBackColor = true;
+			// 
 			// startForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(883, 449);
+			this.ClientSize = new System.Drawing.Size(1015, 591);
+			this.Controls.Add(this.button7);
 			this.Controls.Add(this.linkLabel1);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.textBox1);
@@ -341,5 +354,6 @@
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.LinkLabel linkLabel1;
+		private System.Windows.Forms.Button button7;
 	}
 }

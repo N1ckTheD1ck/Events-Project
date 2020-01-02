@@ -155,6 +155,7 @@ namespace EventsProject
 		{
 			adapter = new OleDbDataAdapter("SELECT * FROM EventTable", con);
 			adapter.Fill(table);
+			id = (int)table.Rows[index]["ID"];
 			titleTextBox.Text = table.Rows[index]["title"].ToString();
 			descriptionTextBox.Text = table.Rows[index]["description"].ToString();
 			categoryComboBox.Text = table.Rows[index]["category"].ToString();
