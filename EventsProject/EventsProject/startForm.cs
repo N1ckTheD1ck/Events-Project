@@ -44,7 +44,7 @@ namespace EventsProject
 			
 		}
 
-		static OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
+		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
 
 		public void eventLoad()
 		{
@@ -113,12 +113,14 @@ namespace EventsProject
 			admin.Show();
 		}
 		int pos = 0;
+		static string cat;
 		OleDbDataAdapter adapter;
 		DataTable table = new DataTable();
 		private void button6_Click(object sender, EventArgs e)
 		{
 			if (called == true)
 			{
+				pos = 0;
 				pos++;
 				if (pos < table.Rows.Count)
 				{
@@ -169,6 +171,7 @@ namespace EventsProject
 		{
 			if (called == true)
 			{
+				pos = 1;
 				pos--;
 				if (pos >= 0)
 				{
@@ -203,7 +206,7 @@ namespace EventsProject
 		
 		public void loadEventWithCat()
 		{
-			string sql = "SELECT * FROM EventTable WHERE category LIKE 'cinema'";
+			string sql = "SELECT * FROM EventTable WHERE category LIKE ''";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
 			
@@ -236,7 +239,7 @@ namespace EventsProject
 		public void loadEventWithcat(int index)
 		{
 			DataTable dt = new DataTable();
-			OleDbDataAdapter ad = new OleDbDataAdapter("SELECT * FROM EventTable WHERE category LIKE 'cinema'", con);
+			OleDbDataAdapter ad = new OleDbDataAdapter("SELECT * FROM EventTable WHERE category LIKE 'Μπουζούκια'", con);
 			ad.Fill(dt);
 			title.Text = dt.Rows[index]["title"].ToString();
 			description.Text = dt.Rows[index]["description"].ToString();
@@ -258,6 +261,13 @@ namespace EventsProject
 
 		private void button3_Click(object sender, EventArgs e)
 		{
+			cat = button3.Text;
+			loadEventWithcat(pos);
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			
 			loadEventWithcat(pos);
 		}
 	}

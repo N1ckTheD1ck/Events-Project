@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
 			this.loginButton = new System.Windows.Forms.Button();
 			this.welcomeLabel = new System.Windows.Forms.Label();
 			this.usernameLabel = new System.Windows.Forms.Label();
@@ -48,7 +47,6 @@
 			this.myAccountLabel = new System.Windows.Forms.LinkLabel();
 			this.button5 = new System.Windows.Forms.Button();
 			this.button6 = new System.Windows.Forms.Button();
-			this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.adminButton = new System.Windows.Forms.Button();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
@@ -56,7 +54,6 @@
 			this.button7 = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// loginButton
@@ -96,6 +93,7 @@
 			this.button1.TabIndex = 4;
 			this.button1.Text = "Μπουζουκια";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// button2
 			// 
@@ -321,7 +319,6 @@
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -340,7 +337,6 @@
 		private System.Windows.Forms.LinkLabel myAccountLabel;
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Button button6;
-		private System.Windows.Forms.BindingSource bindingSource1;
 		
 		private System.Windows.Forms.Label place;
 		private System.Windows.Forms.Label date;
