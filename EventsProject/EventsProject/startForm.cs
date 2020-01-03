@@ -53,12 +53,6 @@ namespace EventsProject
 		{
 			string sql = "SELECT * FROM EventTable";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
-			cmd.CommandType = CommandType.Text;
-
-			OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
-			DataSet ds = new DataSet();
-			adapter.Fill(ds);
-		
 			con.Open();
 
 			OleDbDataReader dr = cmd.ExecuteReader();
@@ -272,6 +266,42 @@ namespace EventsProject
 		{
 			
 			loadEventWithcat(pos);
+		}
+
+		private void searchEvent()
+		{
+			string sql = "SELECT * FROM EventTable WHERE title LIKE '%"+searchTextBox.Text+"%'";
+			OleDbCommand cmd = new OleDbCommand(sql, con);
+			con.Open();
+
+			OleDbDataReader dr = cmd.ExecuteReader();
+
+			try
+			{
+				if (dr.Read())
+				{
+					title.Text = dr["title"].ToString();
+					description.Text = dr["description"].ToString();
+					byte[] fetchedImgBytes = (byte[])dr["image"];
+					MemoryStream stream = new MemoryStream(fetchedImgBytes);
+					Image fetchImg = Image.FromStream(stream);
+					pictureBox1.Image = fetchImg;
+				}
+				else
+				{
+					MessageBox.Show("event not found!");
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			con.Close();
+		}
+
+		private void searchButton_Click(object sender, EventArgs e)
+		{
+			searchEvent();
 		}
 	}
 }

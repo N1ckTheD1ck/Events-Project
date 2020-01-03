@@ -48,10 +48,10 @@
 			this.button5 = new System.Windows.Forms.Button();
 			this.button6 = new System.Windows.Forms.Button();
 			this.adminButton = new System.Windows.Forms.Button();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.searchTextBox = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-			this.button7 = new System.Windows.Forms.Button();
+			this.searchButton = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
@@ -254,17 +254,17 @@
 			this.adminButton.Visible = false;
 			this.adminButton.Click += new System.EventHandler(this.adminButton_Click);
 			// 
-			// textBox1
+			// searchTextBox
 			// 
-			this.textBox1.Location = new System.Drawing.Point(5, 371);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(171, 20);
-			this.textBox1.TabIndex = 8;
+			this.searchTextBox.Location = new System.Drawing.Point(5, 390);
+			this.searchTextBox.Name = "searchTextBox";
+			this.searchTextBox.Size = new System.Drawing.Size(171, 20);
+			this.searchTextBox.TabIndex = 8;
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(12, 348);
+			this.label1.Location = new System.Drawing.Point(9, 374);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(89, 13);
 			this.label1.TabIndex = 8;
@@ -282,24 +282,25 @@
 			this.linkLabel1.Text = "τα events μου";
 			this.linkLabel1.Visible = false;
 			// 
-			// button7
+			// searchButton
 			// 
-			this.button7.Location = new System.Drawing.Point(5, 397);
-			this.button7.Name = "button7";
-			this.button7.Size = new System.Drawing.Size(75, 23);
-			this.button7.TabIndex = 15;
-			this.button7.Text = "search";
-			this.button7.UseVisualStyleBackColor = true;
+			this.searchButton.Location = new System.Drawing.Point(5, 433);
+			this.searchButton.Name = "searchButton";
+			this.searchButton.Size = new System.Drawing.Size(75, 23);
+			this.searchButton.TabIndex = 15;
+			this.searchButton.Text = "search";
+			this.searchButton.UseVisualStyleBackColor = true;
+			this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
 			// 
 			// startForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1015, 591);
-			this.Controls.Add(this.button7);
+			this.Controls.Add(this.searchButton);
 			this.Controls.Add(this.linkLabel1);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.searchTextBox);
 			this.Controls.Add(this.adminButton);
 			this.Controls.Add(this.button6);
 			this.Controls.Add(this.button5);
@@ -347,9 +348,9 @@
 		private System.Windows.Forms.Button adminButton;
 		private System.Windows.Forms.Label town;
 		private System.Windows.Forms.Label category;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox searchTextBox;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.LinkLabel linkLabel1;
-		private System.Windows.Forms.Button button7;
+		private System.Windows.Forms.Button searchButton;
 	}
 }
