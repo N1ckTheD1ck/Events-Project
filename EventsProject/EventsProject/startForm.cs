@@ -15,6 +15,8 @@ namespace EventsProject
 {
 	public partial class startForm : Form
 	{
+		static login log = new login();
+		static int iden = log.identity();
 		public startForm()
 		{
 			InitializeComponent();
@@ -96,6 +98,7 @@ namespace EventsProject
 			welcomeLabel.Visible = true;
 			myAccountLabel.Visible = true;
 			usernameLabel.Visible = true;
+			linkLabel1.Visible = true;
 			loginButton.Text = "logout";
 		}
 		public void admin()
@@ -302,6 +305,65 @@ namespace EventsProject
 		private void searchButton_Click(object sender, EventArgs e)
 		{
 			searchEvent();
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		
+		public void interest(byte[] imgAsBytes)
+		{
+			con.Open();
+			string sql = "INSERT INTO InterestTable (title, town, description, place, placeAddress, [date], [image], category, [user]) VALUES (?,?,?,?,?,?,?,?,?)";
+			OleDbCommand cmd = new OleDbCommand(sql, con);
+
+			login log = new login();
+			cmd.Parameters.AddWithValue("@title", this.title.Text);
+			cmd.Parameters.AddWithValue("@town", this.town.Text);
+			cmd.Parameters.AddWithValue("@description", this.description.Text);
+			cmd.Parameters.AddWithValue("@place", this.place.Text);
+			cmd.Parameters.AddWithValue("@placeAddress", this.address.Text);
+			cmd.Parameters.AddWithValue("@date", this.date.Text);
+			OleDbParameter par = cmd.Parameters.AddWithValue("@image", SqlDbType.Binary);
+			par.Value = imgAsBytes;
+			par.Size = imgAsBytes.Length;
+			cmd.Parameters.AddWithValue("@category", this.category.Text);
+			cmd.Parameters.AddWithValue("@user", log.identity());
+			try
+			{
+				cmd.ExecuteNonQuery();
+				MessageBox.Show("προστεθηκε επιτυχως!");
+			}
+			catch (Exception ex)
+			{
+					MessageBox.Show(ex.Message);
+			}
+			con.Close();
+		}
+
+		private byte[] imageToBytes(Image input)
+		{
+			Bitmap bit = new Bitmap(input);
+
+			MemoryStream stream = new MemoryStream();
+			bit.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+			byte[] imgAsBytes = stream.ToArray();
+
+			return imgAsBytes;
+		}
+
+		private void interestButton_Click(object sender, EventArgs e)
+		{
+		
+			interest(imageToBytes(pictureBox1.Image));
+		}
+
+		private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			myEvents my = new myEvents();
+			my.Show();
 		}
 	}
 }
