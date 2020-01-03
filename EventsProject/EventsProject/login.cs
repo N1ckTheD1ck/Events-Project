@@ -21,7 +21,7 @@ namespace EventsProject
 
 		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
 		HashCode hash = new HashCode();
-
+		static int id;
 		public int authentication()
 		{
 			string sql = "SELECT * FROM UserTable WHERE username = '" + usernameTextBox.Text + "' AND [password] = '" + hash.encrypt(passwordTextBox.Text) + "'";
@@ -42,6 +42,8 @@ namespace EventsProject
 				{
 					MessageBox.Show("login succesfully!!!");
 					is_admin = Convert.ToInt32(dr["is_admin"]);
+					id = (int)dr["ID"];
+					
 				}
 			}
 			catch (Exception ex)
@@ -52,26 +54,55 @@ namespace EventsProject
 			con.Close();
 			return is_admin;
 		}
-		
+
+		public int identity()
+		{
+			string sql = "SELECT * FROM UserTable WHERE username = '" + usernameTextBox.Text + "' AND [password] = '" + hash.encrypt(passwordTextBox.Text) + "'";
+			OleDbCommand cmd = new OleDbCommand(sql, con);
+			cmd.CommandType = CommandType.Text;
+
+			OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+			
+			con.Open();
+
+			OleDbDataReader dr = cmd.ExecuteReader();
+			try
+			{
+
+				if (dr.Read())
+				{
+					id = (int)dr["ID"];
+
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+
+			con.Close();
+			return id;
+		}
+
 		public void loginButton_Click(object sender, EventArgs e)
 		{
 			string username = usernameTextBox.Text;
 			if (usernameTextBox.Text.Length != 0)
 			{
 				authentication();
+				identity();
+				this.Hide();
+				startForm start = new startForm(username);
+				start.Show();
+				start.activate();
+				if (authentication() == 1)
+				{
+					start.admin();
+				}
 			}
 			else
 			{
 				MessageBox.Show("empty fields");
-			}
-			
-			this.Hide();
-			startForm start = new startForm(username);
-			start.Show();
-			start.activate();
-			if (authentication() == 1)
-			{
-				start.admin();
 			}
 		}
 
