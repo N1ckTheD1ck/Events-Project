@@ -117,5 +117,30 @@ namespace EventsProject
 				MessageBox.Show("wrong verification code!");
 			}
 		}
-	}
+
+        private void forgotPass_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void verifyText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

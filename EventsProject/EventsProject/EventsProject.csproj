@@ -241,6 +241,7 @@
       <DependentUpon>startForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="EventsdbDataSet.xsc">
       <DependentUpon>EventsdbDataSet.xsd</DependentUpon>
     </None>

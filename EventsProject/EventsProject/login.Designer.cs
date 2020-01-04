@@ -44,7 +44,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.usernameTextBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.usernameTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.usernameTextBox.Location = new System.Drawing.Point(114, 135);
+            this.usernameTextBox.Location = new System.Drawing.Point(97, 137);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(249, 20);
             this.usernameTextBox.TabIndex = 0;
@@ -56,7 +56,7 @@
             this.passwordTextBox.AccessibleDescription = "";
             this.passwordTextBox.AccessibleName = "";
             this.passwordTextBox.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.passwordTextBox.Location = new System.Drawing.Point(114, 197);
+            this.passwordTextBox.Location = new System.Drawing.Point(97, 199);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(249, 20);
             this.passwordTextBox.TabIndex = 1;
@@ -69,7 +69,7 @@
             this.loginButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.loginButton.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.loginButton.Location = new System.Drawing.Point(114, 319);
+            this.loginButton.Location = new System.Drawing.Point(97, 321);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(249, 34);
             this.loginButton.TabIndex = 2;
@@ -83,7 +83,7 @@
             this.registerButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.registerButton.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
             this.registerButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.registerButton.Location = new System.Drawing.Point(114, 370);
+            this.registerButton.Location = new System.Drawing.Point(97, 372);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(249, 32);
             this.registerButton.TabIndex = 5;
@@ -95,7 +95,7 @@
             // 
             this.forgotPass.AutoSize = true;
             this.forgotPass.LinkColor = System.Drawing.Color.White;
-            this.forgotPass.Location = new System.Drawing.Point(252, 254);
+            this.forgotPass.Location = new System.Drawing.Point(235, 256);
             this.forgotPass.Name = "forgotPass";
             this.forgotPass.Size = new System.Drawing.Size(111, 13);
             this.forgotPass.TabIndex = 6;
@@ -108,7 +108,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(158, 38);
+            this.label3.Location = new System.Drawing.Point(141, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 29);
             this.label3.TabIndex = 7;
