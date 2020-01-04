@@ -28,12 +28,15 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.registerButton = new System.Windows.Forms.Button();
             this.forgotPass = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // usernameTextBox
@@ -44,7 +47,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.usernameTextBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.usernameTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.usernameTextBox.Location = new System.Drawing.Point(97, 137);
+            this.usernameTextBox.Location = new System.Drawing.Point(97, 181);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(249, 20);
             this.usernameTextBox.TabIndex = 0;
@@ -56,7 +59,7 @@
             this.passwordTextBox.AccessibleDescription = "";
             this.passwordTextBox.AccessibleName = "";
             this.passwordTextBox.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.passwordTextBox.Location = new System.Drawing.Point(97, 199);
+            this.passwordTextBox.Location = new System.Drawing.Point(97, 233);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(249, 20);
             this.passwordTextBox.TabIndex = 1;
@@ -95,7 +98,7 @@
             // 
             this.forgotPass.AutoSize = true;
             this.forgotPass.LinkColor = System.Drawing.Color.White;
-            this.forgotPass.Location = new System.Drawing.Point(235, 256);
+            this.forgotPass.Location = new System.Drawing.Point(235, 279);
             this.forgotPass.Name = "forgotPass";
             this.forgotPass.Size = new System.Drawing.Size(111, 13);
             this.forgotPass.TabIndex = 6;
@@ -116,12 +119,27 @@
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(179, 80);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 81);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(440, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.forgotPass);
             this.Controls.Add(this.registerButton);
@@ -133,6 +151,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
             this.Load += new System.EventHandler(this.login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +165,6 @@
 		private System.Windows.Forms.Button registerButton;
 		private System.Windows.Forms.LinkLabel forgotPass;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
