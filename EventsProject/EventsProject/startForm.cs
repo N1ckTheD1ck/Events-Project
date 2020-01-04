@@ -30,7 +30,7 @@ namespace EventsProject
 		bool called;
 		private void loginButton_Click(object sender, EventArgs e)
 		{
-			if(loginButton.Text == "login")
+			if(loginButton.Text == "Login")
 			{
                 this.Hide();
                 login login = new login();
@@ -43,7 +43,7 @@ namespace EventsProject
 				myAccount acc = new myAccount();
 				acc.logout();
 				myAccountLabel.Visible = false;
-				loginButton.Text = "login";
+				loginButton.Text = "Login";
                 adminButton.Visible = false;
             }
 			
@@ -206,16 +206,13 @@ namespace EventsProject
 		
 		public void loadEventWithCat()
 		{
-			string sql = "SELECT * FROM EventTable WHERE category LIKE ''";
+			string sql = "SELECT * FROM EventTable WHERE category LIKE 'cinema'";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
-			
 			OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
 			DataSet ds = new DataSet();
 			adapter.Fill(ds);
-
 			con.Open();
-
 			OleDbDataReader dr = cmd.ExecuteReader();
 
 			try
