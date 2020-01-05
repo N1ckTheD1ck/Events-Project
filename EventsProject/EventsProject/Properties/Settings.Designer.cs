@@ -26,8 +26,8 @@ namespace EventsProject.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Users\\zoide\\source\\repos\\N1ckTheD" +
-            "1ck\\Events-Project-Team-7\\EventsProject\\EventsProject\\bin\\Debug\\Eventsdb.mdb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Users\\kostas\\source\\repos\\N1ckThe" +
+            "D1ck\\Events-Project-Team-7\\EventsProject\\EventsProject\\bin\\Debug\\Eventsdb.mdb")]
         public string EventsConnectionString {
             get {
                 return ((string)(this["EventsConnectionString"]));

@@ -43,7 +43,11 @@ namespace EventsProject
 					MessageBox.Show("login succesfully!!!");
 					is_admin = Convert.ToInt32(dr["is_admin"]);
 					id = (int)dr["ID"];
-					
+
+				}
+				else
+				{
+					MessageBox.Show("wrong username or password");
 				}
 			}
 			catch (Exception ex)

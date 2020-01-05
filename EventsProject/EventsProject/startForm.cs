@@ -100,6 +100,7 @@ namespace EventsProject
 			usernameLabel.Visible = true;
 			linkLabel1.Visible = true;
 			loginButton.Text = "logout";
+			interestButton.Visible = true;
 		}
 		public void admin()
 		{
@@ -124,7 +125,7 @@ namespace EventsProject
 				pos++;
 				if (pos < table.Rows.Count)
 				{
-					loadEventWithcat(pos);
+					loadEventWithcat(pos,cat);
 				}
 				else
 				{
@@ -171,11 +172,11 @@ namespace EventsProject
 		{
 			if (called == true)
 			{
-				pos = 1;
 				pos--;
+				pos = 0;
 				if (pos >= 0)
 				{
-					loadEventWithcat(pos);
+					loadEventWithcat(pos,cat);
 				}
 				else
 				{
@@ -199,53 +200,19 @@ namespace EventsProject
 			}
 		}
 
-		private void label1_Click(object sender, EventArgs e)
-		{
-			
-		}
-		
-		public void loadEventWithCat()
-		{
-			string sql = "SELECT * FROM EventTable WHERE category LIKE 'cinema'";
-			OleDbCommand cmd = new OleDbCommand(sql, con);
-			cmd.CommandType = CommandType.Text;
-			OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
-			DataSet ds = new DataSet();
-			adapter.Fill(ds);
-			con.Open();
-			OleDbDataReader dr = cmd.ExecuteReader();
 
-			try
-			{
-				if (dr.Read())
-				{
-					title.Text = dr["title"].ToString();
-					byte[] fetchedImgBytes = (byte[])dr["image"];
-					MemoryStream stream = new MemoryStream(fetchedImgBytes);
-					Image fetchImg = Image.FromStream(stream);
-					pictureBox1.Image = fetchImg;
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message);
-			}
-			con.Close();
-			called = true;
-		}
-		public void loadEventWithcat(int index)
+		public void loadEventWithcat(int index,string categ)
 		{
-			DataTable dt = new DataTable();
-			OleDbDataAdapter ad = new OleDbDataAdapter("SELECT * FROM EventTable WHERE category LIKE 'Μπουζούκια'", con);
-			ad.Fill(dt);
-			title.Text = dt.Rows[index]["title"].ToString();
-			description.Text = dt.Rows[index]["description"].ToString();
-			category.Text = dt.Rows[index]["category"].ToString();
-			place.Text = dt.Rows[index]["place"].ToString();
-			address.Text = dt.Rows[index]["placeAddress"].ToString();
-			town.Text = dt.Rows[index]["town"].ToString();
-			date.Text = dt.Rows[index]["date"].ToString();
-			byte[] fetchedImgBytes = (byte[])dt.Rows[index]["image"];
+			adapter = new OleDbDataAdapter("SELECT * FROM EventTable WHERE category LIKE '%"+categ.ToString()+"%'", con);
+			adapter.Fill(table);
+			title.Text = table.Rows[index]["title"].ToString();
+			description.Text = table.Rows[index]["description"].ToString();
+			category.Text = table.Rows[index]["category"].ToString();
+			place.Text = table.Rows[index]["place"].ToString();
+			address.Text = table.Rows[index]["placeAddress"].ToString();
+			town.Text = table.Rows[index]["town"].ToString();
+			date.Text = table.Rows[index]["date"].ToString();
+			byte[] fetchedImgBytes = (byte[])table.Rows[index]["image"];
 			MemoryStream stream = new MemoryStream(fetchedImgBytes);
 			Image fetchImg = Image.FromStream(stream);
 			pictureBox1.Image = fetchImg;
@@ -253,19 +220,21 @@ namespace EventsProject
 		}
 		private void button4_Click(object sender, EventArgs e)
 		{
-			
+			cat = button3.Text;
+			loadEventWithcat(pos, cat);
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
+			pos = 0;
 			cat = button3.Text;
-			loadEventWithcat(pos);
+			loadEventWithcat(pos,cat);
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			
-			loadEventWithcat(pos);
+			cat = button1.Text;
+			loadEventWithcat(pos,cat);
 		}
 
 		private void searchEvent()
@@ -306,7 +275,8 @@ namespace EventsProject
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-
+			cat = button2.Text;
+			loadEventWithcat(pos, cat);
 		}
 
 		
@@ -361,6 +331,11 @@ namespace EventsProject
 		{
 			myEvents my = new myEvents();
 			my.Show();
+		}
+
+		private void button7_Click(object sender, EventArgs e)
+		{
+			eventLoad();
 		}
 	}
 }
