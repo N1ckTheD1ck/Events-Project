@@ -43,9 +43,7 @@ namespace EventsProject
 			string check = "SELECT * FROM UserTable WHERE username = @username";
 			OleDbCommand checkcmd = new OleDbCommand(check, con);
 			checkcmd.Parameters.AddWithValue("@username", usernameTextBox.Text);
-			OleDbDataAdapter adapter = new OleDbDataAdapter(checkcmd);
-			DataSet ds = new DataSet();
-			adapter.Fill(ds);
+			
 			con.Open();
 
 			OleDbDataReader dr = checkcmd.ExecuteReader();
@@ -87,7 +85,7 @@ namespace EventsProject
 			cmd.CommandType = CommandType.Text;
 
 			OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
-			DataSet ds = new DataSet();
+			DataTable ds = new DataTable();
 			adapter.Fill(ds);
 
 			con.Open();
@@ -101,7 +99,7 @@ namespace EventsProject
 			}
 			con.Close();
 
-			dataGridView1.DataSource = ds.Tables[0];
+			dataGridView1.DataSource = ds;
 		}
 		private void button1_Click(object sender, EventArgs e)
 		{
@@ -148,5 +146,12 @@ namespace EventsProject
         {
 
         }
-    }
+
+		private void backButton_Click(object sender, EventArgs e)
+		{
+			login login = new login();
+			this.Hide();
+			login.Show();
+		}
+	}
 }

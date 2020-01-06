@@ -27,10 +27,6 @@ namespace EventsProject
 			string sql = "SELECT * FROM UserTable WHERE username = '" + usernameTextBox.Text + "' AND [password] = '" + hash.encrypt(passwordTextBox.Text) + "'";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
-
-			OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
-			DataSet ds = new DataSet();
-			adapter.Fill(ds);
 			int is_admin = 0;
 			con.Open();
 
@@ -93,7 +89,6 @@ namespace EventsProject
 			string username = usernameTextBox.Text;
 			if (usernameTextBox.Text.Length != 0)
 			{
-				authentication();
 				identity();
 				this.Hide();
 				startForm start = new startForm(username);

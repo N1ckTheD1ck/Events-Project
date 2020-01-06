@@ -67,7 +67,7 @@
             this.label8.Size = new System.Drawing.Size(45, 17);
             this.label8.TabIndex = 30;
             this.label8.Text = "Πόλη:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            
             // 
             // townTextBox
             // 
@@ -107,7 +107,7 @@
             this.label4.Size = new System.Drawing.Size(58, 17);
             this.label4.TabIndex = 25;
             this.label4.Text = "Μαγαζί:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            
             // 
             // label3
             // 
@@ -119,7 +119,7 @@
             this.label3.Size = new System.Drawing.Size(78, 17);
             this.label3.TabIndex = 24;
             this.label3.Text = "Κατηγορία:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+           
             // 
             // label2
             // 
@@ -131,7 +131,7 @@
             this.label2.Size = new System.Drawing.Size(82, 17);
             this.label2.TabIndex = 23;
             this.label2.Text = "Περιγραφή:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            
             // 
             // label1
             // 
@@ -143,7 +143,7 @@
             this.label1.Size = new System.Drawing.Size(50, 17);
             this.label1.TabIndex = 22;
             this.label1.Text = "Τίτλος:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+          
             // 
             // streetTextBox
             // 
@@ -238,7 +238,7 @@
             this.label6.Size = new System.Drawing.Size(88, 17);
             this.label6.TabIndex = 37;
             this.label6.Text = "Ημερομήνια:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+           
             // 
             // dateTimePicker1
             // 
@@ -284,7 +284,7 @@
             this.label5.Size = new System.Drawing.Size(44, 17);
             this.label5.TabIndex = 26;
             this.label5.Text = "Οδός:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+           
             // 
             // allEvents
             // 

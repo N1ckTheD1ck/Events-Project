@@ -20,18 +20,18 @@ namespace EventsProject
 		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
 		private void showUsers()
 		{
-			string sql = "SELECT username,firstName,lastName,city,address,email FROM UserTable";
+			string sql = "SELECT * FROM UserTable";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
-
-			OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
-			DataSet ds = new DataSet();
-			adapter.Fill(ds);
-
 			con.Open();
+			OleDbDataReader dr = cmd.ExecuteReader();
+			
 			try
 			{
-				cmd.ExecuteNonQuery();
+				while (dr.Read())
+				{
+					listBox1.Items.Add(string.Format("{0} | {1} | {2} | {3} ", dr["username"], dr["firstName"], dr["lastName"], dr["email"]));
+				}
 			}
 			catch (Exception ex)
 			{
@@ -39,7 +39,7 @@ namespace EventsProject
 			}
 			con.Close();
 
-			dataGridView1.DataSource = ds.Tables[0];
+			
 		}
 		private void allUsers_Load(object sender, EventArgs e)
 		{

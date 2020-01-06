@@ -33,17 +33,13 @@ namespace EventsProject
 			string sql = "SELECT * FROM EventTable";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
-			DataSet ds = new DataSet();
-			OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
-			adapter.Fill(ds);
 
 			con.Open();
-
 			OleDbDataReader dr = cmd.ExecuteReader();
+			
 			try
 			{
-
-				while (dr.Read())
+				if (dr.Read())
 				{
 					id = Convert.ToInt32(dr["ID"]);
 					titleTextBox.Text = dr["title"].ToString();
@@ -63,10 +59,8 @@ namespace EventsProject
 			{
 				MessageBox.Show(ex.Message);
 			}
-
 			con.Close();
 		}
-		
 
 		public void updateEvent(byte[] imgAsBytes)
 		{
@@ -126,6 +120,7 @@ namespace EventsProject
 			{
 				MessageBox.Show(ex.Message);
 			}
+			con.Close();
 		}
 
 		private void button1_Click(object sender, EventArgs e)
@@ -135,7 +130,7 @@ namespace EventsProject
 
 		private void allEvents_Load(object sender, EventArgs e)
 		{
-			loadEventWithId(pos);
+			eventLoad();
 		}
 
 		private void button4_Click(object sender, EventArgs e)
@@ -205,40 +200,5 @@ namespace EventsProject
 				MessageBox.Show("zeroooo");
 			}
 		}
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

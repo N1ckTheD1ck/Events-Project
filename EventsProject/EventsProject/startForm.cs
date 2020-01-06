@@ -251,6 +251,11 @@ namespace EventsProject
 				{
 					title.Text = dr["title"].ToString();
 					description.Text = dr["description"].ToString();
+					category.Text = dr["category"].ToString();
+					town.Text = dr["town"].ToString();
+					place.Text = dr["place"].ToString();
+					address.Text = dr["address"].ToString();
+					date.Text = dr["date"].ToString();
 					byte[] fetchedImgBytes = (byte[])dr["image"];
 					MemoryStream stream = new MemoryStream(fetchedImgBytes);
 					Image fetchImg = Image.FromStream(stream);
