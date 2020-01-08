@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.OleDb;
 using System.IO;
+using System.Net;
 
 namespace EventsProject
 {
@@ -123,6 +124,7 @@ namespace EventsProject
 		{
 			adapter = new OleDbDataAdapter("SELECT * FROM Events", con);
 			adapter.Fill(table);
+<<<<<<< HEAD
 			con.Open();
 			try
 			{
@@ -144,6 +146,30 @@ namespace EventsProject
 				MessageBox.Show(ex.Message);
 			}
 			con.Close();
+=======
+			title.Text = table.Rows[index]["title"].ToString();
+			description.Text = table.Rows[index]["description"].ToString();
+			category.Text = table.Rows[index]["category"].ToString();
+			place.Text = table.Rows[index]["place"].ToString();
+			address.Text = table.Rows[index]["placeAddress"].ToString();
+			town.Text = table.Rows[index]["town"].ToString();
+			date.Text = table.Rows[index]["date"].ToString();
+			/*byte[] fetchedImgBytes = (byte[])table.Rows[index]["image"];
+			MemoryStream stream = new MemoryStream(fetchedImgBytes);
+			Image fetchImg = Image.FromStream(stream);
+			pictureBox1.Image = fetchImg;
+			*/
+
+			//To neo kommati kwdika gia tis fwtografies
+			var imgUrl = table.Rows[index]["Pimg"].ToString();
+			var request = WebRequest.Create(imgUrl);
+
+			using (var response = request.GetResponse())
+			using (var stream = response.GetResponseStream())
+			{
+				pictureBox1.Image = Bitmap.FromStream(stream);
+			}
+>>>>>>> 81c0c43bb5465a8ae9df523bfbb1508e18b97677
 		}
 
 		

@@ -5,10 +5,17 @@
     <Setting Name="EventsConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+<<<<<<< HEAD
   &lt;ConnectionString&gt;Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\kostas\Downloads\Eventsdb.mdb&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\kostas\Downloads\Eventsdb.mdb</Value>
+=======
+  &lt;ConnectionString&gt;Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\giann\source\repos\N1ckTheD1ck\Events-Project-Team-7\EventsProject\EventsProject\bin\Debug\Eventsdb.mdb&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\giann\source\repos\N1ckTheD1ck\Events-Project-Team-7\EventsProject\EventsProject\bin\Debug\Eventsdb.mdb</Value>
+>>>>>>> 81c0c43bb5465a8ae9df523bfbb1508e18b97677
     </Setting>
   </Settings>
 </SettingsFile>
