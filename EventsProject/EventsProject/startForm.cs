@@ -124,7 +124,7 @@ namespace EventsProject
 		{
 			adapter = new OleDbDataAdapter("SELECT * FROM Events", con);
 			adapter.Fill(table);
-<<<<<<< HEAD
+
 			con.Open();
 			try
 			{
@@ -146,7 +146,7 @@ namespace EventsProject
 				MessageBox.Show(ex.Message);
 			}
 			con.Close();
-=======
+
 			title.Text = table.Rows[index]["title"].ToString();
 			description.Text = table.Rows[index]["description"].ToString();
 			category.Text = table.Rows[index]["category"].ToString();
@@ -169,7 +169,7 @@ namespace EventsProject
 			{
 				pictureBox1.Image = Bitmap.FromStream(stream);
 			}
->>>>>>> 81c0c43bb5465a8ae9df523bfbb1508e18b97677
+ 
 		}
 
 		
