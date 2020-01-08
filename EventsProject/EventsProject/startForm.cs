@@ -45,6 +45,7 @@ namespace EventsProject
 				myAccountLabel.Visible = false;
 				loginButton.Text = "Login";
                 adminButton.Visible = false;
+				linkLabel1.Visible = false;
             }
 			
 		}
@@ -83,7 +84,7 @@ namespace EventsProject
 		}
 		private void startForm_Load(object sender, EventArgs e)
 		{
-			eventLoad();
+			loadEventWithId(0);
 		}
 
 		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -109,7 +110,6 @@ namespace EventsProject
 
 		private void adminButton_Click(object sender, EventArgs e)
 		{
-			this.Hide();
 			adminForm admin = new adminForm();
 			admin.Show();
 		}
@@ -121,7 +121,6 @@ namespace EventsProject
 		{
 			if (called == true)
 			{
-				pos = 0;
 				pos++;
 				if (pos < table.Rows.Count)
 				{
@@ -203,7 +202,8 @@ namespace EventsProject
 
 		public void loadEventWithcat(int index,string categ)
 		{
-			adapter = new OleDbDataAdapter("SELECT * FROM EventTable WHERE category LIKE '%"+categ.ToString()+"%'", con);
+			OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM EventTable WHERE category LIKE '"+categ.ToString()+"'", con);
+			DataTable table = new DataTable();
 			adapter.Fill(table);
 			title.Text = table.Rows[index]["title"].ToString();
 			description.Text = table.Rows[index]["description"].ToString();
@@ -220,13 +220,13 @@ namespace EventsProject
 		}
 		private void button4_Click(object sender, EventArgs e)
 		{
-			cat = button3.Text;
+			cat = button4.Text;
 			loadEventWithcat(pos, cat);
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			pos = 0;
+			
 			cat = button3.Text;
 			loadEventWithcat(pos,cat);
 		}
@@ -293,7 +293,7 @@ namespace EventsProject
 
 			login log = new login();
 			cmd.Parameters.AddWithValue("@title", this.title.Text);
-			cmd.Parameters.AddWithValue("@town", this.town.Text);
+			cmd.Parameters.AddWithValue("@town", town.Text);
 			cmd.Parameters.AddWithValue("@description", this.description.Text);
 			cmd.Parameters.AddWithValue("@place", this.place.Text);
 			cmd.Parameters.AddWithValue("@placeAddress", this.address.Text);

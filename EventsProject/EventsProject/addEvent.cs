@@ -23,16 +23,17 @@ namespace EventsProject
 		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
 		private void add(byte[] imgAsBytes)
 		{
-			string sql = "INSERT INTO EventTable (title, description, category, place, placeAddress, [date], [image]) VALUES (?, ?, ?, ?, ?, ?, ?)";
+			string sql = "INSERT INTO EventTable (title, description, category, place, placeAddress, town, [date], [image]) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
 			con.Open();
 
 			cmd.Parameters.AddWithValue("@title", titleTextBox.Text);
 			cmd.Parameters.AddWithValue("@description", descriptionTextBox.Text);
-			cmd.Parameters.AddWithValue("@category", categoryComboBox.Text);
+			cmd.Parameters.AddWithValue("@category", categoryComboBox.SelectedItem.ToString());
 			cmd.Parameters.AddWithValue("@place", placeTextBox.Text);
 			cmd.Parameters.AddWithValue("@placeAddress", streetTextBox.Text);
 			cmd.Parameters.AddWithValue("@date", this.dateTimePicker1.Text);
+			cmd.Parameters.AddWithValue("@town", townTextBox.Text);
 			OleDbParameter par = cmd.Parameters.AddWithValue("@image", SqlDbType.Binary);
 			par.Value = imgAsBytes;
 			par.Size = imgAsBytes.Length;

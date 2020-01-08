@@ -39,7 +39,7 @@ namespace EventsProject
 			
 			try
 			{
-				if (dr.Read())
+				while (dr.Read())
 				{
 					id = Convert.ToInt32(dr["ID"]);
 					titleTextBox.Text = dr["title"].ToString();
@@ -130,7 +130,7 @@ namespace EventsProject
 
 		private void allEvents_Load(object sender, EventArgs e)
 		{
-			eventLoad();
+			loadEventWithId(0);
 		}
 
 		private void button4_Click(object sender, EventArgs e)
@@ -198,6 +198,7 @@ namespace EventsProject
 			else
 			{
 				MessageBox.Show("zeroooo");
+				pos = 0;
 			}
 		}
     }
