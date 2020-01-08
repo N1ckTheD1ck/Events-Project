@@ -53,36 +53,6 @@ namespace EventsProject
 
 		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
 
-		public void eventLoad()
-		{
-			string sql = "SELECT * FROM EventTable";
-			OleDbCommand cmd = new OleDbCommand(sql, con);
-			con.Open();
-
-			OleDbDataReader dr = cmd.ExecuteReader();
-			try
-			{
-
-				if (dr.Read())
-				{
-					title.Text = dr["title"].ToString();
-					description.Text = dr["description"].ToString();
-					date.Text = dr["date"].ToString();
-					place.Text = dr["place"].ToString();
-					address.Text = dr["placeAddress"].ToString();
-					byte[] fetchedImgBytes = (byte[])dr["image"];
-					MemoryStream stream = new MemoryStream(fetchedImgBytes);
-					Image fetchImg = Image.FromStream(stream);
-					pictureBox1.Image = fetchImg;
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message);
-			}
-
-			con.Close();
-		}
 		private void startForm_Load(object sender, EventArgs e)
 		{
 			loadEventWithId(0);
@@ -152,8 +122,31 @@ namespace EventsProject
 		
 		public void loadEventWithId(int index)
 		{
-			adapter = new OleDbDataAdapter("SELECT * FROM EventTable", con);
+			adapter = new OleDbDataAdapter("SELECT * FROM Events", con);
 			adapter.Fill(table);
+<<<<<<< HEAD
+			con.Open();
+			try
+			{
+				title.Text = table.Rows[index]["PName"].ToString();
+				description.Text = table.Rows[index]["Desc"].ToString();
+				category.Text = table.Rows[index]["Category"].ToString();
+				place.Text = table.Rows[index]["Place"].ToString();
+				address.Text = table.Rows[index]["Addr"].ToString();
+				town.Text = table.Rows[index]["Town"].ToString();
+				date.Text = table.Rows[index]["PSD"].ToString();
+				date2.Text = table.Rows[index]["PED"].ToString();
+				/*byte[] fetchedImgBytes = (byte[])table.Rows[index]["image"];
+				MemoryStream stream = new MemoryStream(fetchedImgBytes);
+				Image fetchImg = Image.FromStream(stream);
+				pictureBox1.Image = fetchImg;*/
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			con.Close();
+=======
 			title.Text = table.Rows[index]["title"].ToString();
 			description.Text = table.Rows[index]["description"].ToString();
 			category.Text = table.Rows[index]["category"].ToString();
@@ -176,6 +169,7 @@ namespace EventsProject
 			{
 				pictureBox1.Image = Bitmap.FromStream(stream);
 			}
+>>>>>>> 81c0c43bb5465a8ae9df523bfbb1508e18b97677
 		}
 
 		
@@ -214,44 +208,53 @@ namespace EventsProject
 
 		public void loadEventWithcat(int index,string categ)
 		{
-			OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM EventTable WHERE category LIKE '"+categ.ToString()+"'", con);
+			OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM Events WHERE category LIKE '"+categ.ToString()+"'", con);
 			DataTable table = new DataTable();
 			adapter.Fill(table);
-			title.Text = table.Rows[index]["title"].ToString();
-			description.Text = table.Rows[index]["description"].ToString();
-			category.Text = table.Rows[index]["category"].ToString();
-			place.Text = table.Rows[index]["place"].ToString();
-			address.Text = table.Rows[index]["placeAddress"].ToString();
-			town.Text = table.Rows[index]["town"].ToString();
-			date.Text = table.Rows[index]["date"].ToString();
-			byte[] fetchedImgBytes = (byte[])table.Rows[index]["image"];
-			MemoryStream stream = new MemoryStream(fetchedImgBytes);
-			Image fetchImg = Image.FromStream(stream);
-			pictureBox1.Image = fetchImg;
-			called = true;
+			con.Open();
+			try
+			{
+				title.Text = table.Rows[index]["PName"].ToString();
+				description.Text = table.Rows[index]["Desc"].ToString();
+				category.Text = table.Rows[index]["Category"].ToString();
+				place.Text = table.Rows[index]["Place"].ToString();
+				address.Text = table.Rows[index]["Addr"].ToString();
+				town.Text = table.Rows[index]["Town"].ToString();
+				date.Text = table.Rows[index]["PSD"].ToString();
+				/* byte[] fetchedImgBytes = (byte[])table.Rows[index]["image"];
+				MemoryStream stream = new MemoryStream(fetchedImgBytes);
+				Image fetchImg = Image.FromStream(stream);
+				pictureBox1.Image = fetchImg; */
+				called = true;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			con.Close();
 		}
 		private void button4_Click(object sender, EventArgs e)
 		{
-			cat = button4.Text;
+			cat = "theatro";
 			loadEventWithcat(pos, cat);
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			
-			cat = button3.Text;
+
+			cat = "ekdilwseis";
 			loadEventWithcat(pos,cat);
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			cat = button1.Text;
+			cat = "paidikes";
 			loadEventWithcat(pos,cat);
 		}
 
 		private void searchEvent()
 		{
-			string sql = "SELECT * FROM EventTable WHERE title LIKE '%"+searchTextBox.Text+"%'";
+			string sql = "SELECT * FROM Events WHERE title LIKE '%"+searchTextBox.Text+"%'";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
 			con.Open();
 
@@ -261,17 +264,17 @@ namespace EventsProject
 			{
 				if (dr.Read())
 				{
-					title.Text = dr["title"].ToString();
-					description.Text = dr["description"].ToString();
-					category.Text = dr["category"].ToString();
-					town.Text = dr["town"].ToString();
-					place.Text = dr["place"].ToString();
-					address.Text = dr["address"].ToString();
-					date.Text = dr["date"].ToString();
-					byte[] fetchedImgBytes = (byte[])dr["image"];
+					title.Text = dr["PName"].ToString();
+					description.Text = dr["Desc"].ToString();
+					category.Text = dr["Category"].ToString();
+					place.Text = dr["Place"].ToString();
+					address.Text = dr["Addr"].ToString();
+					town.Text = dr["Town"].ToString();
+					date.Text = dr["PSD"].ToString();
+					/* byte[] fetchedImgBytes = (byte[])dr["image"];
 					MemoryStream stream = new MemoryStream(fetchedImgBytes);
 					Image fetchImg = Image.FromStream(stream);
-					pictureBox1.Image = fetchImg;
+					pictureBox1.Image = fetchImg; */
 				}
 				else
 				{
@@ -292,7 +295,7 @@ namespace EventsProject
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			cat = button2.Text;
+			cat = "sinavlies";
 			loadEventWithcat(pos, cat);
 		}
 
@@ -352,7 +355,7 @@ namespace EventsProject
 
 		private void button7_Click(object sender, EventArgs e)
 		{
-			eventLoad();
+			loadEventWithId(0);
 		}
 	}
 }
