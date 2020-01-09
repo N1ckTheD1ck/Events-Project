@@ -142,5 +142,12 @@ namespace EventsProject
         {
 
         }
-    }
+
+		private void backButton_Click(object sender, EventArgs e)
+		{
+			login log = new login();
+			this.Hide();
+			log.Show();
+		}
+	}
 }
