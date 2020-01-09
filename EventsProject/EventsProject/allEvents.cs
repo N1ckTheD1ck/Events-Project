@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.IO;
+using System.Net;
 
 
 namespace EventsProject
@@ -44,16 +45,24 @@ namespace EventsProject
 					id = Convert.ToInt32(dr["ID"]);
 					titleTextBox.Text = dr["PName"].ToString();
 					descriptionTextBox.Text = dr["Desc"].ToString();
-					dateTimePicker1.Value = Convert.ToDateTime(dr["PSD"]);
-					dateTimePicker2.Value = Convert.ToDateTime(dr["PED"]);
-					placeTextBox.Text = dr["Place"].ToString();
-					streetTextBox.Text = dr["Addr"].ToString();
-					townTextBox.Text = dr["Town"].ToString();
-					categoryComboBox.Text = dr["Category"].ToString();
+					dateTimePicker1.Value = Convert.ToDateTime(dr["PsD"]);
+					dateTimePicker2.Value = Convert.ToDateTime(dr["PeD"]);
+					placeTextBox.Text = dr["PPlace"].ToString();
+					streetTextBox.Text = dr["PAddress"].ToString();
+					townTextBox.Text = dr["PTown"].ToString();
+					categoryComboBox.Text = dr["PCategory"].ToString();
 					/*byte[] fetchedImgBytes = (byte[])dr["image"];
 					MemoryStream stream = new MemoryStream(fetchedImgBytes);
 					Image fetchImg = Image.FromStream(stream);
 					pictureBox1.Image = fetchImg;*/
+					var imgUrl = dr["Pimg"].ToString();
+					var request = WebRequest.Create(imgUrl);
+
+					using (var response = request.GetResponse())
+					using (var stream = response.GetResponseStream())
+					{
+						pictureBox1.Image = Bitmap.FromStream(stream);
+					}
 				}
 			}
 			catch (Exception ex)
@@ -65,7 +74,7 @@ namespace EventsProject
 
 		public void updateEvent(byte[] imgAsBytes)
 		{
-			string sql = "UPDATE Events SET PName=@title, Desc=@description, Category=@category, Town=@town, Place=@place, Addr=@address, PSD=@date1, PED=@date2  WHERE [ID]="+id+"";
+			string sql = "UPDATE Events SET PName=@title, PDesc=@description, PCategory=@category, PTown=@town, PPlace=@place, PAddress=@address, PSD=@date1, PED=@date2  WHERE [ID]="+id+"";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
 
@@ -80,6 +89,7 @@ namespace EventsProject
 			/*OleDbParameter par = cmd.Parameters.AddWithValue("@image", SqlDbType.Binary);
 			par.Value = imgAsBytes;
 			par.Size = imgAsBytes.Length;*/
+
 
 			con.Open();
 
@@ -143,6 +153,7 @@ namespace EventsProject
 		private void button3_Click(object sender, EventArgs e)
 		{
 			deleteEvent();
+			MessageBox.Show("deleted succesfully!");
 			eventLoad();
 		}
 
@@ -154,16 +165,26 @@ namespace EventsProject
 			adapter.Fill(table);
 			id = (int)table.Rows[index]["ID"];
 			titleTextBox.Text = table.Rows[index]["Pname"].ToString();
-			descriptionTextBox.Text = table.Rows[index]["Desc"].ToString();
-			categoryComboBox.Text = table.Rows[index]["Category"].ToString();
-			placeTextBox.Text = table.Rows[index]["Place"].ToString();
-			streetTextBox.Text = table.Rows[index]["Addr"].ToString();
-			townTextBox.Text = table.Rows[index]["Town"].ToString();
-			dateTimePicker1.Value = Convert.ToDateTime(table.Rows[index]["PSD"]);
+			descriptionTextBox.Text = table.Rows[index]["PDesc"].ToString();
+			categoryComboBox.Text = table.Rows[index]["PCategory"].ToString();
+			placeTextBox.Text = table.Rows[index]["PPlace"].ToString();
+			streetTextBox.Text = table.Rows[index]["PAddress"].ToString();
+			townTextBox.Text = table.Rows[index]["PTown"].ToString();
+			dateTimePicker1.Value = Convert.ToDateTime(table.Rows[index]["PsD"]);
+			dateTimePicker2.Value = Convert.ToDateTime(table.Rows[index]["PeD"]);
 			/*byte[] fetchedImgBytes = (byte[])table.Rows[index]["image"];
 			MemoryStream stream = new MemoryStream(fetchedImgBytes);
 			Image fetchImg = Image.FromStream(stream);
 			pictureBox1.Image = fetchImg;*/
+
+			var imgUrl = table.Rows[index]["Pimg"].ToString();
+			var request = WebRequest.Create(imgUrl);
+
+			using (var response = request.GetResponse())
+			using (var stream = response.GetResponseStream())
+			{
+				pictureBox1.Image = Bitmap.FromStream(stream);
+			}
 		}
 		
 		private void button2_Click(object sender, EventArgs e)

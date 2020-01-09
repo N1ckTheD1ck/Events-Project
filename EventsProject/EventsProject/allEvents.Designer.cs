@@ -81,10 +81,10 @@
 			// 
 			this.categoryComboBox.FormattingEnabled = true;
 			this.categoryComboBox.Items.AddRange(new object[] {
-            "Μπουζούκια",
-            "Θέατρο",
-            "Cinema",
-            "Συναυλίες"});
+            "παιδικες",
+            "θεατρο",
+            "εκδηλωσεις",
+            "συναυλιες"});
 			this.categoryComboBox.Location = new System.Drawing.Point(170, 294);
 			this.categoryComboBox.Name = "categoryComboBox";
 			this.categoryComboBox.Size = new System.Drawing.Size(292, 23);
@@ -239,7 +239,7 @@
 			// dateTimePicker1
 			// 
 			this.dateTimePicker1.Location = new System.Drawing.Point(170, 506);
-			this.dateTimePicker1.MinDate = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
+			this.dateTimePicker1.MinDate = new System.DateTime(2018, 3, 1, 0, 0, 0, 0);
 			this.dateTimePicker1.Name = "dateTimePicker1";
 			this.dateTimePicker1.Size = new System.Drawing.Size(292, 24);
 			this.dateTimePicker1.TabIndex = 36;
@@ -281,7 +281,7 @@
 			// dateTimePicker2
 			// 
 			this.dateTimePicker2.Location = new System.Drawing.Point(168, 549);
-			this.dateTimePicker2.MinDate = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
+			this.dateTimePicker2.MinDate = new System.DateTime(2019, 5, 1, 0, 0, 0, 0);
 			this.dateTimePicker2.Name = "dateTimePicker2";
 			this.dateTimePicker2.Size = new System.Drawing.Size(292, 24);
 			this.dateTimePicker2.TabIndex = 39;

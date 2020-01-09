@@ -5,12 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.OleDb;
 using System.IO;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace EventsProject
 {
@@ -207,14 +207,24 @@ namespace EventsProject
 				description.Text = table.Rows[index]["PDesc"].ToString();
 				category.Text = table.Rows[index]["PCategory"].ToString();
 				place.Text = table.Rows[index]["PPlace"].ToString();
-				address.Text = table.Rows[index]["PAddr"].ToString();
+				address.Text = table.Rows[index]["PAddress"].ToString();
 				town.Text = table.Rows[index]["PTown"].ToString();
 				date.Text = table.Rows[index]["PsD"].ToString();
 				date2.Text = table.Rows[index]["PeD"].ToString();
-				/* byte[] fetchedImgBytes = (byte[])table.Rows[index]["image"];
+				/*byte[] fetchedImgBytes = (byte[])table.Rows[index]["image"];
 				MemoryStream stream = new MemoryStream(fetchedImgBytes);
 				Image fetchImg = Image.FromStream(stream);
-				pictureBox1.Image = fetchImg; */
+				pictureBox1.Image = fetchImg;*/
+
+				//To neo kommati kwdika gia tis fwtografies
+				var imgUrl = table.Rows[index]["Pimg"].ToString();
+				var request = WebRequest.Create(imgUrl);
+
+				using (var response = request.GetResponse())
+				using (var stream = response.GetResponseStream())
+				{
+					pictureBox1.Image = Bitmap.FromStream(stream);
+				}
 				called = true;
 			}
 			catch (Exception ex)
@@ -261,10 +271,19 @@ namespace EventsProject
 					address.Text = dr["Addr"].ToString();
 					town.Text = dr["Town"].ToString();
 					date.Text = dr["PSD"].ToString();
+					date2.Text = dr["PED"].ToString();
 					/* byte[] fetchedImgBytes = (byte[])dr["image"];
 					MemoryStream stream = new MemoryStream(fetchedImgBytes);
 					Image fetchImg = Image.FromStream(stream);
 					pictureBox1.Image = fetchImg; */
+					var imgUrl = dr["Pimg"].ToString();
+					var request = WebRequest.Create(imgUrl);
+
+					using (var response = request.GetResponse())
+					using (var stream = response.GetResponseStream())
+					{
+						pictureBox1.Image = Bitmap.FromStream(stream);
+					}
 				}
 				else
 				{

@@ -193,10 +193,10 @@
 			// 
 			this.categoryComboBox.FormattingEnabled = true;
 			this.categoryComboBox.Items.AddRange(new object[] {
-            "Μπουζούκια",
-            "Θέατρο",
-            "Cinema",
-            "Συναυλίες"});
+            "παιδικες",
+            "θεατρο",
+            "εκδηλωσεις",
+            "συναυλιες"});
 			this.categoryComboBox.Location = new System.Drawing.Point(126, 346);
 			this.categoryComboBox.Name = "categoryComboBox";
 			this.categoryComboBox.Size = new System.Drawing.Size(347, 23);

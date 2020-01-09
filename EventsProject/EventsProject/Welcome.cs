@@ -24,7 +24,9 @@ namespace EventsProject
 
         private void Press_button_Click(object sender, EventArgs e)
         {
-
+			startForm start = new startForm();
+			this.Hide();
+			start.Show();
         }
     }
 }
