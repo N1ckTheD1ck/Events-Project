@@ -47,13 +47,13 @@
 			this.button4 = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
 			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-			this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-			this.eventsdbDataSet = new EventsProject.EventsdbDataSet();
-			this.eventTableTableAdapter1 = new EventsProject.EventsdbDataSetTableAdapters.EventTableTableAdapter();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
 			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+			this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+			this.eventsdbDataSet = new EventsProject.EventsdbDataSet();
+			this.eventTableTableAdapter1 = new EventsProject.EventsdbDataSetTableAdapters.EventTableTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.eventsdbDataSet)).BeginInit();
@@ -245,20 +245,6 @@
 			this.dateTimePicker1.TabIndex = 36;
 			this.dateTimePicker1.Value = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
 			// 
-			// bindingSource1
-			// 
-			this.bindingSource1.DataSource = this.eventsdbDataSet;
-			this.bindingSource1.Position = 0;
-			// 
-			// eventsdbDataSet
-			// 
-			this.eventsdbDataSet.DataSetName = "EventsdbDataSet";
-			this.eventsdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// eventTableTableAdapter1
-			// 
-			this.eventTableTableAdapter1.ClearBeforeFill = true;
-			// 
 			// label7
 			// 
 			this.label7.AutoSize = true;
@@ -300,6 +286,20 @@
 			this.dateTimePicker2.Size = new System.Drawing.Size(292, 24);
 			this.dateTimePicker2.TabIndex = 39;
 			this.dateTimePicker2.Value = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
+			// 
+			// bindingSource1
+			// 
+			this.bindingSource1.DataSource = this.eventsdbDataSet;
+			this.bindingSource1.Position = 0;
+			// 
+			// eventsdbDataSet
+			// 
+			this.eventsdbDataSet.DataSetName = "EventsdbDataSet";
+			this.eventsdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// eventTableTableAdapter1
+			// 
+			this.eventTableTableAdapter1.ClearBeforeFill = true;
 			// 
 			// allEvents
 			// 
