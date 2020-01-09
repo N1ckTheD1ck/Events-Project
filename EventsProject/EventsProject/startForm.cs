@@ -147,19 +147,6 @@ namespace EventsProject
 			}
 			con.Close();
 
-			title.Text = table.Rows[index]["title"].ToString();
-			description.Text = table.Rows[index]["description"].ToString();
-			category.Text = table.Rows[index]["category"].ToString();
-			place.Text = table.Rows[index]["place"].ToString();
-			address.Text = table.Rows[index]["placeAddress"].ToString();
-			town.Text = table.Rows[index]["town"].ToString();
-			date.Text = table.Rows[index]["date"].ToString();
-			/*byte[] fetchedImgBytes = (byte[])table.Rows[index]["image"];
-			MemoryStream stream = new MemoryStream(fetchedImgBytes);
-			Image fetchImg = Image.FromStream(stream);
-			pictureBox1.Image = fetchImg;
-			*/
-
 			//To neo kommati kwdika gia tis fwtografies
 			var imgUrl = table.Rows[index]["Pimg"].ToString();
 			var request = WebRequest.Create(imgUrl);
