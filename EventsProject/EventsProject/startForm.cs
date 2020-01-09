@@ -197,7 +197,7 @@ namespace EventsProject
 
 		public void loadEventWithcat(int index,string categ)
 		{
-			OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM Events WHERE category LIKE '"+categ.ToString()+"'", con);
+			OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM Events WHERE category LIKE '" + categ.ToString() + "'", con);
 			DataTable table = new DataTable();
 			adapter.Fill(table);
 			con.Open();
