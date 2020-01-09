@@ -147,6 +147,9 @@
     <Compile Include="allUsers.Designer.cs">
       <DependentUpon>allUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="EventsdbDataSet.cs">
+      <DependentUpon>EventsdbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EventsdbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

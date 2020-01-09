@@ -54,9 +54,9 @@ namespace EventsProject
 			}
 			else
 			{
-				const string V = "INSERT INTO UserTable (username, [password], firstName, lastName, city, address, email, is_admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-				var sql = V;
+			    string sql = "INSERT INTO UserTable (username, [password], firstName, lastName, city, address, email, is_admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 				OleDbCommand cmd = new OleDbCommand(sql, con);
+				cmd.CommandType = CommandType.Text;
 				cmd.Parameters.AddWithValue("@username", usernameTextBox.Text);
 				cmd.Parameters.AddWithValue("@password", hash.encrypt(passwordTextBox.Text));
 				cmd.Parameters.AddWithValue("@firstName", fnameTextBox.Text);
