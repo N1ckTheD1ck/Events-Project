@@ -197,7 +197,7 @@ namespace EventsProject
 
 		public void loadEventWithcat(int index,string categ)
 		{
-			OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM Events WHERE category LIKE '" + categ.ToString() + "'", con);
+			OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM Events WHERE PCategory LIKE '"+categ.ToString()+"'", con);
 			DataTable table = new DataTable();
 			adapter.Fill(table);
 			con.Open();
@@ -235,20 +235,20 @@ namespace EventsProject
 		}
 		private void button4_Click(object sender, EventArgs e)
 		{
-			cat = "theatro";
+			cat = "θεατρο";
 			loadEventWithcat(pos, cat);
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
 
-			cat = "ekdilwseis";
+			cat = "εκδηλωσεις";
 			loadEventWithcat(pos,cat);
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			cat = "paidikes";
+			cat = "παιδικες";
 			loadEventWithcat(pos,cat);
 		}
 
@@ -304,7 +304,7 @@ namespace EventsProject
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			cat = "sinavlies";
+			cat = "συναυλιες";
 			loadEventWithcat(pos, cat);
 		}
 
