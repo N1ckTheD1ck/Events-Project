@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.OleDb;
@@ -129,17 +129,28 @@ namespace EventsProject
 			try
 			{
 				title.Text = table.Rows[index]["PName"].ToString();
-				description.Text = table.Rows[index]["Desc"].ToString();
-				category.Text = table.Rows[index]["Category"].ToString();
-				place.Text = table.Rows[index]["Place"].ToString();
-				address.Text = table.Rows[index]["Addr"].ToString();
-				town.Text = table.Rows[index]["Town"].ToString();
-				date.Text = table.Rows[index]["PSD"].ToString();
-				date2.Text = table.Rows[index]["PED"].ToString();
+				description.Text = table.Rows[index]["PDesc"].ToString();
+				category.Text = table.Rows[index]["PCategory"].ToString();
+				place.Text = table.Rows[index]["PPlace"].ToString();
+				address.Text = table.Rows[index]["PAddress"].ToString();
+				town.Text = table.Rows[index]["PTown"].ToString();
+				date.Text = table.Rows[index]["PsD"].ToString();
+				date2.Text = table.Rows[index]["PeD"].ToString();
 				/*byte[] fetchedImgBytes = (byte[])table.Rows[index]["image"];
 				MemoryStream stream = new MemoryStream(fetchedImgBytes);
 				Image fetchImg = Image.FromStream(stream);
 				pictureBox1.Image = fetchImg;*/
+
+				//To neo kommati kwdika gia tis fwtografies
+				var imgUrl = table.Rows[index]["Pimg"].ToString();
+				var request = WebRequest.Create(imgUrl);
+
+				using (var response = request.GetResponse())
+				using (var stream = response.GetResponseStream())
+				{
+					pictureBox1.Image = Bitmap.FromStream(stream);
+				}
+
 			}
 			catch (Exception ex)
 			{
@@ -147,29 +158,7 @@ namespace EventsProject
 			}
 			con.Close();
 
-			title.Text = table.Rows[index]["title"].ToString();
-			description.Text = table.Rows[index]["description"].ToString();
-			category.Text = table.Rows[index]["category"].ToString();
-			place.Text = table.Rows[index]["place"].ToString();
-			address.Text = table.Rows[index]["placeAddress"].ToString();
-			town.Text = table.Rows[index]["town"].ToString();
-			date.Text = table.Rows[index]["date"].ToString();
-			/*byte[] fetchedImgBytes = (byte[])table.Rows[index]["image"];
-			MemoryStream stream = new MemoryStream(fetchedImgBytes);
-			Image fetchImg = Image.FromStream(stream);
-			pictureBox1.Image = fetchImg;
-			*/
-
-			//To neo kommati kwdika gia tis fwtografies
-			var imgUrl = table.Rows[index]["Pimg"].ToString();
-			var request = WebRequest.Create(imgUrl);
-
-			using (var response = request.GetResponse())
-			using (var stream = response.GetResponseStream())
-			{
-				pictureBox1.Image = Bitmap.FromStream(stream);
-			}
- 
+			
 		}
 
 		
@@ -215,12 +204,13 @@ namespace EventsProject
 			try
 			{
 				title.Text = table.Rows[index]["PName"].ToString();
-				description.Text = table.Rows[index]["Desc"].ToString();
-				category.Text = table.Rows[index]["Category"].ToString();
-				place.Text = table.Rows[index]["Place"].ToString();
-				address.Text = table.Rows[index]["Addr"].ToString();
-				town.Text = table.Rows[index]["Town"].ToString();
-				date.Text = table.Rows[index]["PSD"].ToString();
+				description.Text = table.Rows[index]["PDesc"].ToString();
+				category.Text = table.Rows[index]["PCategory"].ToString();
+				place.Text = table.Rows[index]["PPlace"].ToString();
+				address.Text = table.Rows[index]["PAddr"].ToString();
+				town.Text = table.Rows[index]["PTown"].ToString();
+				date.Text = table.Rows[index]["PsD"].ToString();
+				date2.Text = table.Rows[index]["PeD"].ToString();
 				/* byte[] fetchedImgBytes = (byte[])table.Rows[index]["image"];
 				MemoryStream stream = new MemoryStream(fetchedImgBytes);
 				Image fetchImg = Image.FromStream(stream);
