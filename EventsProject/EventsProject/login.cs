@@ -159,5 +159,12 @@ namespace EventsProject
         {
 
         }
-    }
+
+		private void backButton_Click(object sender, EventArgs e)
+		{
+			startForm startF = new startForm();
+			this.Hide();
+			startF.Show();
+		}
+	}
 }

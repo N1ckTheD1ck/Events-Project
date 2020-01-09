@@ -54,7 +54,8 @@ namespace EventsProject
 			}
 			else
 			{
-				string sql = "INSERT INTO UserTable (username, [password], firstName, lastName, city, address, email, is_admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+				const string V = "INSERT INTO UserTable (username, [password], firstName, lastName, city, address, email, is_admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+				var sql = V;
 				OleDbCommand cmd = new OleDbCommand(sql, con);
 				cmd.Parameters.AddWithValue("@username", usernameTextBox.Text);
 				cmd.Parameters.AddWithValue("@password", hash.encrypt(passwordTextBox.Text));
@@ -68,6 +69,10 @@ namespace EventsProject
 				try
 				{
 					cmd.ExecuteNonQuery();
+					MessageBox.Show("Succesfully Registered.Please Login");
+					login log = new login();
+					this.Hide();
+					log.Show();
 				}
 				catch (Exception ex)
 				{
@@ -77,6 +82,7 @@ namespace EventsProject
 			
 			con.Close();
 		}
+		/*
 		private void showData()
 		{
 
@@ -101,15 +107,16 @@ namespace EventsProject
 
 			dataGridView1.DataSource = ds;
 		}
+		*/
 		private void button1_Click(object sender, EventArgs e)
 		{
 			insertData();
-			showData();
+			//showData();
 		}
 
 		private void register_Load(object sender, EventArgs e)
 		{
-			showData();
+			//showData();
 		}
 
         private void label1_Click(object sender, EventArgs e)

@@ -108,5 +108,6 @@ namespace EventsProject
 			cityTextBox.Text = " ";
 			addressTextBox.Text = " ";
 		}
+
 	}
 }
