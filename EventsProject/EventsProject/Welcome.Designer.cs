@@ -42,10 +42,10 @@
             this.Press_button.FlatAppearance.BorderSize = 0;
             this.Press_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Press_button.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
-            this.Press_button.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Press_button.Location = new System.Drawing.Point(93, 341);
+            this.Press_button.ForeColor = System.Drawing.Color.Transparent;
+            this.Press_button.Location = new System.Drawing.Point(110, 344);
             this.Press_button.Name = "Press_button";
-            this.Press_button.Size = new System.Drawing.Size(230, 33);
+            this.Press_button.Size = new System.Drawing.Size(196, 33);
             this.Press_button.TabIndex = 1;
             this.Press_button.UseVisualStyleBackColor = false;
             this.Press_button.Click += new System.EventHandler(this.Press_button_Click);
