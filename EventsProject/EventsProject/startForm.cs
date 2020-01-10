@@ -92,6 +92,7 @@ namespace EventsProject
 		{
 			if (called == true)
 			{
+				pos = 1;
 				pos++;
 				if (pos < table.Rows.Count)
 				{
@@ -166,8 +167,8 @@ namespace EventsProject
 		{
 			if (called == true)
 			{
+				pos = 2;
 				pos--;
-				pos = 0;
 				if (pos >= 0)
 				{
 					loadEventWithcat(pos,cat);
@@ -236,20 +237,20 @@ namespace EventsProject
 		private void button4_Click(object sender, EventArgs e)
 		{
 			cat = "θεατρο";
-			loadEventWithcat(pos, cat);
+			loadEventWithcat(0, cat);
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
 
 			cat = "εκδηλωσεις";
-			loadEventWithcat(pos,cat);
+			loadEventWithcat(0,cat);
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
 			cat = "παιδικες";
-			loadEventWithcat(pos,cat);
+			loadEventWithcat(0,cat);
 		}
 
 		private void searchEvent()
@@ -305,41 +306,66 @@ namespace EventsProject
 		private void button2_Click(object sender, EventArgs e)
 		{
 			cat = "συναυλιες";
-			loadEventWithcat(pos, cat);
+			loadEventWithcat(0, cat);
 		}
-
 		
-		public void interest(byte[] imgAsBytes)
+		public string img() {
+			string url = null;
+			string sql = "SELECT * FROM Events WHERE PName = '" + title.Text + "'";
+			OleDbCommand cmd = new OleDbCommand(sql,con);
+			
+			try
+			{
+				con.Open();
+				OleDbDataReader dr = cmd.ExecuteReader();
+				while (dr.Read())
+				{
+				   url = dr["Pimg"].ToString();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			con.Close();
+			return url;
+		}
+		
+		public void interest()
 		{
-			con.Open();
-			string sql = "INSERT INTO InterestTable (title, town, description, place, placeAddress, [date], [image], category, [user]) VALUES (?,?,?,?,?,?,?,?,?)";
+			
+			string sql = "INSERT INTO InterestTable (title, town, description, place, placeAddress, [sDate], [eDate], category, [user], [image]) VALUES (?,?,?,?,?,?,?,?,?,?)";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
-
+			
 			login log = new login();
+			
 			cmd.Parameters.AddWithValue("@title", this.title.Text);
 			cmd.Parameters.AddWithValue("@town", town.Text);
 			cmd.Parameters.AddWithValue("@description", this.description.Text);
 			cmd.Parameters.AddWithValue("@place", this.place.Text);
 			cmd.Parameters.AddWithValue("@placeAddress", this.address.Text);
-			cmd.Parameters.AddWithValue("@date", this.date.Text);
-			OleDbParameter par = cmd.Parameters.AddWithValue("@image", SqlDbType.Binary);
+			cmd.Parameters.AddWithValue("@sDate", this.date.Text);
+			cmd.Parameters.AddWithValue("@eDate", this.date2.Text);
+			/*OleDbParameter par = cmd.Parameters.AddWithValue("@image", SqlDbType.Binary);
 			par.Value = imgAsBytes;
-			par.Size = imgAsBytes.Length;
+			par.Size = imgAsBytes.Length;*/
 			cmd.Parameters.AddWithValue("@category", this.category.Text);
 			cmd.Parameters.AddWithValue("@user", log.identity());
+			cmd.Parameters.AddWithValue("@image", img());
 			try
 			{
+				con.Open();
 				cmd.ExecuteNonQuery();
 				MessageBox.Show("προστεθηκε επιτυχως!");
 			}
 			catch (Exception ex)
 			{
-					MessageBox.Show(ex.Message);
+				MessageBox.Show(ex.Message);
 			}
 			con.Close();
 		}
 
-		private byte[] imageToBytes(Image input)
+		/*private byte[] imageToBytes(Image input)
 		{
 			Bitmap bit = new Bitmap(input);
 
@@ -348,12 +374,11 @@ namespace EventsProject
 			byte[] imgAsBytes = stream.ToArray();
 
 			return imgAsBytes;
-		}
+		}*/
 
 		private void interestButton_Click(object sender, EventArgs e)
 		{
-		
-			interest(imageToBytes(pictureBox1.Image));
+			interest();
 		}
 
 		private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
@@ -374,7 +399,7 @@ namespace EventsProject
 
         private void button8_Click(object sender, EventArgs e)
         {
-            this.Close();
+			Application.Exit();
         }
     }
 }
