@@ -21,20 +21,21 @@ namespace EventsProject
 		}
 
 		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
-		private void add(byte[] imgAsBytes)
-		{
-			string sql = "INSERT INTO EventTable (PName, Desc, Category, Place, Addr, Town, PSD, PED) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+		private void add()//byte[] imgAsBytes
+        {
+			string sql = "INSERT INTO Events (PName, PsD, PeD, PPlace, PAddress, PTown, PDesc, PImg, PCategory) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
 			con.Open();
 
 			cmd.Parameters.AddWithValue("@PName", titleTextBox.Text);
-			cmd.Parameters.AddWithValue("@Desc", descriptionTextBox.Text);
-			cmd.Parameters.AddWithValue("@Category", categoryComboBox.SelectedItem.ToString());
-			cmd.Parameters.AddWithValue("@Place", placeTextBox.Text);
-			cmd.Parameters.AddWithValue("@Addr", streetTextBox.Text);
-			cmd.Parameters.AddWithValue("@PED", this.dateTimePicker1);
-			cmd.Parameters.AddWithValue("@PSD", this.dateTimePicker2);
-			cmd.Parameters.AddWithValue("@Town", townTextBox.Text);
+			cmd.Parameters.AddWithValue("@PDesc", descriptionTextBox.Text);
+			cmd.Parameters.AddWithValue("@PCategory", categoryComboBox.SelectedItem.ToString());
+			cmd.Parameters.AddWithValue("@PPlace", placeTextBox.Text);
+			cmd.Parameters.AddWithValue("@PAddress", streetTextBox.Text);
+			cmd.Parameters.AddWithValue("@PeD", this.dateTimePicker2);
+			cmd.Parameters.AddWithValue("@PsD", this.dateTimePicker1);
+			cmd.Parameters.AddWithValue("@PTown", townTextBox.Text);
+            cmd.Parameters.AddWithValue("@PImg", eventPhotoLink.Text);
 			/*OleDbParameter par = cmd.Parameters.AddWithValue("@image", SqlDbType.Binary);
 			par.Value = imgAsBytes;
 			par.Size = imgAsBytes.Length;*/
@@ -62,7 +63,8 @@ namespace EventsProject
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			add(imageToBytes(pictureBox1.Image));
+            //	add(imageToBytes(pictureBox1.Image));
+            add();
 		}
 
 		private void pictureBox1_Click(object sender, EventArgs e)
@@ -88,6 +90,11 @@ namespace EventsProject
         private void button8_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

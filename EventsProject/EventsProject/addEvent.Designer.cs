@@ -51,6 +51,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.button8 = new System.Windows.Forms.Button();
+            this.eventPhotoLink = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -84,16 +85,19 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(347, 24);
             this.dateTimePicker1.TabIndex = 5;
             this.dateTimePicker1.Value = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(533, 335);
+            this.pictureBox1.Enabled = false;
+            this.pictureBox1.Location = new System.Drawing.Point(608, 448);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(531, 292);
+            this.pictureBox1.Size = new System.Drawing.Size(403, 199);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
@@ -168,9 +172,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(732, 286);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(126, 17);
+            this.label7.Size = new System.Drawing.Size(159, 17);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Φωτογραφία event";
+            this.label7.Text = "Φωτογραφία event (link)";
             // 
             // descriptionTextBox
             // 
@@ -280,6 +284,13 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // eventPhotoLink
+            // 
+            this.eventPhotoLink.Location = new System.Drawing.Point(608, 346);
+            this.eventPhotoLink.Name = "eventPhotoLink";
+            this.eventPhotoLink.Size = new System.Drawing.Size(410, 24);
+            this.eventPhotoLink.TabIndex = 24;
+            // 
             // addEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -309,6 +320,7 @@
             this.Controls.Add(this.streetTextBox);
             this.Controls.Add(this.placeTextBox);
             this.Controls.Add(this.titleTextBox);
+            this.Controls.Add(this.eventPhotoLink);
             this.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -346,5 +358,6 @@
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox eventPhotoLink;
     }
 }
