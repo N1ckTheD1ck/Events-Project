@@ -365,5 +365,10 @@ namespace EventsProject
 		{
 			loadEventWithId(0);
 		}
-	}
+
+        private void description_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

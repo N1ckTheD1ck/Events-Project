@@ -36,14 +36,17 @@
             // 
             // Press_button
             // 
-            this.Press_button.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Press_button.BackColor = System.Drawing.Color.Transparent;
+            this.Press_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Press_button.BackgroundImage")));
+            this.Press_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Press_button.FlatAppearance.BorderSize = 0;
+            this.Press_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Press_button.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
-            this.Press_button.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Press_button.Location = new System.Drawing.Point(110, 348);
+            this.Press_button.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Press_button.Location = new System.Drawing.Point(93, 341);
             this.Press_button.Name = "Press_button";
-            this.Press_button.Size = new System.Drawing.Size(196, 33);
+            this.Press_button.Size = new System.Drawing.Size(230, 33);
             this.Press_button.TabIndex = 1;
-            this.Press_button.Text = "Press to continue";
             this.Press_button.UseVisualStyleBackColor = false;
             this.Press_button.Click += new System.EventHandler(this.Press_button_Click);
             // 
@@ -69,6 +72,7 @@
             this.ClientSize = new System.Drawing.Size(418, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Press_button);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Welcome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome";

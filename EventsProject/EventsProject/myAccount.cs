@@ -109,5 +109,21 @@ namespace EventsProject
 			addressTextBox.Text = " ";
 		}
 
-	}
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            startForm startF = new startForm();
+            this.Hide();
+            startF.Show();
+        }
+    }
 }

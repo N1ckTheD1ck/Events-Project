@@ -55,13 +55,16 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(121, 417);
+            this.button1.Location = new System.Drawing.Point(121, 415);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 27);
+            this.button1.Size = new System.Drawing.Size(157, 31);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Register";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -224,7 +227,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label8.Location = new System.Drawing.Point(322, 24);
+            this.label8.Location = new System.Drawing.Point(256, 12);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 29);
             this.label8.TabIndex = 20;
@@ -234,22 +237,25 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(660, 24);
+            this.pictureBox1.Location = new System.Drawing.Point(402, 203);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(90, 94);
+            this.pictureBox1.Size = new System.Drawing.Size(135, 147);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
             // backButton
             // 
-            this.backButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.backButton.BackColor = System.Drawing.Color.Transparent;
+            this.backButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backButton.BackgroundImage")));
+            this.backButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.backButton.FlatAppearance.BorderSize = 0;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
-            this.backButton.Location = new System.Drawing.Point(3, 12);
+            this.backButton.Location = new System.Drawing.Point(12, 12);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(41, 27);
+            this.backButton.Size = new System.Drawing.Size(69, 34);
             this.backButton.TabIndex = 22;
-            this.backButton.Text = "<-";
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
@@ -257,10 +263,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 484);
+            this.ClientSize = new System.Drawing.Size(618, 484);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label8);
@@ -282,6 +287,7 @@
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.button1);
             this.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
