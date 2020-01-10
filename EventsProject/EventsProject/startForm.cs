@@ -312,7 +312,7 @@ namespace EventsProject
 		public void interest(byte[] imgAsBytes)
 		{
 			con.Open();
-			string sql = "INSERT INTO InterestTable (title, town, description, place, placeAddress, [date], [image], category, [user]) VALUES (?,?,?,?,?,?,?,?,?)";
+			string sql = "INSERT INTO InterestTable (title, town, description, place, placeAddress, [sDate], [image], category, [user]) VALUES (?,?,?,?,?,?,?,?,?)";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
 
 			login log = new login();
@@ -321,7 +321,7 @@ namespace EventsProject
 			cmd.Parameters.AddWithValue("@description", this.description.Text);
 			cmd.Parameters.AddWithValue("@place", this.place.Text);
 			cmd.Parameters.AddWithValue("@placeAddress", this.address.Text);
-			cmd.Parameters.AddWithValue("@date", this.date.Text);
+			cmd.Parameters.AddWithValue("@sDate", this.date.Text);
 			OleDbParameter par = cmd.Parameters.AddWithValue("@image", SqlDbType.Binary);
 			par.Value = imgAsBytes;
 			par.Size = imgAsBytes.Length;
