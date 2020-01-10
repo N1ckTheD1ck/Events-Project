@@ -92,6 +92,7 @@ namespace EventsProject
 		{
 			if (called == true)
 			{
+				pos = 1;
 				pos++;
 				if (pos < table.Rows.Count)
 				{
@@ -166,8 +167,8 @@ namespace EventsProject
 		{
 			if (called == true)
 			{
+				pos = 2;
 				pos--;
-				pos = 0;
 				if (pos >= 0)
 				{
 					loadEventWithcat(pos,cat);
@@ -236,20 +237,20 @@ namespace EventsProject
 		private void button4_Click(object sender, EventArgs e)
 		{
 			cat = "θεατρο";
-			loadEventWithcat(pos, cat);
+			loadEventWithcat(0, cat);
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
 
 			cat = "εκδηλωσεις";
-			loadEventWithcat(pos,cat);
+			loadEventWithcat(0,cat);
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
 			cat = "παιδικες";
-			loadEventWithcat(pos,cat);
+			loadEventWithcat(0,cat);
 		}
 
 		private void searchEvent()
@@ -305,7 +306,7 @@ namespace EventsProject
 		private void button2_Click(object sender, EventArgs e)
 		{
 			cat = "συναυλιες";
-			loadEventWithcat(pos, cat);
+			loadEventWithcat(0, cat);
 		}
 
 		
@@ -322,9 +323,10 @@ namespace EventsProject
 			cmd.Parameters.AddWithValue("@place", this.place.Text);
 			cmd.Parameters.AddWithValue("@placeAddress", this.address.Text);
 			cmd.Parameters.AddWithValue("@sDate", this.date.Text);
-			OleDbParameter par = cmd.Parameters.AddWithValue("@image", SqlDbType.Binary);
+			cmd.Parameters.AddWithValue("@sDate", this.date2.Text);
+			/*OleDbParameter par = cmd.Parameters.AddWithValue("@image", SqlDbType.Binary);
 			par.Value = imgAsBytes;
-			par.Size = imgAsBytes.Length;
+			par.Size = imgAsBytes.Length;*/
 			cmd.Parameters.AddWithValue("@category", this.category.Text);
 			cmd.Parameters.AddWithValue("@user", log.identity());
 			try
