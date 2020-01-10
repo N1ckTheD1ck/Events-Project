@@ -75,5 +75,15 @@ namespace EventsProject
         {
 
         }
+
+        private void resetPass_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

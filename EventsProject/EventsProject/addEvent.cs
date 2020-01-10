@@ -74,5 +74,20 @@ namespace EventsProject
 				pictureBox1.Image = new Bitmap(open.FileName);
 			}
 		}
-	}
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
 }

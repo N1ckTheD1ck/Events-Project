@@ -45,5 +45,17 @@ namespace EventsProject
 		{
 			showUsers();
 		}
-	}
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            startForm startF = new startForm();
+            this.Hide();
+            startF.Show();
+        }
+    }
 }

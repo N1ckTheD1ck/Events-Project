@@ -37,5 +37,17 @@ namespace EventsProject
 			allUsers users = new allUsers();
 			users.Show();
 		}
-	}
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            startForm startF = new startForm();
+            this.Hide();
+            startF.Show();
+        }
+    }
 }

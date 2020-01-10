@@ -44,7 +44,8 @@ namespace EventsProject
 				myAccount acc = new myAccount();
 				acc.logout();
 				myAccountLabel.Visible = false;
-				loginButton.Text = "Login";
+                loginButton.Text = "Login";
+                //loginButton.Image = System.Drawing.Image.FromFile(@"C:\Users\zoide\Source\Repos\N1ckTheD1ck\Events-Project-Team-7\EventsProject\EventsProject\bin\Debug\img\button_start\logout_button.png");
                 adminButton.Visible = false;
 				linkLabel1.Visible = false;
             }
@@ -369,6 +370,11 @@ namespace EventsProject
         private void description_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
