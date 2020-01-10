@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.IO;
+using System.Net;
 
 namespace EventsProject
 {
@@ -21,23 +22,33 @@ namespace EventsProject
 		}
 
 		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
-		private void add(byte[] imgAsBytes)
+		private void add(/*byte[] imgAsBytes*/)
 		{
-			string sql = "INSERT INTO EventTable (PName, Desc, Category, Place, Addr, Town, PSD, PED) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+			string sql = "INSERT INTO Events (PName, PDesc, PCategory, PPlace, PAddress, PTown, PsD, PeD, Pimg) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
 			con.Open();
 
 			cmd.Parameters.AddWithValue("@PName", titleTextBox.Text);
-			cmd.Parameters.AddWithValue("@Desc", descriptionTextBox.Text);
-			cmd.Parameters.AddWithValue("@Category", categoryComboBox.SelectedItem.ToString());
-			cmd.Parameters.AddWithValue("@Place", placeTextBox.Text);
-			cmd.Parameters.AddWithValue("@Addr", streetTextBox.Text);
-			cmd.Parameters.AddWithValue("@PED", this.dateTimePicker1);
-			cmd.Parameters.AddWithValue("@PSD", this.dateTimePicker2);
-			cmd.Parameters.AddWithValue("@Town", townTextBox.Text);
+			cmd.Parameters.AddWithValue("@PDesc", descriptionTextBox.Text);
+			cmd.Parameters.AddWithValue("@PCategory", categoryComboBox.SelectedItem.ToString());
+			cmd.Parameters.AddWithValue("@PPlace", placeTextBox.Text);
+			cmd.Parameters.AddWithValue("@PAddress", streetTextBox.Text);
+			cmd.Parameters.AddWithValue("@PeD", this.dateTimePicker1.Value);
+			cmd.Parameters.AddWithValue("@PsD", this.dateTimePicker2.Value);
+			cmd.Parameters.AddWithValue("@PTown", townTextBox.Text);
+			cmd.Parameters.AddWithValue("@Pimg", urlTextBox.Text);
 			/*OleDbParameter par = cmd.Parameters.AddWithValue("@image", SqlDbType.Binary);
 			par.Value = imgAsBytes;
 			par.Size = imgAsBytes.Length;*/
+
+			var imgUrl = urlTextBox.Text;
+			var request = WebRequest.Create(imgUrl);
+
+			using (var response = request.GetResponse())
+			using (var stream = response.GetResponseStream())
+			{
+				pictureBox1.Image = Bitmap.FromStream(stream);
+			}
 			try
 			{
 				cmd.ExecuteNonQuery();
@@ -49,7 +60,7 @@ namespace EventsProject
 			con.Close();
 		}
 
-		private byte[] imageToBytes(Image input)
+		/*private byte[] imageToBytes(Image input)
 		{
 			Bitmap bit = new Bitmap(input);
 
@@ -58,21 +69,16 @@ namespace EventsProject
 			byte[] imgAsBytes = stream.ToArray();
 
 			return imgAsBytes;
-		}
+		}*/
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			add(imageToBytes(pictureBox1.Image));
+			add(/*imageToBytes(pictureBox1.Image)*/);
 		}
 
 		private void pictureBox1_Click(object sender, EventArgs e)
 		{
-			OpenFileDialog open = new OpenFileDialog();
 			
-			if(open.ShowDialog() == DialogResult.OK)
-			{
-				pictureBox1.Image = new Bitmap(open.FileName);
-			}
 		}
 
         private void label10_Click(object sender, EventArgs e)
