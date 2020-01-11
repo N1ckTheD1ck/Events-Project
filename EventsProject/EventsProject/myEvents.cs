@@ -80,8 +80,8 @@ namespace EventsProject
 			}
 			else
 			{
-				MessageBox.Show("end");
-				pos = table.Rows.Count - 1;
+				pos = 0;
+                showData(pos);
 			}
 		}
 
@@ -90,13 +90,12 @@ namespace EventsProject
 			pos--;
 			if (pos >= 0)
 			{
-
-				showData(pos);
+                showData(pos);
 			}
 			else
 			{
-				MessageBox.Show("zeroooo");
-				pos = 0;
+                pos = table.Rows.Count - 1;
+                showData(pos);
 			}
 		}
 
