@@ -28,7 +28,7 @@ namespace EventsProject
 			usernameLabel.Text = user;
 		}
 
-		bool called;
+		bool called=false;
 		private void loginButton_Click(object sender, EventArgs e)
 		{
 			if(loginButton.Text == "Login")
@@ -91,7 +91,6 @@ namespace EventsProject
 		{
 			if (called == true)
 			{
-				pos = 1;
 				pos++;
 				if (pos < table.Rows.Count)
 				{
@@ -105,7 +104,6 @@ namespace EventsProject
 			}
 			else
 			{
-				loadEventWithId(pos);
 				pos++;
 				if (pos < table.Rows.Count)
 				{
@@ -167,7 +165,6 @@ namespace EventsProject
 		{
 			if (called == true)
 			{
-				pos = 2;
 				pos--;
 				if (pos >= 0)
 				{
@@ -176,7 +173,7 @@ namespace EventsProject
 				else
 				{
 					MessageBox.Show("zeroooo");
-					pos = 0;
+					pos = 1;
 				}
 			}
 			else
@@ -198,7 +195,7 @@ namespace EventsProject
 
 		public void loadEventWithcat(int index,string categ)
 		{
-			OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM Events WHERE PCategory LIKE '"+categ.ToString()+"'", con);
+			OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM Events WHERE PCategory LIKE '%"+categ.ToString()+"%'", con);
 			DataTable table = new DataTable();
 			adapter.Fill(table);
 			con.Open();
@@ -389,7 +386,9 @@ namespace EventsProject
 
 		private void button7_Click(object sender, EventArgs e)
 		{
-			loadEventWithId(0);
+			called = false;
+			pos = 0;
+			loadEventWithId(pos);
 		}
 
         private void description_Click(object sender, EventArgs e)

@@ -33,8 +33,8 @@ namespace EventsProject
 			cmd.Parameters.AddWithValue("@PCategory", categoryComboBox.SelectedItem.ToString());
 			cmd.Parameters.AddWithValue("@PPlace", placeTextBox.Text);
 			cmd.Parameters.AddWithValue("@PAddress", streetTextBox.Text);
-			cmd.Parameters.AddWithValue("@PsD", this.dateTimePicker1.Value);
-			cmd.Parameters.AddWithValue("@PeD", this.dateTimePicker2.Value);
+			cmd.Parameters.AddWithValue("@PsD", textBox1.Text);
+			cmd.Parameters.AddWithValue("@PeD", textBox2.Text);
 			cmd.Parameters.AddWithValue("@PTown", townTextBox.Text);
 			cmd.Parameters.AddWithValue("@Pimg", urlTextBox.Text);
 			/*OleDbParameter par = cmd.Parameters.AddWithValue("@image", SqlDbType.Binary);
