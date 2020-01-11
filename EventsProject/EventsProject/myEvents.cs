@@ -131,5 +131,37 @@ namespace EventsProject
 		{
 
 		}
-	}
+
+        private void myEventDelete_Click(object sender, EventArgs e)
+        {
+            login log = new login();
+            int iden = log.identity();
+
+            string sql = "DELETE ROW FROM InterestTable WHERE (title = ? AND user = ?)";
+            OleDbCommand cmd = new OleDbCommand(sql, con);
+
+            try
+            {
+                con.Open();
+
+                cmd.Parameters.AddWithValue("@title", title.Text);
+                cmd.Parameters.AddWithValue("@user", iden);
+                
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Το event διαγράφηκε από τα αποθηκευμένα :(");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            con.Close();
+            this.Close();
+            myEvents my = new myEvents();
+            my.Show();
+
+        }
+
+
+    }
 }
