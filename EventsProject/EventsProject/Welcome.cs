@@ -28,5 +28,10 @@ namespace EventsProject
 			this.Hide();
 			start.Show();
         }
+
+        private void Welcome_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

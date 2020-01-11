@@ -110,5 +110,12 @@ namespace EventsProject
         {
 
         }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            adminForm adminF = new adminForm();
+            this.Hide();
+            adminF.Show();
+        }
     }
 }

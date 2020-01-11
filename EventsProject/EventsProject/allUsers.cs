@@ -18,6 +18,9 @@ namespace EventsProject
 			InitializeComponent();
 		}
 		OleDbConnection con = new OleDbConnection(Properties.Settings.Default.EventsConnectionString);
+
+        
+
 		private void showUsers()
 		{
 			string sql = "SELECT * FROM UserTable";
@@ -53,7 +56,9 @@ namespace EventsProject
 
         private void backButton_Click(object sender, EventArgs e)
         {
-           
+            adminForm adminF = new adminForm();
+            this.Hide();
+            adminF.Show();
         }
     }
 }

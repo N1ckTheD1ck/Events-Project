@@ -49,5 +49,10 @@ namespace EventsProject
             this.Hide();
             startF.Show();
         }
+
+        private void adminForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

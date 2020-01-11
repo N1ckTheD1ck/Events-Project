@@ -117,9 +117,9 @@ namespace EventsProject
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            login login = new login();
+            startForm startF = new startForm();
             this.Hide();
-            login.Show();
+            startF.Show();
         }
 
         private void button8_Click(object sender, EventArgs e)

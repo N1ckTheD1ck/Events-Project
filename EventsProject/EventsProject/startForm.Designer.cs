@@ -438,7 +438,7 @@
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.usernameLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.usernameLabel.Location = new System.Drawing.Point(1027, 41);
+            this.usernameLabel.Location = new System.Drawing.Point(1031, 61);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(0, 17);
             this.usernameLabel.TabIndex = 17;

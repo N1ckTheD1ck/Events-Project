@@ -46,7 +46,6 @@
             this.title = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button8 = new System.Windows.Forms.Button();
-            this.backButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -247,28 +246,12 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // backButton
-            // 
-            this.backButton.BackColor = System.Drawing.Color.Transparent;
-            this.backButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backButton.BackgroundImage")));
-            this.backButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.backButton.FlatAppearance.BorderSize = 0;
-            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backButton.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
-            this.backButton.Location = new System.Drawing.Point(12, 12);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(51, 23);
-            this.backButton.TabIndex = 30;
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
             // myEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1026, 826);
-            this.Controls.Add(this.backButton);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.date2);
@@ -318,6 +301,5 @@
 		private System.Windows.Forms.Label title;
 		private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button backButton;
     }
 }

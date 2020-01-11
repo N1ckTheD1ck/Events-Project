@@ -37,9 +37,9 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(0, 72);
+            this.listBox1.Location = new System.Drawing.Point(12, 72);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(715, 368);
+            this.listBox1.Size = new System.Drawing.Size(691, 355);
             this.listBox1.TabIndex = 0;
             // 
             // backButton
@@ -82,6 +82,7 @@
             this.Controls.Add(this.listBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "allUsers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "allUsers";
             this.Load += new System.EventHandler(this.allUsers_Load);
             this.ResumeLayout(false);
