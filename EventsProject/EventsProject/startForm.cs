@@ -252,7 +252,7 @@ namespace EventsProject
 
 		private void searchEvent()
 		{
-			string sql = "SELECT * FROM Events WHERE title LIKE '%"+searchTextBox.Text+"%'";
+			string sql = "SELECT * FROM Events WHERE PName LIKE '%"+searchTextBox.Text+"%'";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
 			con.Open();
 
@@ -263,13 +263,13 @@ namespace EventsProject
 				if (dr.Read())
 				{
 					title.Text = dr["PName"].ToString();
-                    description_Rich.Text =dr["Desc"].ToString();
-                    category.Text = dr["Category"].ToString();
-					place.Text = dr["Place"].ToString();
-					address.Text = dr["Addr"].ToString();
-					town.Text = dr["Town"].ToString();
-					date.Text = dr["PSD"].ToString();
-					date2.Text = dr["PED"].ToString();
+                    description_Rich.Text =dr["PDesc"].ToString();
+                    category.Text = dr["PCategory"].ToString();
+					place.Text = dr["PPlace"].ToString();
+					address.Text = dr["PAddress"].ToString();
+					town.Text = dr["PTown"].ToString();
+					date.Text = dr["PsD"].ToString();
+					date2.Text = dr["PeD"].ToString();
 					/* byte[] fetchedImgBytes = (byte[])dr["image"];
 					MemoryStream stream = new MemoryStream(fetchedImgBytes);
 					Image fetchImg = Image.FromStream(stream);
