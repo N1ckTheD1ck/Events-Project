@@ -126,5 +126,10 @@ namespace EventsProject
         {
             this.Close();
         }
-    }
+
+		private void cat_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
