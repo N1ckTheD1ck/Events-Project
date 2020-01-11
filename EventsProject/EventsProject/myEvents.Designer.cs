@@ -148,7 +148,7 @@
             this.date2.AutoSize = true;
             this.date2.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.date2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.date2.Location = new System.Drawing.Point(311, 719);
+            this.date2.Location = new System.Drawing.Point(309, 729);
             this.date2.Name = "date2";
             this.date2.Size = new System.Drawing.Size(42, 17);
             this.date2.TabIndex = 27;
@@ -159,7 +159,7 @@
             this.townLabel.AutoSize = true;
             this.townLabel.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.townLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.townLabel.Location = new System.Drawing.Point(64, 606);
+            this.townLabel.Location = new System.Drawing.Point(61, 605);
             this.townLabel.Name = "townLabel";
             this.townLabel.Size = new System.Drawing.Size(39, 17);
             this.townLabel.TabIndex = 26;
@@ -181,7 +181,7 @@
             this.addressLabel.AutoSize = true;
             this.addressLabel.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.addressLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.addressLabel.Location = new System.Drawing.Point(63, 682);
+            this.addressLabel.Location = new System.Drawing.Point(61, 689);
             this.addressLabel.Name = "addressLabel";
             this.addressLabel.Size = new System.Drawing.Size(55, 17);
             this.addressLabel.TabIndex = 24;
@@ -192,7 +192,7 @@
             this.placeLabel.AutoSize = true;
             this.placeLabel.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.placeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.placeLabel.Location = new System.Drawing.Point(64, 643);
+            this.placeLabel.Location = new System.Drawing.Point(61, 650);
             this.placeLabel.Name = "placeLabel";
             this.placeLabel.Size = new System.Drawing.Size(40, 17);
             this.placeLabel.TabIndex = 23;
@@ -203,7 +203,7 @@
             this.date1.AutoSize = true;
             this.date1.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.date1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.date1.Location = new System.Drawing.Point(64, 719);
+            this.date1.Location = new System.Drawing.Point(61, 729);
             this.date1.Name = "date1";
             this.date1.Size = new System.Drawing.Size(42, 17);
             this.date1.TabIndex = 22;
@@ -229,7 +229,7 @@
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.richTextBox1.Location = new System.Drawing.Point(67, 441);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(894, 123);
+            this.richTextBox1.Size = new System.Drawing.Size(894, 105);
             this.richTextBox1.TabIndex = 28;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -290,6 +290,7 @@
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "myEvents";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "myEvents";
             this.Load += new System.EventHandler(this.myEvents_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

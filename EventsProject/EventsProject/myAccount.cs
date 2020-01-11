@@ -128,9 +128,7 @@ namespace EventsProject
 
         private void button3_Click(object sender, EventArgs e)
         {
-            startForm startF = new startForm();
             this.Close();
-            startF.Show();
         }
     }
 }

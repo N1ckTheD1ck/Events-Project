@@ -36,6 +36,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.description_Rich = new System.Windows.Forms.RichTextBox();
             this.date2 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.interestButton = new System.Windows.Forms.Button();
@@ -57,7 +58,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
-            this.description_Rich = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -183,6 +183,20 @@
             this.panel1.Size = new System.Drawing.Size(734, 627);
             this.panel1.TabIndex = 8;
             // 
+            // description_Rich
+            // 
+            this.description_Rich.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.description_Rich.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.description_Rich.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.description_Rich.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.description_Rich.Location = new System.Drawing.Point(9, 390);
+            this.description_Rich.Name = "description_Rich";
+            this.description_Rich.ReadOnly = true;
+            this.description_Rich.Size = new System.Drawing.Size(722, 55);
+            this.description_Rich.TabIndex = 11;
+            this.description_Rich.Text = "";
+            this.description_Rich.TextChanged += new System.EventHandler(this.description_Rich_TextChanged);
+            // 
             // date2
             // 
             this.date2.AutoSize = true;
@@ -224,7 +238,7 @@
             // 
             this.town.AutoSize = true;
             this.town.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.town.Location = new System.Drawing.Point(8, 503);
+            this.town.Location = new System.Drawing.Point(6, 503);
             this.town.Name = "town";
             this.town.Size = new System.Drawing.Size(39, 17);
             this.town.TabIndex = 7;
@@ -234,7 +248,7 @@
             // 
             this.category.AutoSize = true;
             this.category.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.category.Location = new System.Drawing.Point(6, 469);
+            this.category.Location = new System.Drawing.Point(8, 464);
             this.category.Name = "category";
             this.category.Size = new System.Drawing.Size(61, 17);
             this.category.TabIndex = 6;
@@ -259,12 +273,13 @@
             this.address.Size = new System.Drawing.Size(55, 17);
             this.address.TabIndex = 4;
             this.address.Text = "address";
+            this.address.Click += new System.EventHandler(this.address_Click);
             // 
             // place
             // 
             this.place.AutoSize = true;
             this.place.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.place.Location = new System.Drawing.Point(8, 535);
+            this.place.Location = new System.Drawing.Point(6, 537);
             this.place.Name = "place";
             this.place.Size = new System.Drawing.Size(40, 17);
             this.place.TabIndex = 3;
@@ -290,14 +305,13 @@
             this.title.TabIndex = 0;
             this.title.Text = "Title";
             this.title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.title.Click += new System.EventHandler(this.title_Click);
             // 
             // myAccountLabel
             // 
             this.myAccountLabel.ActiveLinkColor = System.Drawing.Color.Red;
             this.myAccountLabel.AutoSize = true;
             this.myAccountLabel.LinkColor = System.Drawing.Color.GhostWhite;
-            this.myAccountLabel.Location = new System.Drawing.Point(952, 146);
+            this.myAccountLabel.Location = new System.Drawing.Point(952, 139);
             this.myAccountLabel.Name = "myAccountLabel";
             this.myAccountLabel.Size = new System.Drawing.Size(79, 17);
             this.myAccountLabel.TabIndex = 9;
@@ -376,7 +390,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(952, 201);
+            this.linkLabel1.Location = new System.Drawing.Point(953, 185);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(94, 17);
             this.linkLabel1.TabIndex = 12;
@@ -424,7 +438,7 @@
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.usernameLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.usernameLabel.Location = new System.Drawing.Point(1031, 61);
+            this.usernameLabel.Location = new System.Drawing.Point(1027, 41);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(0, 17);
             this.usernameLabel.TabIndex = 17;
@@ -442,21 +456,6 @@
             this.button8.TabIndex = 18;
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // description_Rich
-            // 
-            this.description_Rich.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.description_Rich.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.description_Rich.Enabled = false;
-            this.description_Rich.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.description_Rich.Location = new System.Drawing.Point(7, 392);
-            this.description_Rich.Name = "description_Rich";
-            this.description_Rich.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.description_Rich.ShortcutsEnabled = false;
-            this.description_Rich.Size = new System.Drawing.Size(722, 72);
-            this.description_Rich.TabIndex = 11;
-            this.description_Rich.Text = "";
-            this.description_Rich.TextChanged += new System.EventHandler(this.description_Rich_TextChanged);
             // 
             // startForm
             // 
@@ -482,7 +481,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.loginButton);
-            this.Enabled = false;
             this.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "startForm";

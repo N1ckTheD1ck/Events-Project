@@ -129,9 +129,9 @@ namespace EventsProject
 			try
 			{
 				title.Text = table.Rows[index]["PName"].ToString();
-                //description.Text = table.Rows[index]["PDesc"].ToString();
+				//description.Text = table.Rows[index]["PDesc"].ToString();
                 description_Rich.Text = table.Rows[index]["PDesc"].ToString();
-                category.Text = table.Rows[index]["PCategory"].ToString();
+				category.Text = table.Rows[index]["PCategory"].ToString();
 				place.Text = table.Rows[index]["PPlace"].ToString();
 				address.Text = table.Rows[index]["PAddress"].ToString();
 				town.Text = table.Rows[index]["PTown"].ToString();
@@ -205,7 +205,7 @@ namespace EventsProject
 			try
 			{
 				title.Text = table.Rows[index]["PName"].ToString();
-				description.Text = table.Rows[index]["PDesc"].ToString();
+				description_Rich.Text = table.Rows[index]["PDesc"].ToString();
 				category.Text = table.Rows[index]["PCategory"].ToString();
 				place.Text = table.Rows[index]["PPlace"].ToString();
 				address.Text = table.Rows[index]["PAddress"].ToString();
@@ -266,7 +266,7 @@ namespace EventsProject
 				if (dr.Read())
 				{
 					title.Text = dr["PName"].ToString();
-                    description.Text =dr["Desc"].ToString();
+                    description_Rich.Text =dr["Desc"].ToString();
                     category.Text = dr["Category"].ToString();
 					place.Text = dr["Place"].ToString();
 					address.Text = dr["Addr"].ToString();
@@ -341,7 +341,7 @@ namespace EventsProject
 			
 			cmd.Parameters.AddWithValue("@title", this.title.Text);
 			cmd.Parameters.AddWithValue("@town", town.Text);
-			cmd.Parameters.AddWithValue("@description", this.description.Text);
+			cmd.Parameters.AddWithValue("@description", this.description_Rich.Text);
 			cmd.Parameters.AddWithValue("@place", this.place.Text);
 			cmd.Parameters.AddWithValue("@placeAddress", this.address.Text);
 			cmd.Parameters.AddWithValue("@sDate", this.date.Text);
@@ -404,10 +404,12 @@ namespace EventsProject
 
         private void description_Rich_TextChanged(object sender, EventArgs e)
         {
+            // description_Rich.ReadOnly =  true;
+            //description_Rich.Enabled = false;
             
         }
 
-        private void title_Click(object sender, EventArgs e)
+        private void address_Click(object sender, EventArgs e)
         {
 
         }

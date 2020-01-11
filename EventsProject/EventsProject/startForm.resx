@@ -120,17 +120,17 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="loginButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAIgAAAAkCAYAAABSZHLHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAIfSURBVHhe7dzLTsJAFAbgJiQ1PArgy6jgRl9IAig3fQM3
-        ugfUlyCAaFxoonuIXMJFM55/0iGljLOn/Sf5EgrT2Zw/sTVzxluv1Q4ZvjgVt+JdLAV+oPiYiKFAjQvC
-        V0p5UbZwHIk3EV6M4g81P/43IDJS4kLoGzKZrCqVKqrXe1bT6ULJHIoR1BS1RY1Ra1P3IAMpW0B0ONLp
-        tGo0rtVi8WNdmOIHta5W68r3/U1ItgIiI48fMKHdfrQuQvHXaj2EQ5LXAZGBB9JPoVNku5GSo1ZrmIB8
-        BdnwzvBFNpvjnxXSGUAWkAlxjoDc4aJcvrTeQMmDLAQBuUdAPnCBJ1rbZEqefn9oAoJseAtc8FWWjNls
-        aQKCf5DqD9aJlFwmFwwIWTEg5MSAkBMDQk4MCDkxIOTEgJATA0JODAg5MSDkxICQEwNCTgwIOTEg5MSA
-        kFM4IN/4gE0itomUPKPRxIRDbxh6xQW2mdkmU/J0u30TEL3lkJuWaUulcmUCojct67aHXO6QbQ+kM4As
-        BAHRbQ+bxik0zdhuouSo15smHGicOjCtl2j/1213nc6T9UaKv0jrZSHavF3ED2jebjZv1HL5a12E4ge1
-        jjRvF7eat0EGjn+oBxP0kQB4WBkMXtR8vrIuTPtrPJ7qtxXUOHL8Q0PsHv9gyDgRPEAmeVBz3dEfthOQ
-        ICR4cMXbDV5zcATVSoQXo/2HmqK2qDFqbTmCSnl/lDqFusD0LZgAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAIgAAAAkCAYAAABSZHLHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAh9JREFUeF7t3MtOwkAUBuAmJDU8CuDLqOBGX0gCKDd9Aze6B9SXIIBoXGiie4hc
+        wkUznn/SIaWMs6f9J/kSCtPZnD+xNXPGW6/VDhm+OBW34l0sBX6g+JiIoUCNC8JXSnlRtnAciTcRXozi
+        DzU//jcgMlLiQugbMpmsKpUqqtd7VtPpQskcihHUFLVFjVFrU/cgAylbQHQ40um0ajSu1WLxY12Y4ge1
+        rlbryvf9TUi2AiIjjx8wod1+tC5C8ddqPYRDktcBkYEH0k+hU2S7kZKjVmuYgHwF2fDO8EU2m+OfFdIZ
+        QBaQCXGOgNzholy+tN5AyYMsBAG5R0A+cIEnWttkSp5+f2gCgmx4C1zwVZaM2WxpAoJ/kOoP1omUXCYX
+        DAhZMSDkxICQEwNCTgwIOTEg5MSAkBMDQk4MCDkxIOTEgJATA0JODAg5MSDkxICQUzgg3/iATSK2iZQ8
+        o9HEhENvGHrFBbaZ2SZT8nS7fRMQveWQm5ZpS6VyZQKiNy3rtodc7pBtD6QzgCwEAdFtD5vGKTTN2G6i
+        5KjXmyYcaJw6MK2XaP/XbXedzpP1Roq/SOtlIdq8XcQPaN5uNm/UcvlrXYTiB7WONG8Xt5q3QQaOf6gH
+        E/SRAHhYGQxe1Hy+si5M+2s8nuq3FdQ4cvxDQ+we/2DIOBE8QCZ5UHPd0R+2E5AgJHhwxdsNXnNwBNVK
+        hBej/YeaoraoMWptOYJKeX+UOoW6wPQtmAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -308,9 +308,6 @@
         QmCC
 </value>
   </data>
-  <metadata name="description_Rich.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="interestButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIgAAAAkCAYAAABSZHLHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
