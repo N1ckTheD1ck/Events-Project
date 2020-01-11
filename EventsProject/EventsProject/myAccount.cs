@@ -46,7 +46,7 @@ namespace EventsProject
 				while (dr.Read())
 				{
 					id = Convert.ToInt32(dr["ID"]);
-					usernameTextBox.Text.Equals(dr["username"].ToString());
+					usernameTextBox.Text = dr["username"].ToString();
 					fnameTextBox.Text = dr["firstName"].ToString();
 					lnameTextBox.Text = dr["lastName"].ToString();
 					mailTextBox.Text = dr["email"].ToString();
@@ -63,7 +63,7 @@ namespace EventsProject
 
 		public void updateUser()
 		{
-			string sql = "UPDATE UserTable SET username = @username, lastName=@lastName, firstName=@firstName,email=@email,city=@city,address=@address  WHERE username=" + id + "";
+			string sql = "UPDATE UserTable SET username = @username, lastName=@lastName, firstName=@firstName,email=@email,city=@city,address=@address  WHERE ID	=" + id + "";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
 
