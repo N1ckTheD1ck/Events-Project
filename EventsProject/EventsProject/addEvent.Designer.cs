@@ -52,8 +52,8 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.urlTextBox = new System.Windows.Forms.TextBox();
 			this.backButton = new System.Windows.Forms.Button();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.SuspendLayout();
@@ -299,21 +299,21 @@
 			this.backButton.UseVisualStyleBackColor = false;
 			this.backButton.Click += new System.EventHandler(this.backButton_Click);
 			// 
-			// textBox1
+			// dateTimePicker1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(167, 600);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(347, 24);
-			this.textBox1.TabIndex = 28;
-			this.textBox1.Text = "11/1/2020";
+			this.dateTimePicker1.Location = new System.Drawing.Point(167, 549);
+			this.dateTimePicker1.Name = "dateTimePicker1";
+			this.dateTimePicker1.Size = new System.Drawing.Size(347, 24);
+			this.dateTimePicker1.TabIndex = 27;
+			this.dateTimePicker1.Value = new System.DateTime(2020, 1, 17, 0, 0, 0, 0);
 			// 
-			// textBox2
+			// dateTimePicker2
 			// 
-			this.textBox2.Location = new System.Drawing.Point(167, 553);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(347, 24);
-			this.textBox2.TabIndex = 27;
-			this.textBox2.Text = "11/1/2020";
+			this.dateTimePicker2.Location = new System.Drawing.Point(167, 595);
+			this.dateTimePicker2.Name = "dateTimePicker2";
+			this.dateTimePicker2.Size = new System.Drawing.Size(347, 24);
+			this.dateTimePicker2.TabIndex = 28;
+			this.dateTimePicker2.Value = new System.DateTime(2020, 1, 11, 0, 0, 0, 0);
 			// 
 			// addEvent
 			// 
@@ -322,8 +322,8 @@
 			this.AutoScroll = true;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
 			this.ClientSize = new System.Drawing.Size(1088, 699);
-			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.textBox2);
+			this.Controls.Add(this.dateTimePicker2);
+			this.Controls.Add(this.dateTimePicker1);
 			this.Controls.Add(this.backButton);
 			this.Controls.Add(this.label11);
 			this.Controls.Add(this.urlTextBox);
@@ -385,7 +385,7 @@
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.TextBox urlTextBox;
         private System.Windows.Forms.Button backButton;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.DateTimePicker dateTimePicker2;
 	}
 }

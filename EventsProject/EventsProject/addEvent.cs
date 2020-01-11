@@ -26,31 +26,32 @@ namespace EventsProject
 		{
 			string sql = "INSERT INTO Events (PName, PDesc, PCategory, PPlace, PAddress, PTown, PsD, PeD, Pimg) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
-			con.Open();
-
-			cmd.Parameters.AddWithValue("@PName", titleTextBox.Text);
-			cmd.Parameters.AddWithValue("@PDesc", descriptionTextBox.Text);
-			cmd.Parameters.AddWithValue("@PCategory", categoryComboBox.SelectedItem.ToString());
-			cmd.Parameters.AddWithValue("@PPlace", placeTextBox.Text);
-			cmd.Parameters.AddWithValue("@PAddress", streetTextBox.Text);
-			cmd.Parameters.AddWithValue("@PsD", Convert.ToDateTime(textBox1.Text));
-			cmd.Parameters.AddWithValue("@PeD", Convert.ToDateTime(textBox2.Text));
-			cmd.Parameters.AddWithValue("@PTown", townTextBox.Text);
-			cmd.Parameters.AddWithValue("@Pimg", urlTextBox.Text);
-			/*OleDbParameter par = cmd.Parameters.AddWithValue("@image", SqlDbType.Binary);
-			par.Value = imgAsBytes;
-			par.Size = imgAsBytes.Length;*/
-
-			var imgUrl = urlTextBox.Text;
-			var request = WebRequest.Create(imgUrl);
-
-			using (var response = request.GetResponse())
-			using (var stream = response.GetResponseStream())
-			{
-				pictureBox1.Image = Bitmap.FromStream(stream);
-			}
+			
 			try
 			{
+				con.Open();
+
+				cmd.Parameters.AddWithValue("@PName", titleTextBox.Text);
+				cmd.Parameters.AddWithValue("@PDesc", descriptionTextBox.Text);
+				cmd.Parameters.AddWithValue("@PCategory", categoryComboBox.SelectedItem.ToString());
+				cmd.Parameters.AddWithValue("@PPlace", placeTextBox.Text);
+				cmd.Parameters.AddWithValue("@PAddress", streetTextBox.Text);
+				cmd.Parameters.AddWithValue("@PTown", townTextBox.Text);
+				cmd.Parameters.AddWithValue("@PsD", dateTimePicker1.Value.Date.ToString());
+				cmd.Parameters.AddWithValue("@PeD", dateTimePicker2.Value.Date.ToString());
+				cmd.Parameters.AddWithValue("@Pimg", urlTextBox.Text);
+				/*OleDbParameter par = cmd.Parameters.AddWithValue("@image", SqlDbType.Binary);
+				par.Value = imgAsBytes;
+				par.Size = imgAsBytes.Length;*/
+
+				var imgUrl = urlTextBox.Text;
+				var request = WebRequest.Create(imgUrl);
+
+				using (var response = request.GetResponse())
+				using (var stream = response.GetResponseStream())
+				{
+					pictureBox1.Image = Bitmap.FromStream(stream);
+				}
 				cmd.ExecuteNonQuery();
 			}
 			catch (Exception ex)

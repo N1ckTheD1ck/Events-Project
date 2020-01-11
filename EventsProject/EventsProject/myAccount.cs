@@ -67,17 +67,18 @@ namespace EventsProject
 			OleDbCommand cmd = new OleDbCommand(sql, con);
 			cmd.CommandType = CommandType.Text;
 
-			cmd.Parameters.AddWithValue("@username", this.usernameTextBox.Text);
-			cmd.Parameters.AddWithValue("@lastName", this.lnameTextBox.Text);
-			cmd.Parameters.AddWithValue("@firstName", this.fnameTextBox.Text);
-			cmd.Parameters.AddWithValue("@email", this.mailTextBox.Text);
-			cmd.Parameters.AddWithValue("@city", this.cityTextBox.Text);
-			cmd.Parameters.AddWithValue("@address", this.addressTextBox.Text);
+			
 
 			con.Open();
 
 			try
 			{
+				cmd.Parameters.AddWithValue("@username", this.usernameTextBox.Text);
+				cmd.Parameters.AddWithValue("@lastName", this.lnameTextBox.Text);
+				cmd.Parameters.AddWithValue("@firstName", this.fnameTextBox.Text);
+				cmd.Parameters.AddWithValue("@email", this.mailTextBox.Text);
+				cmd.Parameters.AddWithValue("@city", this.cityTextBox.Text);
+				cmd.Parameters.AddWithValue("@address", this.addressTextBox.Text);
 				cmd.ExecuteScalar();
 				MessageBox.Show("updated succesfully");
 			}catch(Exception ex)

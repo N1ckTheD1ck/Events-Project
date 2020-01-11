@@ -72,7 +72,7 @@ namespace EventsProject
 			con.Close();
 		}
 
-		public void updateEvent(byte[] imgAsBytes)
+		public void updateEvent()
 		{
 			string sql = "UPDATE Events SET PName=@title, PDesc=@description, PCategory=@category, PTown=@town, PPlace=@place, PAddress=@address, PSD=@date1, PED=@date2 Pimg=@image  WHERE [ID]="+id+"";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
@@ -84,8 +84,8 @@ namespace EventsProject
 			cmd.Parameters.AddWithValue("@town", this.townTextBox.Text);
 			cmd.Parameters.AddWithValue("@place", this.placeTextBox.Text);
 			cmd.Parameters.AddWithValue("@address", this.streetTextBox.Text);
-			cmd.Parameters.AddWithValue("@date1", this.dateTimePicker1.Value);
-			cmd.Parameters.AddWithValue("@date2", this.dateTimePicker1.Value);
+			cmd.Parameters.AddWithValue("@date1", dateTimePicker1.Value.Date.ToString());
+			cmd.Parameters.AddWithValue("@date2", dateTimePicker2.Value.Date.ToString());
 			cmd.Parameters.AddWithValue("@Pimg", urlTextBox.Text);
 			/*OleDbParameter par = cmd.Parameters.AddWithValue("@image", SqlDbType.Binary);
 			par.Value = imgAsBytes;
@@ -116,7 +116,7 @@ namespace EventsProject
 			con.Close();
 		}
 
-		private byte[] imageToBytes(Image input)
+		/*private byte[] imageToBytes(Image input)
 		{
 			Bitmap bit = new Bitmap(input);
 
@@ -125,7 +125,7 @@ namespace EventsProject
 			byte[] imgAsBytes = stream.ToArray();
 
 			return imgAsBytes;
-		}
+		}*/
 
 		private void deleteEvent()
 		{
@@ -157,7 +157,7 @@ namespace EventsProject
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			updateEvent(imageToBytes(pictureBox1.Image));
+			updateEvent();
 		}
 
 		private void button3_Click(object sender, EventArgs e)
