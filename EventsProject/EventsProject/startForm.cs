@@ -45,8 +45,7 @@ namespace EventsProject
 				acc.logout();
 				myAccountLabel.Visible = false;
                 loginButton.Text = "Login";
-                //loginButton.Image = System.Drawing.Image.FromFile(@"C:\Users\zoide\Source\Repos\N1ckTheD1ck\Events-Project-Team-7\EventsProject\EventsProject\bin\Debug\img\button_start\logout_button.png");
-                adminButton.Visible = false;
+                                                                                                              adminButton.Visible = false;
 				linkLabel1.Visible = false;
             }
 			
@@ -71,7 +70,7 @@ namespace EventsProject
 			myAccountLabel.Visible = true;
 			usernameLabel.Visible = true;
 			linkLabel1.Visible = true;
-			loginButton.Text = "logout";
+			loginButton.Text = "Logout";
 			interestButton.Visible = true;
 		}
 		public void admin()
@@ -130,8 +129,9 @@ namespace EventsProject
 			try
 			{
 				title.Text = table.Rows[index]["PName"].ToString();
-				description.Text = table.Rows[index]["PDesc"].ToString();
-				category.Text = table.Rows[index]["PCategory"].ToString();
+                //description.Text = table.Rows[index]["PDesc"].ToString();
+                description_Rich.Text = table.Rows[index]["PDesc"].ToString();
+                category.Text = table.Rows[index]["PCategory"].ToString();
 				place.Text = table.Rows[index]["PPlace"].ToString();
 				address.Text = table.Rows[index]["PAddress"].ToString();
 				town.Text = table.Rows[index]["PTown"].ToString();
@@ -266,8 +266,8 @@ namespace EventsProject
 				if (dr.Read())
 				{
 					title.Text = dr["PName"].ToString();
-					description.Text = dr["Desc"].ToString();
-					category.Text = dr["Category"].ToString();
+                    description.Text =dr["Desc"].ToString();
+                    category.Text = dr["Category"].ToString();
 					place.Text = dr["Place"].ToString();
 					address.Text = dr["Addr"].ToString();
 					town.Text = dr["Town"].ToString();
@@ -400,6 +400,16 @@ namespace EventsProject
         private void button8_Click(object sender, EventArgs e)
         {
 			Application.Exit();
+        }                              
+
+        private void description_Rich_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void title_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

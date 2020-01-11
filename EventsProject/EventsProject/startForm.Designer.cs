@@ -45,7 +45,6 @@
             this.address = new System.Windows.Forms.Label();
             this.place = new System.Windows.Forms.Label();
             this.date = new System.Windows.Forms.Label();
-            this.description = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
             this.myAccountLabel = new System.Windows.Forms.LinkLabel();
             this.button5 = new System.Windows.Forms.Button();
@@ -58,6 +57,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
+            this.description_Rich = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -69,13 +69,14 @@
             this.loginButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.loginButton.FlatAppearance.BorderSize = 0;
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginButton.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
-            this.loginButton.ForeColor = System.Drawing.Color.Transparent;
+            this.loginButton.Font = new System.Drawing.Font("Corbel", 19F, System.Drawing.FontStyle.Bold);
+            this.loginButton.ForeColor = System.Drawing.Color.Black;
             this.loginButton.Image = ((System.Drawing.Image)(resources.GetObject("loginButton.Image")));
-            this.loginButton.Location = new System.Drawing.Point(20, 430);
+            this.loginButton.Location = new System.Drawing.Point(12, 432);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(140, 39);
             this.loginButton.TabIndex = 0;
+            this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
@@ -101,7 +102,7 @@
             this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1, 340);
+            this.button1.Location = new System.Drawing.Point(8, 340);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(195, 56);
             this.button1.TabIndex = 4;
@@ -119,7 +120,7 @@
             this.button2.ForeColor = System.Drawing.Color.Transparent;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 260);
+            this.button2.Location = new System.Drawing.Point(7, 260);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(195, 56);
             this.button2.TabIndex = 5;
@@ -138,7 +139,7 @@
             this.button3.ForeColor = System.Drawing.Color.Transparent;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 180);
+            this.button3.Location = new System.Drawing.Point(7, 180);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(195, 56);
             this.button3.TabIndex = 6;
@@ -156,7 +157,7 @@
             this.button4.ForeColor = System.Drawing.Color.Transparent;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 107);
+            this.button4.Location = new System.Drawing.Point(7, 107);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(195, 56);
             this.button4.TabIndex = 7;
@@ -166,6 +167,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.description_Rich);
             this.panel1.Controls.Add(this.date2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.interestButton);
@@ -175,7 +177,6 @@
             this.panel1.Controls.Add(this.address);
             this.panel1.Controls.Add(this.place);
             this.panel1.Controls.Add(this.date);
-            this.panel1.Controls.Add(this.description);
             this.panel1.Controls.Add(this.title);
             this.panel1.Location = new System.Drawing.Point(212, 7);
             this.panel1.Name = "panel1";
@@ -279,33 +280,24 @@
             this.date.TabIndex = 2;
             this.date.Text = "date";
             // 
-            // description
-            // 
-            this.description.AutoSize = true;
-            this.description.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.description.Location = new System.Drawing.Point(7, 389);
-            this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(75, 17);
-            this.description.TabIndex = 1;
-            this.description.Text = "description";
-            this.description.Click += new System.EventHandler(this.description_Click);
-            // 
             // title
             // 
             this.title.AutoSize = true;
             this.title.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.title.Location = new System.Drawing.Point(158, 340);
+            this.title.Location = new System.Drawing.Point(8, 354);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(35, 17);
             this.title.TabIndex = 0;
             this.title.Text = "Title";
+            this.title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.title.Click += new System.EventHandler(this.title_Click);
             // 
             // myAccountLabel
             // 
             this.myAccountLabel.ActiveLinkColor = System.Drawing.Color.Red;
             this.myAccountLabel.AutoSize = true;
             this.myAccountLabel.LinkColor = System.Drawing.Color.GhostWhite;
-            this.myAccountLabel.Location = new System.Drawing.Point(952, 139);
+            this.myAccountLabel.Location = new System.Drawing.Point(952, 146);
             this.myAccountLabel.Name = "myAccountLabel";
             this.myAccountLabel.Size = new System.Drawing.Size(79, 17);
             this.myAccountLabel.TabIndex = 9;
@@ -355,7 +347,7 @@
             this.adminButton.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.adminButton.ForeColor = System.Drawing.Color.White;
             this.adminButton.Image = ((System.Drawing.Image)(resources.GetObject("adminButton.Image")));
-            this.adminButton.Location = new System.Drawing.Point(17, 489);
+            this.adminButton.Location = new System.Drawing.Point(9, 488);
             this.adminButton.Name = "adminButton";
             this.adminButton.Size = new System.Drawing.Size(143, 39);
             this.adminButton.TabIndex = 6;
@@ -384,7 +376,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(953, 185);
+            this.linkLabel1.Location = new System.Drawing.Point(952, 201);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(94, 17);
             this.linkLabel1.TabIndex = 12;
@@ -402,9 +394,9 @@
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchButton.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.searchButton.ForeColor = System.Drawing.Color.Transparent;
-            this.searchButton.Location = new System.Drawing.Point(-6, 607);
+            this.searchButton.Location = new System.Drawing.Point(65, 610);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(220, 24);
+            this.searchButton.Size = new System.Drawing.Size(83, 24);
             this.searchButton.TabIndex = 15;
             this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
@@ -419,9 +411,9 @@
             this.button7.ForeColor = System.Drawing.Color.Transparent;
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(0, 28);
+            this.button7.Location = new System.Drawing.Point(7, 28);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(206, 76);
+            this.button7.Size = new System.Drawing.Size(196, 63);
             this.button7.TabIndex = 16;
             this.button7.Text = "Αρχική";
             this.button7.UseVisualStyleBackColor = false;
@@ -432,7 +424,7 @@
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.usernameLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.usernameLabel.Location = new System.Drawing.Point(1027, 41);
+            this.usernameLabel.Location = new System.Drawing.Point(1031, 61);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(0, 17);
             this.usernameLabel.TabIndex = 17;
@@ -450,6 +442,21 @@
             this.button8.TabIndex = 18;
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // description_Rich
+            // 
+            this.description_Rich.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.description_Rich.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.description_Rich.Enabled = false;
+            this.description_Rich.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.description_Rich.Location = new System.Drawing.Point(7, 392);
+            this.description_Rich.Name = "description_Rich";
+            this.description_Rich.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+            this.description_Rich.ShortcutsEnabled = false;
+            this.description_Rich.Size = new System.Drawing.Size(722, 72);
+            this.description_Rich.TabIndex = 11;
+            this.description_Rich.Text = "";
+            this.description_Rich.TextChanged += new System.EventHandler(this.description_Rich_TextChanged);
             // 
             // startForm
             // 
@@ -475,6 +482,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.loginButton);
+            this.Enabled = false;
             this.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "startForm";
@@ -504,7 +512,6 @@
 		
 		private System.Windows.Forms.Label place;
 		private System.Windows.Forms.Label date;
-		private System.Windows.Forms.Label description;
 		private System.Windows.Forms.Label title;
 		private System.Windows.Forms.Label address;
 		private System.Windows.Forms.PictureBox pictureBox1;
@@ -521,5 +528,6 @@
 		private System.Windows.Forms.Label usernameLabel;
 		private System.Windows.Forms.Label date2;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.RichTextBox description_Rich;
     }
 }
