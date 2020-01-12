@@ -61,6 +61,7 @@ namespace EventsProject
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
+				this.Hide();
 			}
 			con.Close();
 

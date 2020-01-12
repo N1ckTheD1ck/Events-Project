@@ -378,10 +378,27 @@ namespace EventsProject
 			interest();
 		}
 
+		static int posit = 0;
+		OleDbDataAdapter adapter1;
+		DataTable table1 = new DataTable();
 		private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			myEvents my = new myEvents();
-			my.Show();
+			login log = new login();
+			int id = log.identity();
+			string sql = "SELECT * FROM InterestTable WHERE [user]=" + id + "";
+			OleDbCommand cmd = new OleDbCommand(sql, con);
+
+			adapter = new OleDbDataAdapter(cmd);
+			adapter.Fill(table1);
+			if (table1.Rows.Count == 0)
+			{
+				MessageBox.Show("Δεν υπάρχουν αποθηκευμένα event για παρακολούθηση!");
+			}
+			else
+			{
+				myEvents my = new myEvents();
+				my.Show();
+			}
 		}
 
 		private void button7_Click(object sender, EventArgs e)
