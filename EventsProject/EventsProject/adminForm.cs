@@ -24,19 +24,22 @@ namespace EventsProject
 		{
 			addEvent add = new addEvent();
 			add.Show();
-		}
+            this.Hide();
+        }
 
 		private void button2_Click(object sender, EventArgs e)
 		{
 			allEvents events = new allEvents();
 			events.Show();
-		}
+            this.Hide();
+        }
 
 		private void button3_Click(object sender, EventArgs e)
 		{
 			allUsers users = new allUsers();
 			users.Show();
-		}
+            this.Hide();
+        }
 
         private void button8_Click(object sender, EventArgs e)
         {
