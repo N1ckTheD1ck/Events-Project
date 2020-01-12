@@ -42,6 +42,9 @@ namespace EventsProject
 				{
 					cmd.ExecuteNonQuery();
 					MessageBox.Show("password reset succesfully");
+					login log = new login();
+					this.Hide();
+					log.Show();
 				}
 				catch (Exception ex)
 				{
