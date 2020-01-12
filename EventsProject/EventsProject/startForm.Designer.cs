@@ -58,8 +58,13 @@
             this.button7 = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // loginButton
@@ -72,9 +77,9 @@
             this.loginButton.Font = new System.Drawing.Font("Corbel", 19F, System.Drawing.FontStyle.Bold);
             this.loginButton.ForeColor = System.Drawing.Color.Black;
             this.loginButton.Image = ((System.Drawing.Image)(resources.GetObject("loginButton.Image")));
-            this.loginButton.Location = new System.Drawing.Point(12, 432);
+            this.loginButton.Location = new System.Drawing.Point(1001, 397);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(140, 39);
+            this.loginButton.Size = new System.Drawing.Size(143, 50);
             this.loginButton.TabIndex = 0;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = false;
@@ -83,9 +88,10 @@
             // welcomeLabel
             // 
             this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.BackColor = System.Drawing.Color.Transparent;
             this.welcomeLabel.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
-            this.welcomeLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.welcomeLabel.Location = new System.Drawing.Point(953, 61);
+            this.welcomeLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.welcomeLabel.Location = new System.Drawing.Point(12, 61);
             this.welcomeLabel.Name = "welcomeLabel";
             this.welcomeLabel.Size = new System.Drawing.Size(68, 17);
             this.welcomeLabel.TabIndex = 2;
@@ -315,8 +321,10 @@
             // 
             this.myAccountLabel.ActiveLinkColor = System.Drawing.Color.Red;
             this.myAccountLabel.AutoSize = true;
-            this.myAccountLabel.LinkColor = System.Drawing.Color.GhostWhite;
-            this.myAccountLabel.Location = new System.Drawing.Point(952, 139);
+            this.myAccountLabel.BackColor = System.Drawing.Color.Transparent;
+            this.myAccountLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.myAccountLabel.LinkColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.myAccountLabel.Location = new System.Drawing.Point(12, 108);
             this.myAccountLabel.Name = "myAccountLabel";
             this.myAccountLabel.Size = new System.Drawing.Size(79, 17);
             this.myAccountLabel.TabIndex = 9;
@@ -366,9 +374,9 @@
             this.adminButton.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.adminButton.ForeColor = System.Drawing.Color.White;
             this.adminButton.Image = ((System.Drawing.Image)(resources.GetObject("adminButton.Image")));
-            this.adminButton.Location = new System.Drawing.Point(9, 488);
+            this.adminButton.Location = new System.Drawing.Point(1001, 453);
             this.adminButton.Name = "adminButton";
-            this.adminButton.Size = new System.Drawing.Size(143, 39);
+            this.adminButton.Size = new System.Drawing.Size(143, 35);
             this.adminButton.TabIndex = 6;
             this.adminButton.UseVisualStyleBackColor = false;
             this.adminButton.Visible = false;
@@ -376,16 +384,16 @@
             // 
             // searchTextBox
             // 
-            this.searchTextBox.Location = new System.Drawing.Point(12, 577);
+            this.searchTextBox.Location = new System.Drawing.Point(11, 471);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(136, 24);
+            this.searchTextBox.Size = new System.Drawing.Size(169, 24);
             this.searchTextBox.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(9, 557);
+            this.label1.Location = new System.Drawing.Point(8, 451);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 17);
             this.label1.TabIndex = 8;
@@ -394,8 +402,10 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(953, 185);
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel1.Location = new System.Drawing.Point(13, 154);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(94, 17);
             this.linkLabel1.TabIndex = 12;
@@ -413,7 +423,7 @@
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchButton.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.searchButton.ForeColor = System.Drawing.Color.Transparent;
-            this.searchButton.Location = new System.Drawing.Point(65, 610);
+            this.searchButton.Location = new System.Drawing.Point(97, 505);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(83, 24);
             this.searchButton.TabIndex = 15;
@@ -442,9 +452,10 @@
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
+            this.usernameLabel.BackColor = System.Drawing.Color.Transparent;
             this.usernameLabel.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
-            this.usernameLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.usernameLabel.Location = new System.Drawing.Point(1031, 61);
+            this.usernameLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.usernameLabel.Location = new System.Drawing.Point(90, 61);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(0, 17);
             this.usernameLabel.TabIndex = 17;
@@ -463,29 +474,60 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.welcomeLabel);
+            this.panel2.Controls.Add(this.myAccountLabel);
+            this.panel2.Controls.Add(this.usernameLabel);
+            this.panel2.Controls.Add(this.linkLabel1);
+            this.panel2.Location = new System.Drawing.Point(962, 102);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(209, 206);
+            this.panel2.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(52, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 19);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Personal Menu";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(15, 26);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(178, 3);
+            this.panel3.TabIndex = 19;
+            // 
             // startForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1184, 700);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.adminButton);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.myAccountLabel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.loginButton);
             this.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -496,6 +538,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -533,5 +577,9 @@
 		private System.Windows.Forms.Label date2;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.RichTextBox description_Rich;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label3;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
