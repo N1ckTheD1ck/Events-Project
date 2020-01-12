@@ -160,7 +160,5 @@ namespace EventsProject
             my.Show();
 
         }
-
-
     }
 }

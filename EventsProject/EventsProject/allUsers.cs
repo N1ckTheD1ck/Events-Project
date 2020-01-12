@@ -60,5 +60,10 @@ namespace EventsProject
             this.Hide();
             adminF.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -29,37 +29,26 @@
 		private void InitializeComponent()
 		{
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(myEvents));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.town = new System.Windows.Forms.Label();
             this.category = new System.Windows.Forms.Label();
             this.address = new System.Windows.Forms.Label();
             this.place = new System.Windows.Forms.Label();
             this.date = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.date2 = new System.Windows.Forms.Label();
-            this.townLabel = new System.Windows.Forms.Label();
-            this.cat = new System.Windows.Forms.Label();
-            this.addressLabel = new System.Windows.Forms.Label();
-            this.placeLabel = new System.Windows.Forms.Label();
-            this.date1 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             this.title = new System.Windows.Forms.Label();
+            this.date1 = new System.Windows.Forms.Label();
+            this.placeLabel = new System.Windows.Forms.Label();
+            this.addressLabel = new System.Windows.Forms.Label();
+            this.cat = new System.Windows.Forms.Label();
+            this.townLabel = new System.Windows.Forms.Label();
+            this.date2 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.myEventDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.pictureBox1.Location = new System.Drawing.Point(52, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(909, 292);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // town
             // 
@@ -111,21 +100,16 @@
             this.date.TabIndex = 13;
             this.date.Text = "date";
             // 
-            // button6
+            // pictureBox1
             // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
-            this.button6.ForeColor = System.Drawing.Color.Transparent;
-            this.button6.Location = new System.Drawing.Point(824, 692);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(136, 37);
-            this.button6.TabIndex = 20;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.pictureBox1.Location = new System.Drawing.Point(52, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(909, 292);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button5
             // 
@@ -143,27 +127,66 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // date2
+            // button6
             // 
-            this.date2.AutoSize = true;
-            this.date2.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
-            this.date2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.date2.Location = new System.Drawing.Point(308, 659);
-            this.date2.Name = "date2";
-            this.date2.Size = new System.Drawing.Size(42, 17);
-            this.date2.TabIndex = 27;
-            this.date2.Text = "date2";
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
+            this.button6.ForeColor = System.Drawing.Color.Transparent;
+            this.button6.Location = new System.Drawing.Point(821, 692);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(136, 37);
+            this.button6.TabIndex = 20;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // townLabel
+            // title
             // 
-            this.townLabel.AutoSize = true;
-            this.townLabel.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
-            this.townLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.townLabel.Location = new System.Drawing.Point(60, 544);
-            this.townLabel.Name = "townLabel";
-            this.townLabel.Size = new System.Drawing.Size(39, 17);
-            this.townLabel.TabIndex = 26;
-            this.townLabel.Text = "town";
+            this.title.AutoSize = true;
+            this.title.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
+            this.title.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.title.Location = new System.Drawing.Point(60, 363);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(35, 17);
+            this.title.TabIndex = 21;
+            this.title.Text = "Title";
+            this.title.Click += new System.EventHandler(this.title_Click);
+            // 
+            // date1
+            // 
+            this.date1.AutoSize = true;
+            this.date1.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
+            this.date1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.date1.Location = new System.Drawing.Point(60, 659);
+            this.date1.Name = "date1";
+            this.date1.Size = new System.Drawing.Size(42, 17);
+            this.date1.TabIndex = 22;
+            this.date1.Text = "date1";
+            // 
+            // placeLabel
+            // 
+            this.placeLabel.AutoSize = true;
+            this.placeLabel.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
+            this.placeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.placeLabel.Location = new System.Drawing.Point(60, 580);
+            this.placeLabel.Name = "placeLabel";
+            this.placeLabel.Size = new System.Drawing.Size(40, 17);
+            this.placeLabel.TabIndex = 23;
+            this.placeLabel.Text = "place";
+            // 
+            // addressLabel
+            // 
+            this.addressLabel.AutoSize = true;
+            this.addressLabel.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
+            this.addressLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.addressLabel.Location = new System.Drawing.Point(60, 619);
+            this.addressLabel.Name = "addressLabel";
+            this.addressLabel.Size = new System.Drawing.Size(55, 17);
+            this.addressLabel.TabIndex = 24;
+            this.addressLabel.Text = "address";
             // 
             // cat
             // 
@@ -177,50 +200,27 @@
             this.cat.Text = "category";
             this.cat.Click += new System.EventHandler(this.cat_Click);
             // 
-            // addressLabel
+            // townLabel
             // 
-            this.addressLabel.AutoSize = true;
-            this.addressLabel.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
-            this.addressLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.addressLabel.Location = new System.Drawing.Point(60, 619);
-            this.addressLabel.Name = "addressLabel";
-            this.addressLabel.Size = new System.Drawing.Size(55, 17);
-            this.addressLabel.TabIndex = 24;
-            this.addressLabel.Text = "address";
+            this.townLabel.AutoSize = true;
+            this.townLabel.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
+            this.townLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.townLabel.Location = new System.Drawing.Point(60, 544);
+            this.townLabel.Name = "townLabel";
+            this.townLabel.Size = new System.Drawing.Size(39, 17);
+            this.townLabel.TabIndex = 26;
+            this.townLabel.Text = "town";
             // 
-            // placeLabel
+            // date2
             // 
-            this.placeLabel.AutoSize = true;
-            this.placeLabel.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
-            this.placeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.placeLabel.Location = new System.Drawing.Point(60, 580);
-            this.placeLabel.Name = "placeLabel";
-            this.placeLabel.Size = new System.Drawing.Size(40, 17);
-            this.placeLabel.TabIndex = 23;
-            this.placeLabel.Text = "place";
-            // 
-            // date1
-            // 
-            this.date1.AutoSize = true;
-            this.date1.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
-            this.date1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.date1.Location = new System.Drawing.Point(60, 659);
-            this.date1.Name = "date1";
-            this.date1.Size = new System.Drawing.Size(42, 17);
-            this.date1.TabIndex = 22;
-            this.date1.Text = "date1";
-            // 
-            // title
-            // 
-            this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
-            this.title.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.title.Location = new System.Drawing.Point(60, 335);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(35, 17);
-            this.title.TabIndex = 21;
-            this.title.Text = "Title";
-            this.title.Click += new System.EventHandler(this.title_Click);
+            this.date2.AutoSize = true;
+            this.date2.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
+            this.date2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.date2.Location = new System.Drawing.Point(308, 659);
+            this.date2.Name = "date2";
+            this.date2.Size = new System.Drawing.Size(42, 17);
+            this.date2.TabIndex = 27;
+            this.date2.Text = "date2";
             // 
             // richTextBox1
             // 
@@ -228,9 +228,9 @@
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold);
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.richTextBox1.Location = new System.Drawing.Point(66, 371);
+            this.richTextBox1.Location = new System.Drawing.Point(63, 401);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(894, 103);
+            this.richTextBox1.Size = new System.Drawing.Size(894, 66);
             this.richTextBox1.TabIndex = 28;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -250,9 +250,14 @@
             // 
             // myEventDelete
             // 
-            this.myEventDelete.Location = new System.Drawing.Point(824, 652);
+            this.myEventDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.myEventDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("myEventDelete.BackgroundImage")));
+            this.myEventDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.myEventDelete.FlatAppearance.BorderSize = 0;
+            this.myEventDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.myEventDelete.Location = new System.Drawing.Point(799, 642);
             this.myEventDelete.Name = "myEventDelete";
-            this.myEventDelete.Size = new System.Drawing.Size(136, 29);
+            this.myEventDelete.Size = new System.Drawing.Size(158, 34);
             this.myEventDelete.TabIndex = 30;
             this.myEventDelete.Text = "Δεν ενδιαφέρομαι";
             this.myEventDelete.UseVisualStyleBackColor = false;
@@ -263,7 +268,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1026, 733);
+            this.ClientSize = new System.Drawing.Size(1026, 760);
             this.Controls.Add(this.myEventDelete);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.richTextBox1);
@@ -296,23 +301,22 @@
 		}
 
 		#endregion
-
-		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label town;
 		private System.Windows.Forms.Label category;
 		private System.Windows.Forms.Label address;
 		private System.Windows.Forms.Label place;
 		private System.Windows.Forms.Label date;
-		private System.Windows.Forms.Button button6;
-		private System.Windows.Forms.Button button5;
-		private System.Windows.Forms.Label date2;
-		private System.Windows.Forms.Label townLabel;
-		private System.Windows.Forms.Label cat;
-		private System.Windows.Forms.Label addressLabel;
-		private System.Windows.Forms.Label placeLabel;
-		private System.Windows.Forms.Label date1;
-		private System.Windows.Forms.Label title;
-		private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label title;
+        private System.Windows.Forms.Label date1;
+        private System.Windows.Forms.Label placeLabel;
+        private System.Windows.Forms.Label addressLabel;
+        private System.Windows.Forms.Label cat;
+        private System.Windows.Forms.Label townLabel;
+        private System.Windows.Forms.Label date2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button myEventDelete;
     }

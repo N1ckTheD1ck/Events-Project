@@ -227,7 +227,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label8.Location = new System.Drawing.Point(256, 12);
+            this.label8.Location = new System.Drawing.Point(261, 17);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 29);
             this.label8.TabIndex = 20;
