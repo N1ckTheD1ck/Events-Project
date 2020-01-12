@@ -68,8 +68,8 @@ namespace EventsProject
 			randomCode = (rand.Next(999999)).ToString();
 			MailMessage mail = new MailMessage();
 			to = email;
-			from = "kmpatz88@gmail.com";
-			pass = "19122014";
+			from = "eventsteamadopse@gmail.com";
+			pass = "eventsTeam7!";
 			message = "your reset code is:" + " " + randomCode; ;
 			mail.To.Add(to);
 			mail.From = new MailAddress(from);

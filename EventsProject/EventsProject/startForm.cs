@@ -388,8 +388,8 @@ namespace EventsProject
 			string sql = "SELECT * FROM InterestTable WHERE [user]=" + id + "";
 			OleDbCommand cmd = new OleDbCommand(sql, con);
 
-			adapter = new OleDbDataAdapter(cmd);
-			adapter.Fill(table1);
+			adapter1 = new OleDbDataAdapter(cmd);
+			adapter1.Fill(table1);
 			if (table1.Rows.Count == 0)
 			{
 				MessageBox.Show("Δεν υπάρχουν αποθηκευμένα event για παρακολούθηση!");
